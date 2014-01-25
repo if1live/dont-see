@@ -33,5 +33,6 @@
     <ClInclude Include="..\Classes\KeyboardDevice.h" />
     <ClInclude Include="..\Classes\vision_clipper.h" />
     <ClInclude Include="..\Classes\TmxObject.h" />
+    <ClInclude Include="..\Classes\MouseDevice.h" />
   </ItemGroup>
 </Project>
