@@ -37,13 +37,14 @@ CCClippingNode *VisionClipper::create()
 CCDrawNode* VisionClipper::shape()
 {
 	const int circlePoint = 16;
-	const float innerRadius = 100;
-	const float outerRadius = 100;
+	const float innerRadius = 70;
+	const float outerRadius = 110;
+	const float outerDeg = 35;
 
     CCDrawNode *shape = CCDrawNode::create();
 
 	std::vector<CCPoint> pointList;
-	for(int i = 1 ; i < circlePoint - 1 ; i++) {
+	for(int i = 2 ; i < circlePoint-1 ; i++) {
 		float segment = 360.0f / circlePoint;
 		float angle = segment * i + 90;
 		float rad = CC_DEGREES_TO_RADIANS(angle);
@@ -54,6 +55,14 @@ CCDrawNode* VisionClipper::shape()
 
 		pointList.push_back(ccp(x, y));
 	}
+
+	
+	float x = sin(CC_DEGREES_TO_RADIANS(outerDeg)) * outerRadius;
+	float y = cos(CC_DEGREES_TO_RADIANS(outerDeg)) * outerRadius;
+	pointList.push_back(ccp(x, y));
+	pointList.push_back(ccp(0, outerRadius));
+	pointList.push_back(ccp(-x, y));
+
 
     static ccColor4F green = {0, 1, 0, 1};
 	shape->drawPolygon(pointList.data(), pointList.size(), green, 0, green);
