@@ -49,4 +49,9 @@ void CollisionAnimationObject::runAnimation()
 		CCAction *act = create_fire_animation();
 		m_sprite->runAction(act);
 	}
+
+	if(m_textureName == "texture\\trash.png") {
+		CCAction *act = create_trash_animation();
+		m_sprite->runAction(act);
+	}
 }

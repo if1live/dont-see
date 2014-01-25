@@ -30,6 +30,11 @@
     <property name="texture_name" value="texture\fire.png"/>
    </properties>
   </object>
+  <object name="trash" type="animate" x="22" y="862" width="29" height="31">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="collisions" width="32" height="32">
   <object x="0" y="813" width="372" height="17"/>
