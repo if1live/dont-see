@@ -13,7 +13,7 @@ Npc* Npc::create(cocos2d::CCDictionary* dict)
 }
 
 Npc::Npc(CCDictionary* dict)
-	: TmxObject(dict), m_movingCool(0)
+	: TmxObject(dict, OBJECT_NPC), m_movingCool(0)
 {
 }
 

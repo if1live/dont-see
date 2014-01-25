@@ -1,12 +1,17 @@
 #pragma once
 
+enum {
+	OBJECT_PLAYER,
+	OBJECT_NPC,
+};
+
 int safeReadIntValue(cocos2d::CCDictionary* dict, const char* key, int defaultValue = 0);
 std::string safeReadStringValue(cocos2d::CCDictionary* dict, const char* key, const char* defaultValue = "");
 
 class TmxObject : public cocos2d::CCLayer
 {
 public:
-	TmxObject(cocos2d::CCDictionary* dict);
+	TmxObject(cocos2d::CCDictionary* dict, int objType);
 	virtual ~TmxObject();
 
 	virtual bool init();
@@ -16,6 +21,7 @@ public:
 	virtual b2Body *createBody() = 0;
 
 protected:
+	int m_objType;
 	int m_x;
 	int m_y;
 	int m_speed;

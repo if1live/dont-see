@@ -19,6 +19,8 @@ public:
 	void addTmxObject(TmxObject *obj);
 	void removeTmxObject(TmxObject *obj);
 
+	TmxObject *getObjectByType(int objType);
+
 public:
 	GLESDebugDraw debugDraw;
 	b2World *b2_world;

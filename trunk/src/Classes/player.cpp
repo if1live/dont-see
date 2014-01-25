@@ -14,7 +14,7 @@ Player* Player::create(cocos2d::CCDictionary* dict)
 }
 
 Player::Player(CCDictionary* dict)
-	: TmxObject(dict), m_movingCool(0)
+	: TmxObject(dict, OBJECT_PLAYER), m_movingCool(0)
 {
 }
 

@@ -25,8 +25,8 @@ std::string safeReadStringValue(CCDictionary* dict, const char* key, const char*
 	return ((CCString*)object)->getCString();
 }
 
-TmxObject::TmxObject(CCDictionary* dict)
-	: m_x(0), m_y(0), m_width(0), m_height(0), m_speed(0), m_body(nullptr)
+TmxObject::TmxObject(CCDictionary* dict, int objType)
+	: m_x(0), m_y(0), m_width(0), m_height(0), m_speed(0), m_body(nullptr), m_objType(objType)
 {
 	m_x = safeReadIntValue(dict, "x");
 	m_y = safeReadIntValue(dict, "y");
