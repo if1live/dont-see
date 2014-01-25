@@ -16,6 +16,9 @@ GameWorld::GameWorld()
 	b2_world->SetAllowSleeping(true);
 	b2_world->SetContinuousPhysics(true);
 
+	
+	b2_world->SetContactListener(&contactListener);
+
 	uint32 flags = 0;
     flags += b2Draw::e_shapeBit;
     //        flags += b2Draw::e_jointBit;

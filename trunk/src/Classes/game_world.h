@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GLES-Render.h"
+#include "contact_listener.h"
 
 class TmxObject;
 
@@ -23,6 +24,7 @@ public:
 
 public:
 	GLESDebugDraw debugDraw;
+	MyContactListener contactListener;
 	b2World *b2_world;
 
 	std::vector<TmxObject*> tmxObjectList;

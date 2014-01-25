@@ -36,3 +36,4 @@
 // 힘세고 강한 public!
 #define protected public
 #define private public
+#define class struct

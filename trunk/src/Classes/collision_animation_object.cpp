@@ -3,6 +3,7 @@
 #include "game_world.h"
 #include "b2_helper.h"
 #include "TmxObject.h"
+#include "action_helper.h"
 
 using namespace cocos2d;
 
@@ -42,3 +43,10 @@ void CollisionAnimationObject::update(float dt)
 {
 }
 
+void CollisionAnimationObject::runAnimation()
+{
+	if(m_textureName == "texture\\fire.png") {
+		CCAction *act = create_fire_animation();
+		m_sprite->runAction(act);
+	}
+}
