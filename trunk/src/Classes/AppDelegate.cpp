@@ -103,6 +103,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
     CCScene *scene = nullptr;
 	scene = MenuLayer::scene();
+
 	
     // run
     pDirector->runWithScene(scene);
