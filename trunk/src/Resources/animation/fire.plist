@@ -7,11 +7,11 @@
             <key>fire_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,36},{28,32}}</string>
+                <string>{{2,2},{28,32}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{2,0},{28,32}}</string>
                 <key>sourceSize</key>
@@ -20,13 +20,13 @@
             <key>fire_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{32,32}}</string>
+                <string>{{32,2},{30,30}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{32,32}}</string>
+                <string>{{1,1},{30,30}}</string>
                 <key>sourceSize</key>
                 <string>{32,32}</string>
             </dict>
@@ -38,9 +38,9 @@
             <key>realTextureFileName</key>
             <string>fire.png</string>
             <key>size</key>
-            <string>{64,128}</string>
+            <string>{64,64}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:bb948229b417faaf365eedc7f5c655fb:8488ea06877ae8eba20665024fd8ff15:0bb5bce7cb5efcf05dfe712e64a0ca66$</string>
+            <string>$TexturePacker:SmartUpdate:5733412a97f55accf25637cec3b08d2d:9915034a8c8739696cd731684f65a731:0bb5bce7cb5efcf05dfe712e64a0ca66$</string>
             <key>textureFileName</key>
             <string>fire.png</string>
         </dict>
