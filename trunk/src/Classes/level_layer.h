@@ -4,6 +4,7 @@
 
 class GameWorld;
 class Player;
+class VisionMask;
 
 class LevelLayer : public cocos2d::CCLayer {
 public:
@@ -17,6 +18,8 @@ public:
 	virtual void draw();
 
 	void initPhysics();
+	void initMap();
+
 	void addNewSpriteAtPosition(cocos2d::CCPoint p);
 	virtual void ccTouchesEnded(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
 	
@@ -26,4 +29,5 @@ public:
 private:
 	GameWorld *gameWorld;
 	Player *player;
+	VisionMask *masking;
 };
