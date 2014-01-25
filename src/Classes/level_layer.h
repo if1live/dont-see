@@ -6,6 +6,7 @@ class GameWorld;
 class Player;
 class VisionMask;
 class TmxObject;
+class Custom_action;
 
 class LevelLayer : public cocos2d::CCLayer {
 public:
@@ -36,6 +37,9 @@ private:
 	
 	typedef std::map<TmxObject*, std::pair<cocos2d::CCSprite*, cocos2d::CCAction*>> SoundEffectObjectMap;
 	SoundEffectObjectMap soundEffectObjectMap;
+
+
+	Custom_action* custom_action;
 
 public:
 	cocos2d::CCClippingNode *clipper;

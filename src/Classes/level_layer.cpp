@@ -14,6 +14,7 @@
 #include "level_loader.h"
 
 #include "SoundManager.h"
+#include "custom_action.h"
 
 using namespace cocos2d;
 
@@ -28,6 +29,7 @@ LevelLayer::LevelLayer()
 	, masking(nullptr)
 	, soundTick(0)
 {
+	custom_action = new Custom_action();
 }
 
 cocos2d::CCScene *LevelLayer::scene(const char *mapfile)
@@ -128,6 +130,7 @@ void LevelLayer::update(float dt)
 	
 	masking->Update();
 
+	custom_action->Update(dt);
 	updateSound(dt);
 }
 
