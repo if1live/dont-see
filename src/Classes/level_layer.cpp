@@ -74,7 +74,57 @@ void LevelLayer::update(float dt)
 {
 	gameWorld->update(dt);
 
+
+
+	keyUpdate();
 }
+
+void LevelLayer::keyUpdate()
+{
+	int tempDir = 0;
+	if(GetAsyncKeyState('W') & 0x8000)
+	{
+		tempDir |= 1;
+		//CCLOG("W");
+	}
+
+	if(GetAsyncKeyState('A') & 0x8000)
+	{
+		tempDir |= 2;
+		//CCLOG("A");
+	}
+
+	if(GetAsyncKeyState('S') & 0x8000)
+	{
+		tempDir |= 4;
+		//CCLOG("S");
+	}
+
+	if(GetAsyncKeyState('D') & 0x8000)
+	{
+		tempDir |= 8;
+		//CCLOG("D");
+	}
+
+	setUserDirection(tempDir);
+}
+
+int LevelLayer::setUserDirection(int argDir)
+{
+	if(m_direction != argDir)
+	{
+		CCLOG("%d", argDir);
+	}
+
+	m_direction = argDir;
+	return m_direction;
+}
+
+int LevelLayer::getUserDirection()
+{
+	return m_direction;
+}
+
 
 void LevelLayer::draw()
 {

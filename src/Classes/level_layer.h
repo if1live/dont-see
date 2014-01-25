@@ -23,7 +23,15 @@ public:
 	// implement the "static node()" method manually
     CREATE_FUNC(LevelLayer);
 
+
+	int setUserDirection(int argDir);
+	int getUserDirection();
+
 private:
 	GameWorld *gameWorld;
 	Player *player;
+	void keyUpdate();
+
+	int m_direction;
+
 };
