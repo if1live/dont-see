@@ -51,7 +51,8 @@ void CollisionAnimationObject::runAnimation()
 	}
 
 	if(m_textureName == "texture\\trash.png") {
-		CCAction *act = create_trash_animation();
+		int mode = rand() % 2;
+		CCAction *act = create_trash_animation(mode);
 		m_sprite->runAction(act);
 	}
 }

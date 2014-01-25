@@ -53,19 +53,18 @@ cocos2d::CCAction *create_fire_animation()
 }
 
 
-cocos2d::CCAction *create_trash_animation()
+cocos2d::CCAction *create_trash_animation(int mode)
 {
 	CCSpriteFrameCache *cache = CCSpriteFrameCache::sharedSpriteFrameCache();
-	cache->addSpriteFramesWithFile("animation/fire.plist");
+	cache->addSpriteFramesWithFile("animation/trash_can.plist");
 
 	CCArray *frames = CCArray::createWithCapacity(4);
 
+	assert(mode == 1 || mode == 0);
 	char buffer[256];
-	for(int i = 2 ; i <= 2 ; ++i) {
-		sprintf(buffer, "fire_%d.png", i);
-		CCSpriteFrame *frame = cache->spriteFrameByName(buffer);
-		frames->addObject(frame);
-	}
+	sprintf(buffer, "trash_can_%d.png", mode + 1);
+	CCSpriteFrame *frame = cache->spriteFrameByName(buffer);
+	frames->addObject(frame);
 
 	CCAnimation *animation = CCAnimation::createWithSpriteFrames(frames, 0.1f);
 	CCAnimate *animate = CCAnimate::create(animation);

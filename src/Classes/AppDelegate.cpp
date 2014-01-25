@@ -39,7 +39,7 @@ using namespace std;
 using namespace CocosDenshion;
 
 AppDelegate::AppDelegate() {
-
+	srand(time(NULL));
 }
 
 AppDelegate::~AppDelegate() 
