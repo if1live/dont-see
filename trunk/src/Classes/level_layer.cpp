@@ -54,6 +54,11 @@ bool LevelLayer::init()
 		child->getTexture()->setAntiAliasTexParameters();
 	}
 
+	playerSprite = CCSprite::create("texture/player.png");
+	this->addChild(playerSprite);
+
+	playerSprite->runAction(cocos2d::CCMoveBy::create(5.0f, cocos2d::CCPoint(100, 100)));
+
 	CCLabelTTF *pLabel = CCLabelTTF::create("test",
                                             "Arial",
                                             18);
