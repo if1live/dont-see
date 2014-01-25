@@ -53,7 +53,6 @@ bool LevelLayer::init()
 		child->getTexture()->setAntiAliasTexParameters();
 	}
 
-
 	CCLabelTTF *pLabel = CCLabelTTF::create("test",
                                             "Arial",
                                             18);
@@ -62,11 +61,24 @@ bool LevelLayer::init()
     addChild(pLabel);
 
 	//플레이어 추가
-	player = new Player();
+	int x = 0;
+	int y = 0;
+	CCTMXObjectGroup* group = map->objectGroupNamed("positions");
+	if (group != nullptr)
+	{
+		CCDictionary* dict = group->objectNamed("user_start");
+		if (dict != nullptr)
+		{
+			x = ((CCString*)dict->objectForKey("x"))->intValue();
+			y = ((CCString*)dict->objectForKey("y"))->intValue();
+		}
+	}
+
+	player = new Player(x, y);
 	player->init();
 	this->addChild(player, -1);
 	player->release();
-			
+
 	return true;
 }
 

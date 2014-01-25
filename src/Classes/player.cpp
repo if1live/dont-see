@@ -3,7 +3,8 @@
 
 using namespace cocos2d;
 
-Player::Player()
+Player::Player(int x, int y)
+	: m_x(x), m_y(y)
 {
 }
 
@@ -20,7 +21,7 @@ bool Player::init()
 	CCSprite *playerSprite = CCSprite::create("texture/player.png");
 	this->addChild(playerSprite);
 
-	playerSprite->runAction(cocos2d::CCMoveBy::create(5.0f, cocos2d::CCPoint(100, 100)));
+	playerSprite->runAction(cocos2d::CCMoveBy::create(5.0f, cocos2d::CCPoint(m_x, m_y)));
 
 
 	return true;
