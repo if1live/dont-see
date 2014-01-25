@@ -43,6 +43,19 @@ void Npc::update(float dt)
 		case 4: dx += m_speed; break;
 		}
 
+		int px = getPositionX();
+		int py = getPositionY();
+		if (m_moveDirection == 1 || m_moveDirection == 3) {
+			if (px != startPos.x && std::abs(px - startPos.x) > 16) {
+				dx = px > startPos.x ? -1 * m_speed : m_speed;
+			}
+		}
+		if (m_moveDirection == 2 || m_moveDirection == 4) {
+			if (py != startPos.y && std::abs(py - startPos.y) > 16) {
+				dy = py > startPos.y ? -1 * m_speed : m_speed;
+			}
+		}
+
 		m_movingCool = 0.3f;
 		setVelocity(dx, dy);
 
