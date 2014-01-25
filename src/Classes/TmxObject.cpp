@@ -79,3 +79,17 @@ void TmxObject::setVelocity(float x, float y)
 	b2Vec2 mt_vec = px_to_mt_pos(ccp(x, y));
 	m_body->SetLinearVelocity(mt_vec);
 }
+
+bool TmxObject::noiseable()
+{
+	switch(m_objType) {
+	case OBJECT_GOAL:
+	case OBJECT_COLLISION_ANIMATION:
+	case OBJECT_PLAYER:
+		return false;
+	case OBJECT_NPC:
+		return true;
+	default:
+		assert(false);
+	}
+}

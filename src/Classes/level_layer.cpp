@@ -106,6 +106,9 @@ void LevelLayer::update(float dt)
 	std::vector<TmxObject*> nearObjects = GameWorld::sharedWorld()->nearBy(player->getPosition(), minViewRadius, maxViewRadius);
 	for (auto it = nearObjects.begin(); it != nearObjects.end(); ++it) {
 		TmxObject* nearObject = (*it);
+		if(nearObject->noiseable() == false) {
+			continue;
+		}
 
 		auto mapIt = soundEffectObjectMap.find(nearObject);
 		if (mapIt == soundEffectObjectMap.end()) {
