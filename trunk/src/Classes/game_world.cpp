@@ -71,9 +71,12 @@ void GameWorld::update(float dt)
 
 void GameWorld::addTmxObject(TmxObject *obj)
 {
-	
+	tmxObjectList.push_back(obj);
 }
 
 void GameWorld::removeTmxObject(TmxObject *obj)
 {
+	auto it = std::find(std::begin(tmxObjectList), std::end(tmxObjectList), obj);
+	if (it != tmxObjectList.end())
+		tmxObjectList.erase(it);
 }
