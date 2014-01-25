@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "level_layer.h"
 #include "game_world.h"
+#include "player.h"
 
 using namespace cocos2d;
 
@@ -10,7 +11,8 @@ LevelLayer::~LevelLayer()
 }
 
 LevelLayer::LevelLayer()
-	: gameWorld(nullptr)
+	: gameWorld(nullptr),
+	player(nullptr)
 {
 }
 
@@ -51,10 +53,6 @@ bool LevelLayer::init()
 		child->getTexture()->setAntiAliasTexParameters();
 	}
 
-	playerSprite = CCSprite::create("texture/player.png");
-	this->addChild(playerSprite);
-
-	playerSprite->runAction(cocos2d::CCMoveBy::create(5.0f, cocos2d::CCPoint(100, 100)));
 
 	CCLabelTTF *pLabel = CCLabelTTF::create("test",
                                             "Arial",
@@ -62,7 +60,13 @@ bool LevelLayer::init()
     CCSize size = CCDirector::sharedDirector()->getWinSize();
     pLabel->setPosition(ccp(size.width/2, size.height/2));
     addChild(pLabel);
-	
+
+	//플레이어 추가
+	player = new Player();
+	player->init();
+	this->addChild(player, -1);
+	player->release();
+			
 	return true;
 }
 
