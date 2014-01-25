@@ -22,6 +22,8 @@ public:
 
 	virtual b2Body *createBody() = 0;
 
+	bool noiseable();
+
 protected:
 	int m_objType;
 	int m_x;
