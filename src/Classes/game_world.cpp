@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "game_world.h"
 #include "VisibleRect.h"
+#include "TmxObject.h"
+#include "b2_helper.h"
 
 GameWorld::GameWorld()
 	: b2_world(nullptr),
@@ -67,6 +69,13 @@ void GameWorld::update(float dt)
     int positionIterations = 1;
 	b2_world->Step(dt, velocityIterations, positionIterations);
 
+
+	for(int i = 0 ; i < tmxObjectList.size() ; ++i) {
+		TmxObject *obj = tmxObjectList[i];
+		b2Vec2 mt_pos = obj->m_body->GetPosition();
+		CCPoint px_pos = mt_to_px_pos(mt_pos);
+		obj->setPosition(px_pos);
+	}
 }
 
 void GameWorld::addTmxObject(TmxObject *obj)

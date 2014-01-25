@@ -32,3 +32,7 @@
 
 #define SCREEN_WIDTH 1024
 #define SCREEN_HEIGHT 768
+
+// 힘세고 강한 public!
+#define protected public
+#define private public
