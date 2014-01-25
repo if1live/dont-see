@@ -5,6 +5,7 @@ Custom_action::Custom_action():specialCountMax(3),specialGapMax(10.f)
 {
 	specialCount = 0;
 	specialGap = 0.f;
+	specialSoundFlag = false;
 }
 
 Custom_action::~Custom_action()
@@ -39,5 +40,17 @@ void Custom_action::Update(float dt)
 	{
 		specialGap = 0.f;
 		specialCount++;
+		specialSoundFlag = true;
 	}
+}
+
+bool Custom_action::TrySpecialSound()
+{
+	if(specialSoundFlag == true)
+	{
+		specialSoundFlag = false;
+		return true;
+	}
+
+	return false;
 }
