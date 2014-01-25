@@ -68,15 +68,14 @@ bool TmxObject::init()
 
 	return true;
 }
-
 void TmxObject::Move(int dx, int dy, float animDelay /* = 0 */)
 {
 	if (dx == 0 && dy == 0)
 		return;
 
-	CCLog("%d, %d", m_x, m_y);
+	//CCLog("%d, %d", m_x, m_y);
 	m_x += dx;
 	m_y += dy;
-	m_sprite->runAction(cocos2d::CCMoveTo::create(animDelay, cocos2d::CCPoint(m_x, m_y)));
-}
+	this->runAction(cocos2d::CCMoveTo::create(animDelay, cocos2d::CCPoint(m_x, m_y)));
 
+}

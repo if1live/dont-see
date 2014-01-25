@@ -37,7 +37,7 @@ CCClippingNode *VisionClipper::create()
 CCDrawNode* VisionClipper::shape()
 {
 	const int circlePoint = 16;
-	const float innerRadius = 50;
+	const float innerRadius = 100;
 	const float outerRadius = 100;
 
     CCDrawNode *shape = CCDrawNode::create();

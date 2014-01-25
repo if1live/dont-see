@@ -25,6 +25,8 @@ public:
 	// implement the "static node()" method manually
     CREATE_FUNC(LevelLayer);
 
+	void updateCamera();
+
 private:
 	Player *player;
 	VisionMask *masking;

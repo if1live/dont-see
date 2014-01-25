@@ -26,6 +26,9 @@ cocos2d::CCScene *LevelLayer::scene()
 	clipper->setPosition(ccp(size.width/2, size.height/2));
 	clipper->addChild(layer);
 	scene->addChild(clipper);
+
+
+	//scene->addChild(layer);
 	return scene;
 }
 
@@ -55,6 +58,7 @@ void LevelLayer::update(float dt)
 {
 	GameWorld::sharedWorld()->update(dt);
 	KeyboardDevice::sharedDevice()->Update();
+	updateCamera();
 }
 
 void LevelLayer::draw()
@@ -132,40 +136,26 @@ void LevelLayer::ccTouchesEnded(CCSet* touches, CCEvent* event)
 
 void LevelLayer::initMap()
 {
-	CCDrawNode* shape = CCDrawNode::create();
-	
-	CCPoint pts[4];
-	CCSize size = CCDirector::sharedDirector()->getWinSize();
-
-	pts[0] = ccp( 0, 0);
-	pts[1] = ccp( 0, size.height/2);
-	pts[2] = ccp( size.width/2 - 1, size.height/2);
-	pts[3] = ccp( size.width/2 - 1, 0);
-	
-	shape->drawPolygon(pts, 4, ccc4f(1, 1, 1, 1), 0, ccc4f(1, 0, 0, 1));
-
-	// add shape in stencil
-	CCClippingNode* clip = CCClippingNode::create();
-	//clip->setAnchorPoint(ccp(0.5, 0.5));
-	clip->setAnchorPoint(ccp(0.5, 0.5));
-	clip->setPosition( ccp(size.width/4,size.height/4) );
-	clip->setStencil(shape);
-	this->addChild(clip);
+	//좌표 개발 관련이 끝난다음에 클리핑을 되살린다. 그쪽이 차라리 속편하겟다.
 	/*
 	// setup content
+	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 	CCSprite* pSprite = CCSprite::create("HelloWorld.png");
 	pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 	clip->addChild(pSprite);
 	*/
+	
 	// create a TMX map
 	CCTMXTiledMap *map = CCTMXTiledMap::create("tilemap/desert.tmx");
-	clip->addChild(map, -1);
+	this->addChild(map, -1);
 
-
+	/*
 	CCSprite *sp = CCSprite::create("texture/mask_default.png");
 	sp->setPosition(ccp(size.width/4,size.height/4));
+	this->addChild(sp, 0);
+	*/
 
-	clip->addChild(sp, 0);
 	//디버깅용 타일 경계선 그리기
 	// All the tiles by default will be aliased. If you want to create anti-alias tiles, you should do:
 	// iterate over all the "layers" (atlas sprite managers)
@@ -220,4 +210,21 @@ void LevelLayer::initMap()
 	Npc* npc = Npc::create(&tempDict);
 	npc->init();
 	this->addChild(npc, -1);
+
+	//카메라를 기본 위치로 이동시키기
+	//레이어 초기화할때 같이 하지 않으면 끊기는 느낌이 든다
+	updateCamera();
+}
+
+void LevelLayer::updateCamera()
+{
+	//플레이어의 위치만큼 화면을 반대로 이동
+	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+	CCPoint camPos(winSize.width/2, winSize.height/2);
+	if(player != nullptr) {
+		CCPoint playerPos = player->getPosition();
+		camPos.x -= playerPos.x;
+		camPos.y -= playerPos.y;
+	}
+	this->setPosition(camPos);
 }
