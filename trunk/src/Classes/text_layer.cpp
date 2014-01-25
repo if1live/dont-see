@@ -79,7 +79,7 @@ void TextLayer::update(float dt)
 	sprintf(buffer, "Tile: %.2f, %.2f", tileX, tileY);
 	tileCoordLabel->setString(buffer);
 
-	sprintf(buffer, "HP  : %d", player->hp);
+	sprintf(buffer, "HP  : %d / %.1f", player->hp, player->powerfulTime);
 	hpLabel->setString(buffer);
 
 	sprintf(buffer, "Avail: %d / %.1f", customAction->GetSpecialCount(), customAction->GetSpecialGap());
