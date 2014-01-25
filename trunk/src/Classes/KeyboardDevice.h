@@ -11,7 +11,7 @@ enum Keys
 class KeyboardDevice
 {
 public:
-	static KeyboardDevice* sharedDirector() {
+	static KeyboardDevice* sharedDevice() {
 		static KeyboardDevice device;
 		return &device;
 	}

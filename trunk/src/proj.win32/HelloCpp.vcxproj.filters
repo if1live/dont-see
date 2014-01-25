@@ -13,6 +13,7 @@
     <ClCompile Include="..\Classes\vision_mask.cpp" />
     <ClCompile Include="..\Classes\MenuLayer.cpp" />
     <ClCompile Include="..\Classes\Npc.cpp" />
+    <ClCompile Include="..\Classes\TmxObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -29,5 +30,6 @@
     <ClInclude Include="..\Classes\MenuLayer.h" />
     <ClInclude Include="..\Classes\Npc.h" />
     <ClInclude Include="..\Classes\KeyboardDevice.h" />
+    <ClInclude Include="..\Classes\TmxObject.h" />
   </ItemGroup>
 </Project>

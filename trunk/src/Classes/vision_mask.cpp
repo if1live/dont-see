@@ -33,7 +33,7 @@ bool VisionMask::init()
 	}
 
 	centerMasking = CCSprite::create("texture/mask_circle.png");
-	lightMasking = CCSprite::create("texture/mask_star.png");
+	lightMasking = CCSprite::create("texture/mask_circle.png");
 
 	this->addChild(centerMasking);
 	this->addChild(lightMasking);
