@@ -7,6 +7,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="..\Classes\GLES-Render.cpp" />
     <ClCompile Include="..\Classes\level_layer.cpp" />
+    <ClCompile Include="..\Classes\VisibleRect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -16,5 +17,6 @@
     <ClInclude Include="..\Classes\stdafx.h" />
     <ClInclude Include="..\Classes\GLES-Render.h" />
     <ClInclude Include="..\Classes\level_layer.h" />
+    <ClInclude Include="..\Classes\VisibleRect.h" />
   </ItemGroup>
 </Project>
