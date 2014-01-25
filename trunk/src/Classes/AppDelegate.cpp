@@ -31,7 +31,7 @@ THE SOFTWARE.
 #include "HelloWorldScene.h"
 #include "AppMacros.h"
 
-#include "level_layer.h"
+#include "MenuLayer.h"
 
 USING_NS_CC;
 using namespace std;
@@ -102,7 +102,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
     CCScene *scene = nullptr;
 	//scene = HelloWorld::scene();
-	scene = LevelLayer::scene();
+	scene = MenuLayer::scene();
 	
     // run
     pDirector->runWithScene(scene);
