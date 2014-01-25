@@ -3,6 +3,7 @@
 #include "GLES-Render.h"
 
 class GameWorld;
+class Player;
 
 class LevelLayer : public cocos2d::CCLayer {
 public:
@@ -23,8 +24,6 @@ public:
     CREATE_FUNC(LevelLayer);
 
 private:
-	cocos2d::CCSprite *playerSprite;
-
-private:
 	GameWorld *gameWorld;
+	Player *player;
 };
