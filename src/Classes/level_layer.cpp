@@ -47,6 +47,11 @@ cocos2d::CCScene *LevelLayer::scene(const char *mapfile)
 
 	layer->clipper = clipper;
 	layer->updateClipper(false);
+
+	//masking
+	VisionMask *visionMasking = VisionMask::create();
+	scene->addChild(visionMasking);
+	visionMasking->setPosition(ccp(size.width/2, size.height/2));
 	return scene;
 }
 
