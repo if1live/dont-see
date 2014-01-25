@@ -27,9 +27,14 @@ b2Body *CollisionAnimationObject::createBody()
 
 	b2Body *body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
 
-	b2PolygonShape box;
-	box.SetAsBox(0.5f, 0.5f);
-	body->CreateFixture(&box, 1);
+	b2CircleShape circle;
+	circle.m_radius = 0.5f;
+
+	b2FixtureDef fixtureDef;
+	fixtureDef.density = 1.0f;
+	fixtureDef.shape = &circle;
+
+	body->CreateFixture(&fixtureDef);
 
 	return body;
 }
