@@ -29,7 +29,9 @@ public:
 private:
 	Player *player;
 	VisionMask *masking;
+	float soundTick;
 
 public:
 	cocos2d::CCClippingNode *clipper;
+	cocos2d::CCLayer *soundLayer;
 };

@@ -25,7 +25,7 @@ cocos2d::CCAction *create_circle_sonar()
     CCAction* action = CCSpawn::create(animate, wait, NULL);
 
     CCActionInterval* rep1 = (CCActionInterval*)action;
-    CCAction* rep2 = CCRepeatForever::create(rep1);
+    CCAction* rep2 = CCRepeat::create(rep1, 3);
 	return rep2;
 }
 

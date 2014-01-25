@@ -81,6 +81,21 @@ void GameWorld::update(float dt)
 	}
 }
 
+std::vector<CCPoint> GameWorld::gatherPoints(const CCPoint center, float minDistance, float maxDistance)
+{
+	std::vector<CCPoint> points;
+	for (auto it = tmxObjectList.begin(); it != tmxObjectList.end(); ++it) {
+		TmxObject* object = (*it);
+		b2Vec2 mt_pos = object->m_body->GetPosition();
+		CCPoint px_pos = mt_to_px_pos(mt_pos);
+		float distance = center.getDistance(px_pos);
+		if (minDistance <= distance && distance <= maxDistance) {
+			points.push_back(px_pos);
+		}
+	}
+	return points;
+}
+
 void GameWorld::addTmxObject(TmxObject *obj)
 {
 	tmxObjectList.push_back(obj);
