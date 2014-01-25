@@ -28,7 +28,6 @@ cocos2d::CCScene *LevelLayer::scene()
 	clipper->addChild(layer);
 	scene->addChild(clipper);
 
-
 	//scene->addChild(layer);
 	return scene;
 }
@@ -138,25 +137,9 @@ void LevelLayer::ccTouchesEnded(CCSet* touches, CCEvent* event)
 
 void LevelLayer::initMap()
 {
-	//좌표 개발 관련이 끝난다음에 클리핑을 되살린다. 그쪽이 차라리 속편하겟다.
-	/*
-	// setup content
-	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-	CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
-	CCSprite* pSprite = CCSprite::create("HelloWorld.png");
-	pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-	clip->addChild(pSprite);
-	*/
-	
 	// create a TMX map
 	CCTMXTiledMap *map = CCTMXTiledMap::create("tilemap/desert.tmx");
 	this->addChild(map, -1);
-
-	/*
-	CCSprite *sp = CCSprite::create("texture/mask_default.png");
-	sp->setPosition(ccp(size.width/4,size.height/4));
-	this->addChild(sp, 0);
-	*/
 
 	//디버깅용 타일 경계선 그리기
 	// All the tiles by default will be aliased. If you want to create anti-alias tiles, you should do:
@@ -222,7 +205,8 @@ void LevelLayer::updateCamera()
 {
 	//플레이어의 위치만큼 화면을 반대로 이동
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-	CCPoint camPos(winSize.width/2, winSize.height/2);
+	// CCPoint camPos(winSize.width/2, winSize.height/2);
+	CCPoint camPos;
 	if(player != nullptr) {
 		CCPoint playerPos = player->getPosition();
 		camPos.x -= playerPos.x;
