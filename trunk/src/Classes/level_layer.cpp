@@ -184,6 +184,7 @@ void LevelLayer::initMap()
 	player = Player::create(dict);
 	player->init();
 	this->addChild(player, -1);
+	GameWorld::sharedWorld()->addTmxObject(player);
 
 	//Npc 추가
 	if (group != nullptr) {
@@ -198,6 +199,7 @@ void LevelLayer::initMap()
 				Npc* npc = Npc::create(dict);
 				npc->init();
 				this->addChild(npc);
+				GameWorld::sharedWorld()->addTmxObject(npc);
 			}
 		}
 	}
@@ -213,6 +215,7 @@ void LevelLayer::initMap()
 	Npc* npc = Npc::create(&tempDict);
 	npc->init();
 	this->addChild(npc, -1);
+	GameWorld::sharedWorld()->addTmxObject(npc);
 
 	//카메라를 기본 위치로 이동시키기
 	//레이어 초기화할때 같이 하지 않으면 끊기는 느낌이 든다
