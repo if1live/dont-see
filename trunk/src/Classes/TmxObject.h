@@ -4,6 +4,7 @@ enum {
 	OBJECT_PLAYER,
 	OBJECT_NPC,
 	OBJECT_COLLISION_ANIMATION,
+	OBJECT_GOAL,
 };
 
 int safeReadIntValue(cocos2d::CCDictionary* dict, const char* key, int defaultValue = 0);
