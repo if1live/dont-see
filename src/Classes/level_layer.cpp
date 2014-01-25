@@ -13,6 +13,8 @@
 #include "action_helper.h"
 #include "level_loader.h"
 
+#include "SoundManager.h"
+
 using namespace cocos2d;
 
 enum {
@@ -72,6 +74,8 @@ bool LevelLayer::initWithMapfile(const char *mapfile)
 	this->initPhysics();
 	this->initMap(mapfile);
 
+	SoundManager::sharedManager();
+
 	return true;
 }
 
@@ -123,8 +127,22 @@ void LevelLayer::update(float dt)
 	}
 	
 	masking->Update();
+
+	updateSound(dt);
 }
 
+void LevelLayer::updateSound(float dt)
+{
+	int currentKeys = KeyboardDevice::sharedDevice()->GetKeys();
+	int preKeys = KeyboardDevice::sharedDevice()->GetPreKeys();
+
+	if( (currentKeys & KeyLButton) != 0 && (preKeys & KeyLButton) == 0)
+	{
+		SoundManager::sharedManager()->PlayEffect(EFFECT_DOG);
+	}
+
+	SoundManager::sharedManager()->Update(dt);
+}
 void LevelLayer::draw()
 {
 	CCLayer::draw();

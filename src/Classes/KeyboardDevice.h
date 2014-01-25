@@ -21,7 +21,7 @@ public:
 	}
 
 	KeyboardDevice()
-		: m_keys(0) {}
+		: m_keys(0), m_preKeys(0) {}
 
 	void Update();
 
@@ -29,11 +29,18 @@ public:
 		return m_keys;
 	}
 
+	int GetPreKeys() const {
+		return m_preKeys;
+	}
+
 private:
 	int m_keys;
+	int m_preKeys;
 };
 
 inline void KeyboardDevice::Update() {
+
+	m_preKeys = m_keys;
 	int currentKeys = 0;
 	if (GetAsyncKeyState('W') & 0x8000) currentKeys |= KeyW;
 	if (GetAsyncKeyState('A') & 0x8000) currentKeys |= KeyA;
