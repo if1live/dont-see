@@ -11,7 +11,6 @@ cocos2d::CCScene *VisionClipper::testScene()
 	CCSprite *sprite = CCSprite::create("texture/HelloWorld.png");
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 	CCPoint center(winSize.width / 2, winSize.height / 2);
-	sprite->setScale(3);
 
 	CCClippingNode *clipper = VisionClipper::create();
 	clipper->setPosition(center);
@@ -19,7 +18,7 @@ cocos2d::CCScene *VisionClipper::testScene()
 
 	scene->addChild(clipper);
 	//scene->addChild(sprite);
-	sprite->setPosition(center);
+	//sprite->setPosition(center);
 
 	return scene;
 

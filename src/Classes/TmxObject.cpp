@@ -48,6 +48,7 @@ bool TmxObject::init()
 	m_sprite = CCSprite::create(m_textureName.c_str());
 	this->addChild(m_sprite);
 
+	/*
 	// Define the dynamic body.
 	//Set up a 1m squared box in the physics world
 	b2BodyDef bodyDef;
@@ -57,16 +58,10 @@ bool TmxObject::init()
 	b2Body *body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
 
 	// Define another box shape for our dynamic body.
-	b2PolygonShape dynamicBox;
-	dynamicBox.SetAsBox(.5f, .5f);//These are mid points for our 1m box
-
-	// Define the dynamic body fixture.
-	b2FixtureDef fixtureDef;
-	fixtureDef.shape = &dynamicBox;
-	fixtureDef.density = 1.0f;
-	fixtureDef.friction = 0.3f;
-	body->CreateFixture(&fixtureDef);
-
+	b2PolygonShape box;
+	box.SetAsBox(.5f, .5f);//These are mid points for our 1m box
+	body->CreateFixture(&box, 0.0f);
+	*/
 	m_sprite->runAction(cocos2d::CCMoveTo::create(0, cocos2d::CCPoint(m_x, m_y)));
 
 	scheduleUpdate();

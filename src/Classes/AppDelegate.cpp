@@ -102,9 +102,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
     CCScene *scene = nullptr;
-	//scene = HelloWorld::scene();
-	//scene = MenuLayer::scene();
-	scene = VisionClipper::testScene();
+	scene = MenuLayer::scene();
 	
     // run
     pDirector->runWithScene(scene);

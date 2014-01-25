@@ -34,10 +34,10 @@ bool VisionMask::init()
 
 	centerMasking = CCSprite::create("texture/mask_default.png");
 	lightMasking = CCSprite::create("texture/mask_default.png");
-
+	
 	this->addChild(centerMasking);
 	this->addChild(lightMasking);
-
+	
 	//auto rect = CCDirector::sharedDirector()->getWinSize();
 	//CCPoint center(rect.width / 2, rect.height / 2);
 	//centerMasking->setPosition(center);

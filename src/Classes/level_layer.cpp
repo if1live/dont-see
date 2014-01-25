@@ -6,6 +6,7 @@
 #include "KeyboardDevice.h"
 #include "TmxObject.h"
 #include "Npc.h"
+#include "vision_clipper.h"
 
 using namespace cocos2d;
 
@@ -19,7 +20,12 @@ cocos2d::CCScene *LevelLayer::scene()
 {
 	CCScene *scene = CCScene::create();
 	CCLayer *layer = LevelLayer::create();
-	scene->addChild(layer);
+	
+	CCSize size = CCDirector::sharedDirector()->getWinSize();
+	CCClippingNode* clipper = VisionClipper::create();
+	clipper->setPosition(ccp(size.width/2, size.height/2));
+	clipper->addChild(layer);
+	scene->addChild(clipper);
 	return scene;
 }
 
@@ -35,17 +41,10 @@ bool LevelLayer::init()
 	this->initPhysics();
 	this->initMap();
 
-
 	CCLabelTTF *pLabel = CCLabelTTF::create("test",
                                             "Arial",
                                             18);
-    CCSize size = CCDirector::sharedDirector()->getWinSize();
-    pLabel->setPosition(ccp(size.width/2, size.height/2));
-    addChild(pLabel);
-
-	masking = VisionMask::create();
-	masking->setPosition(ccp(size.width/2, size.height/2));
-	this->addChild(masking, -1);
+	this->addChild(pLabel);
 
 
 	return true;
@@ -188,5 +187,5 @@ void LevelLayer::initMap()
 	
 	Npc* npc = Npc::create(&tempDict);
 	npc->init();
-	this->addChild(npc);
+	this->addChild(npc, -1);
 }
