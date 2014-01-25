@@ -22,6 +22,9 @@ SoundManager::SoundManager()
 		SimpleAudioEngine::sharedEngine()->preloadEffect(effectSoundFile[i]);
 		effectSoundInterval[i] = 2.0f;
 	}
+
+	//SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("/sound/background/bg01.mp3");
+	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("/sound/background/bg01.mp3", true);
 }
 
 SoundManager::~SoundManager()
