@@ -53,11 +53,17 @@ cocos2d::CCScene *LevelLayer::scene(const char *mapfile)
 	layer->clipper = clipper;
 	layer->updateClipper(false);
 
+	CCSprite *maskOuter = CCSprite::create("texture/mask_2.png");
+	scene->addChild(maskOuter);
+	maskOuter->setAnchorPoint(ccp(0.5, 0.5));
+	maskOuter->setPosition(ccp(size.width/2, size.height/2));
+	maskOuter->setScale(1.2);
+
 	//masking
 	VisionMask *visionMasking = VisionMask::create();
 	layer->masking = visionMasking;
 	scene->addChild(visionMasking);
-	visionMasking->setPosition(ccp(size.width/2, size.height/2));
+	visionMasking->setPosition(ccp(size.width/2, size.height/2+15));
 
 	layer->soundLayer = CCLayer::create();
 	scene->addChild(layer->soundLayer);

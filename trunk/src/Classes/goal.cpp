@@ -49,6 +49,8 @@ void Goal::clearGame()
 {
 	if(clearCalled == false) {
 		clearCalled = true;
+		
+		//TODO °ñ µµÂø½Ã ³ª´Â ¼Ò¸®
 	}
 	printf("clear game");
 }
