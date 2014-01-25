@@ -21,6 +21,9 @@ public:
     CREATE_FUNC(LevelLayer);
 
 private:
+	cocos2d::CCSprite *playerSprite;
+
+private:
 	GLESDebugDraw debugDraw;
 	b2World *world;
 };
