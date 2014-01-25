@@ -160,7 +160,6 @@ void LevelLayer::initMap()
 	player = Player::create(dict);
 	player->init();
 	this->addChild(player, -1);
-	player->release();
 
 	//Npc Ãß°¡
 	if (group != nullptr) {
