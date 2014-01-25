@@ -2,6 +2,7 @@
 
 #include <cstdio>
 #include <cstdlib>
+#include <cstdarg>
 
 #include <vector>
 #include <string>
@@ -21,7 +22,7 @@
 // C RunTime Header Files
 #include "CCStdC.h"
 
-
+#include "Box2D/Box2D.h"
 #include "cocos2d.h"
 
 #include "AppMacros.h"
