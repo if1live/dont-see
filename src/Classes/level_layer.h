@@ -26,8 +26,13 @@ public:
     CREATE_FUNC(LevelLayer);
 
 	void updateCamera();
+	void updateClipper(bool use);
+	bool isClipperEnabled();
 
 private:
 	Player *player;
 	VisionMask *masking;
+
+public:
+	cocos2d::CCClippingNode *clipper;
 };

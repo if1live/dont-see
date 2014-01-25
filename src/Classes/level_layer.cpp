@@ -11,6 +11,12 @@
 
 using namespace cocos2d;
 
+enum {
+	Level_Scene,
+	Level_Clipper,
+	Level_Layer,
+};
+
 LevelLayer::LevelLayer()
 	: player(nullptr)
 	, masking(nullptr)
@@ -20,15 +26,21 @@ LevelLayer::LevelLayer()
 cocos2d::CCScene *LevelLayer::scene() 
 {
 	CCScene *scene = CCScene::create();
-	CCLayer *layer = LevelLayer::create();
-	
+	scene->setTag(Level_Scene);
+
+	LevelLayer *layer = (LevelLayer*)LevelLayer::create();
+	layer->setTag(Level_Layer);
+
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	CCClippingNode* clipper = VisionClipper::create();
+	clipper->setTag(Level_Layer);
 	clipper->setPosition(ccp(size.width/2, size.height/2));
-	clipper->addChild(layer);
-	scene->addChild(clipper);
-
+	
+	clipper->addChild(layer);	scene->addChild(clipper);
 	//scene->addChild(layer);
+
+	layer->clipper = clipper;
+	layer->updateClipper(false);
 	return scene;
 }
 
@@ -205,12 +217,59 @@ void LevelLayer::updateCamera()
 {
 	//플레이어의 위치만큼 화면을 반대로 이동
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-	// CCPoint camPos(winSize.width/2, winSize.height/2);
+
 	CCPoint camPos;
+	if(isClipperEnabled()) {
+		;
+	} else {
+		camPos = CCPoint(winSize.width/2, winSize.height/2);
+	}
+	
 	if(player != nullptr) {
 		CCPoint playerPos = player->getPosition();
 		camPos.x -= playerPos.x;
 		camPos.y -= playerPos.y;
 	}
 	this->setPosition(camPos);
+}
+
+bool LevelLayer::isClipperEnabled()
+{
+	if(this->getParent() == nullptr) {
+		return false;
+	}
+
+	if(this->getParent()->getTag() == Level_Scene) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+void LevelLayer::updateClipper(bool use)
+{
+	if(use) {
+		if(isClipperEnabled()) {
+			// 클리퍼를 쓸라고 씬-레이어 로 구성된 경우
+			// 씬-클리퍼-레이어 로 바꾼다
+			CCNode *scene = this->getParent();
+			this->removeFromParentAndCleanup(false);
+
+			scene->addChild(clipper);
+			clipper->addChild(this);
+
+		} else {
+			;
+		}
+	} else {
+		if(isClipperEnabled()) {
+			// 클리퍼를 안쓸라고 하고 씬-클리퍼-레이어로 구성된 경우
+			// 씬-레이어로 바꾼다
+			CCNode *scene = this->getParent()->getParent();
+			this->getParent()->removeFromParentAndCleanup(false);
+			this->removeFromParentAndCleanup(false);
+
+			scene->addChild(this);
+		}
+	}
 }
