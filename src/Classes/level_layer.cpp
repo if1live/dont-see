@@ -8,6 +8,7 @@
 #include "TmxObject.h"
 #include "Npc.h"
 #include "vision_clipper.h"
+#include "action_helper.h"
 
 using namespace cocos2d;
 
@@ -220,6 +221,13 @@ void LevelLayer::initMap()
 	//카메라를 기본 위치로 이동시키기
 	//레이어 초기화할때 같이 하지 않으면 끊기는 느낌이 든다
 	updateCamera();
+
+	//효과용 애니메이션 테스트로 넣어보자
+	CCSprite *empty = CCSprite::create("texture/empty.png");
+	this->addChild(empty);
+	empty->setPosition(ccp(-50, 100));
+	CCAction *sonarAction = create_circle_sonar();
+	empty->runAction(sonarAction);
 }
 
 void LevelLayer::updateCamera()

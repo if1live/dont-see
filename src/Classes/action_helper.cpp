@@ -1,0 +1,30 @@
+#include "stdafx.h"
+#include "action_helper.h"
+
+using namespace cocos2d;
+
+cocos2d::CCAction *create_circle_sonar()
+{
+	// 스프라이트 시트의 위치정보 파일을 읽어들인다.
+    CCSpriteFrameCache *cache = CCSpriteFrameCache::sharedSpriteFrameCache();
+    cache->addSpriteFramesWithFile("animation/sound_round.plist");
+    
+    CCArray* animFrames = CCArray::createWithCapacity(15);
+    
+    char str[100] = {0};
+    for(int i = 1; i <=5 ; i++) {
+        sprintf(str, "sound_round_%d.png", i);
+        CCSpriteFrame* frame = cache->spriteFrameByName( str );
+        animFrames->addObject(frame);
+    }
+    
+    // 애니메이션 만들기
+    CCAnimation* animation = CCAnimation::createWithSpriteFrames(animFrames, 0.1f);
+    CCAnimate *animate = CCAnimate::create(animation);
+	CCActionInterval *wait = CCActionInterval::create(1.0f);
+    CCAction* action = CCSpawn::create(animate, wait, NULL);
+
+    CCActionInterval* rep1 = (CCActionInterval*)action;
+    CCAction* rep2 = CCRepeatForever::create(rep1);
+	return rep2;
+}
