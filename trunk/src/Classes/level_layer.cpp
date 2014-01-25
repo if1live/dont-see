@@ -263,6 +263,9 @@ void LevelLayer::updateCamera()
 		camPos.x -= playerPos.x;
 		camPos.y -= playerPos.y;
 	}
+
+	camPos.x = (int)camPos.x;
+	camPos.y = (int)camPos.y;
 	this->setPosition(camPos);
 }
 
