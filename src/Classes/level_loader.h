@@ -12,6 +12,7 @@ public:
 	Player *registerPlayer(cocos2d::CCTMXTiledMap *map);
 	void registerNpc(cocos2d::CCTMXTiledMap *map);
 	void registerCollisionBox(cocos2d::CCTMXTiledMap *map);
+	void registerAnimate(cocos2d::CCTMXTiledMap *map);
 
 	void load();
 

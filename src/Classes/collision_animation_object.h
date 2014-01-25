@@ -11,5 +11,6 @@ public:
 	virtual b2Body *createBody();
 	virtual void update(float dt);
 
+	void runAnimation();
 private:
 };

@@ -5,6 +5,7 @@
 #include "game_world.h"
 #include "Npc.h"
 #include "b2_helper.h"
+#include "collision_animation_object.h"
 
 using namespace cocos2d;
 
@@ -99,7 +100,7 @@ void LevelLoader::registerCollisionBox(cocos2d::CCTMXTiledMap *map)
 			b2BodyDef bodyDef;
 			bodyDef.position = px_to_mt_pos(ccp(x + width/2, y + height/2));
 			bodyDef.type = b2_staticBody;
-			bodyDef.userData = this;
+			bodyDef.userData = nullptr;
 
 			b2Body *body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
 
@@ -121,4 +122,29 @@ void LevelLoader::load()
 	registerPlayer(map);
 	registerNpc(map);
 	registerCollisionBox(map);
+	registerAnimate(map);
+}
+
+void LevelLoader::registerAnimate(cocos2d::CCTMXTiledMap *map)
+{
+	CCDictionary* dict = nullptr;
+	CCTMXObjectGroup* group = map->objectGroupNamed("objects");
+
+	//Npc Ãß°¡
+	if (group != nullptr) {
+		CCArray* array = group->getObjects();
+		CCObject* object;
+		CCARRAY_FOREACH(array, object) {
+			CCDictionary* dict = (CCDictionary*)object;
+			CCString* type = (CCString*)dict->objectForKey("type");
+
+			std::string typeValue = safeReadStringValue(dict, "type");
+			if (typeValue == "animate") {
+				CollisionAnimationObject *obj = CollisionAnimationObject::create(dict);
+				obj->init();
+				layer->addChild(obj);
+				GameWorld::sharedWorld()->addTmxObject(obj);
+			}
+		}
+	}
 }

@@ -44,7 +44,8 @@ void MenuLayer::update(float dt)
 	if (m_logoShowingTime > 1 && m_sceneChangeOccur == false) {
 		m_sceneChangeOccur = true;
 		CCDirector* pDirector = CCDirector::sharedDirector();
-		const char *mapfile = "tilemap/MAP_1.tmx";
+		//const char *mapfile = "tilemap/MAP_1.tmx";
+		const char *mapfile = "tilemap/MAP_0.tmx";
 		pDirector->replaceScene(CCTransitionFade::create(0.5, LevelLayer::scene(mapfile)));
 	}
 }
