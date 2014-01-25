@@ -31,6 +31,8 @@ THE SOFTWARE.
 #include "HelloWorldScene.h"
 #include "AppMacros.h"
 
+#include "level_layer.h"
+
 USING_NS_CC;
 using namespace std;
 
@@ -98,10 +100,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    CCScene *pScene = HelloWorld::scene();
-
+    CCScene *scene = nullptr;
+	//scene = HelloWorld::scene();
+	scene = LevelLayer::scene();
+	
     // run
-    pDirector->runWithScene(pScene);
+    pDirector->runWithScene(scene);
 
     return true;
 }
