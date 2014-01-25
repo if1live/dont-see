@@ -62,13 +62,6 @@ bool LevelLayer::initWithMapfile(const char *mapfile)
 	this->initPhysics();
 	this->initMap(mapfile);
 
-	CCLabelTTF *pLabel = CCLabelTTF::create("test",
-                                            "Arial",
-                                            18);
-	this->addChild(pLabel);
-	/*
-	*/
-
 	return true;
 }
 
@@ -170,34 +163,6 @@ void LevelLayer::initMap(const char *mapfile)
 	//카메라를 기본 위치로 이동시키기
 	//레이어 초기화할때 같이 하지 않으면 끊기는 느낌이 든다
 	updateCamera();
-
-	/*
-	//소화전 임시로 추가
-	//효과용 애니메이션 테스트로 넣어보자
-	CCSprite *empty = CCSprite::create("texture/empty.png");
-	this->addChild(empty);
-	empty->setPosition(ccp(-50, 100));
-	CCAction *sonarAction = create_circle_sonar();
-	empty->runAction(sonarAction);
-
-
-	//소화전 애니메이션
-	CCSprite *empty1 = CCSprite::create("texture/empty.png");
-	this->addChild(empty1);
-	empty1->setPosition(ccp(-50, 0));
-	CCAction *fireAction = create_fire_animation();
-	empty1->runAction(fireAction);
-
-	{
-		CCDictionary tempDict;
-		tempDict.setObject(CCString::create("32"), "x");
-		tempDict.setObject(CCString::create("32"), "y");
-		CollisionAnimationObject *obj = CollisionAnimationObject::create(&tempDict);
-		obj->init();
-		this->addChild(obj, -1);
-		GameWorld::sharedWorld()->addTmxObject(obj);
-	}
-	*/
 }
 
 void LevelLayer::updateCamera()
