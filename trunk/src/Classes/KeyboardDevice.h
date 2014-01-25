@@ -7,6 +7,7 @@ enum Keys
 	KeyS = 1 << 2,
 	KeyD = 1 << 3,
 	Key1 = 1 << 4,	// for debugging
+	Key2 = 1 << 5,	// for clipping
 };
 
 class KeyboardDevice
@@ -37,5 +38,6 @@ inline void KeyboardDevice::Update() {
 	if (GetAsyncKeyState('S') & 0x8000) currentKeys |= KeyS;
 	if (GetAsyncKeyState('D') & 0x8000) currentKeys |= KeyD;
 	if (GetAsyncKeyState('1') & 0x8000) currentKeys |= Key1;
+	if (GetAsyncKeyState('2') & 0x8000) currentKeys |= Key2;
 	m_keys = currentKeys;
 }

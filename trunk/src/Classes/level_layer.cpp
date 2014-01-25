@@ -71,6 +71,12 @@ void LevelLayer::update(float dt)
 	GameWorld::sharedWorld()->update(dt);
 	KeyboardDevice::sharedDevice()->Update();
 	MouseDevice::sharedDevice()->Update();
+
+	if (KeyboardDevice::sharedDevice()->GetKeys() == Key2)
+	{
+		this->updateClipper(!this->isClipperEnabled());
+	}
+
 	updateCamera();
 }
 
