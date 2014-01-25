@@ -50,6 +50,7 @@ cocos2d::CCScene *LevelLayer::scene(const char *mapfile)
 
 	//masking
 	VisionMask *visionMasking = VisionMask::create();
+	layer->masking = visionMasking;
 	scene->addChild(visionMasking);
 	visionMasking->setPosition(ccp(size.width/2, size.height/2));
 	return scene;
@@ -82,6 +83,7 @@ void LevelLayer::update(float dt)
 	}
 
 	updateCamera();
+	masking->Update();
 }
 
 void LevelLayer::draw()
@@ -151,6 +153,9 @@ void LevelLayer::ccTouchesEnded(CCSet* touches, CCEvent* event)
         touch = (CCTouch*)(*it);
         if(!touch)
             break;
+
+
+		int a = touch->getID();
 
         CCPoint location = touch->getLocation();
         addNewSpriteAtPosition( location );
