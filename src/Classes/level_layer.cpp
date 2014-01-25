@@ -45,7 +45,8 @@ bool LevelLayer::init()
                                             "Arial",
                                             18);
 	this->addChild(pLabel);
-
+	/*
+	*/
 
 	return true;
 }
@@ -131,9 +132,40 @@ void LevelLayer::ccTouchesEnded(CCSet* touches, CCEvent* event)
 
 void LevelLayer::initMap()
 {
+	CCDrawNode* shape = CCDrawNode::create();
+	
+	CCPoint pts[4];
+	CCSize size = CCDirector::sharedDirector()->getWinSize();
+
+	pts[0] = ccp( 0, 0);
+	pts[1] = ccp( 0, size.height/2);
+	pts[2] = ccp( size.width/2 - 1, size.height/2);
+	pts[3] = ccp( size.width/2 - 1, 0);
+	
+	shape->drawPolygon(pts, 4, ccc4f(1, 1, 1, 1), 0, ccc4f(1, 0, 0, 1));
+
+	// add shape in stencil
+	CCClippingNode* clip = CCClippingNode::create();
+	//clip->setAnchorPoint(ccp(0.5, 0.5));
+	clip->setAnchorPoint(ccp(0.5, 0.5));
+	clip->setPosition( ccp(size.width/4,size.height/4) );
+	clip->setStencil(shape);
+	this->addChild(clip);
+	/*
+	// setup content
+	CCSprite* pSprite = CCSprite::create("HelloWorld.png");
+	pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+	clip->addChild(pSprite);
+	*/
 	// create a TMX map
 	CCTMXTiledMap *map = CCTMXTiledMap::create("tilemap/desert.tmx");
-	this->addChild(map, -1);
+	clip->addChild(map, -1);
+
+
+	CCSprite *sp = CCSprite::create("texture/mask_default.png");
+	sp->setPosition(ccp(size.width/4,size.height/4));
+
+	clip->addChild(sp, 0);
 	//디버깅용 타일 경계선 그리기
 	// All the tiles by default will be aliased. If you want to create anti-alias tiles, you should do:
 	// iterate over all the "layers" (atlas sprite managers)

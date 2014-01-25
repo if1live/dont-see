@@ -28,3 +28,7 @@
 #include "AppMacros.h"
 
 #define PTM_RATIO (32.0f)
+
+
+#define SCREEN_WIDTH 1024
+#define SCREEN_HEIGHT 768
