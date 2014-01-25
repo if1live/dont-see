@@ -13,6 +13,8 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 					   */
 int main()
 {
+	srand(time(NULL));
+
     // create the application instance
     AppDelegate app;
     CCEGLView* eglView = CCEGLView::sharedOpenGLView();

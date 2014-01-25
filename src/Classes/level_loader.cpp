@@ -47,10 +47,25 @@ void LevelLoader::enableTileGrid(CCTMXTiledMap *map)
 Player *LevelLoader::registerPlayer(cocos2d::CCTMXTiledMap *map)
 {
 	//플레이어 추가
-	CCDictionary* dict = nullptr;
+	std::vector<CCDictionary*> dicts;
 	CCTMXObjectGroup* group = map->objectGroupNamed("objects");
 	if (group != nullptr) {
-		dict = group->objectNamed("player");
+		CCArray* array = group->getObjects();
+		CCObject* object;
+		CCARRAY_FOREACH(array, object) {
+			CCDictionary* dict = (CCDictionary*)object;
+			CCString* type = (CCString*)dict->objectForKey("type");
+
+			std::string typeValue = safeReadStringValue(dict, "type");
+			if (typeValue == "player") {
+				dicts.push_back(dict);
+			}
+		}
+	}
+	CCDictionary* dict = nullptr;
+	if (!dicts.empty()) {
+		std::random_shuffle(dicts.begin(), dicts.end());
+		dict = dicts.front();
 	}
 
 	Player *player = Player::create(dict);
