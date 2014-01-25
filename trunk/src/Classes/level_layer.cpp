@@ -2,6 +2,7 @@
 #include "level_layer.h"
 #include "game_world.h"
 #include "player.h"
+#include "KeyboardDevice.h"
 
 using namespace cocos2d;
 
@@ -61,23 +62,16 @@ bool LevelLayer::init()
     addChild(pLabel);
 
 	//플레이어 추가
-	int x = 0;
-	int y = 0;
+	CCDictionary* dict = nullptr;
 	CCTMXObjectGroup* group = map->objectGroupNamed("positions");
 	if (group != nullptr)
 	{
-		CCDictionary* dict = group->objectNamed("user_start");
-		if (dict != nullptr)
-		{
-			x = ((CCString*)dict->objectForKey("x"))->intValue();
-			y = ((CCString*)dict->objectForKey("y"))->intValue();
-		}
+		dict = group->objectNamed("user_start");
 	}
 
-	player = new Player(x, y);
+	player = Player::create(dict);
 	player->init();
 	this->addChild(player, -1);
-	player->release();
 
 	return true;
 }
@@ -85,58 +79,8 @@ bool LevelLayer::init()
 void LevelLayer::update(float dt)
 {
 	gameWorld->update(dt);
-
-
-
-	keyUpdate();
+	KeyboardDevice::sharedDirector()->Update();
 }
-
-void LevelLayer::keyUpdate()
-{
-	int tempDir = 0;
-	if(GetAsyncKeyState('W') & 0x8000)
-	{
-		tempDir |= 1;
-		//CCLOG("W");
-	}
-
-	if(GetAsyncKeyState('A') & 0x8000)
-	{
-		tempDir |= 2;
-		//CCLOG("A");
-	}
-
-	if(GetAsyncKeyState('S') & 0x8000)
-	{
-		tempDir |= 4;
-		//CCLOG("S");
-	}
-
-	if(GetAsyncKeyState('D') & 0x8000)
-	{
-		tempDir |= 8;
-		//CCLOG("D");
-	}
-
-	setUserDirection(tempDir);
-}
-
-int LevelLayer::setUserDirection(int argDir)
-{
-	if(m_direction != argDir)
-	{
-		CCLOG("%d", argDir);
-	}
-
-	m_direction = argDir;
-	return m_direction;
-}
-
-int LevelLayer::getUserDirection()
-{
-	return m_direction;
-}
-
 
 void LevelLayer::draw()
 {
