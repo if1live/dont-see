@@ -32,8 +32,8 @@ bool VisionMask::init()
 		return false;
 	}
 
-	centerMasking = CCSprite::create("texture/mask_circle.png");
-	lightMasking = CCSprite::create("texture/mask_circle.png");
+	centerMasking = CCSprite::create("texture/mask_default.png");
+	lightMasking = CCSprite::create("texture/mask_default.png");
 
 	this->addChild(centerMasking);
 	this->addChild(lightMasking);
