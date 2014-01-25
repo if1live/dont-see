@@ -15,6 +15,16 @@ int safeReadIntValue(CCDictionary* dict, const char* key, int defaultValue /* = 
 	return ((CCString*)object)->intValue();
 }
 
+float safeReadFloatValue(CCDictionary* dict, const char* key, float defaultValue /* = 0 */)
+{
+	if (dict == nullptr)
+		return defaultValue;
+	CCObject* object = dict->objectForKey(key);
+	if (object == nullptr)
+		return defaultValue;
+	return ((CCString*)object)->floatValue();
+}
+
 std::string safeReadStringValue(CCDictionary* dict, const char* key, const char* defaultValue /* = "" */)
 {
 	if (dict == nullptr)

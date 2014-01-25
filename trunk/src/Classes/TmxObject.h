@@ -7,6 +7,7 @@ enum {
 };
 
 int safeReadIntValue(cocos2d::CCDictionary* dict, const char* key, int defaultValue = 0);
+float safeReadFloatValue(cocos2d::CCDictionary* dict, const char* key, float defaultValue = 0);
 std::string safeReadStringValue(cocos2d::CCDictionary* dict, const char* key, const char* defaultValue = "");
 
 class TmxObject : public cocos2d::CCLayer
