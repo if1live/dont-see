@@ -15,6 +15,7 @@
     <ClCompile Include="..\Classes\Npc.cpp" />
     <ClCompile Include="..\Classes\vision_clipper.cpp" />
     <ClCompile Include="..\Classes\TmxObject.cpp" />
+    <ClCompile Include="..\Classes\b2_helper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -34,5 +35,6 @@
     <ClInclude Include="..\Classes\vision_clipper.h" />
     <ClInclude Include="..\Classes\TmxObject.h" />
     <ClInclude Include="..\Classes\MouseDevice.h" />
+    <ClInclude Include="..\Classes\b2_helper.h" />
   </ItemGroup>
 </Project>

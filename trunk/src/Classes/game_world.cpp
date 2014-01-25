@@ -9,7 +9,7 @@ GameWorld::GameWorld()
 
 	//물리엔진 초기화
 	b2Vec2 gravity;
-	gravity.Set(0.0f, -5.0f);
+	gravity.Set(0.0f, 0.0f);
 	b2_world = new b2World(gravity);
 	b2_world->SetAllowSleeping(true);
 	b2_world->SetContinuousPhysics(true);
@@ -23,7 +23,7 @@ GameWorld::GameWorld()
     debugDraw.SetFlags(flags);
 	b2_world->SetDebugDraw(&debugDraw);
 	
-
+	/*
 	// Define the ground body.
     b2BodyDef groundBodyDef;
 	groundBodyDef.type = b2_staticBody;
@@ -52,6 +52,7 @@ GameWorld::GameWorld()
     // right
     groundBox.Set(b2Vec2(right, bottom), b2Vec2(right, top));
     groundBody->CreateFixture(&groundBox,0);
+	*/
 }
 
 
