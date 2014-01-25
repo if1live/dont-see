@@ -27,12 +27,14 @@ LevelLayer::LevelLayer()
 {
 }
 
-cocos2d::CCScene *LevelLayer::scene() 
+cocos2d::CCScene *LevelLayer::scene(const char *mapfile)
 {
 	CCScene *scene = CCScene::create();
 	scene->setTag(Level_Scene);
 
-	LevelLayer *layer = (LevelLayer*)LevelLayer::create();
+	LevelLayer *layer = new LevelLayer();
+	layer->initWithMapfile(mapfile);
+	layer->autorelease();
 	layer->setTag(Level_Layer);
 
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
@@ -49,7 +51,7 @@ cocos2d::CCScene *LevelLayer::scene()
 }
 
 
-bool LevelLayer::init()
+bool LevelLayer::initWithMapfile(const char *mapfile)
 {
 	if(!CCLayer::init()) {
 		return false;
@@ -58,7 +60,7 @@ bool LevelLayer::init()
 	this->setTouchEnabled( true );
 	this->scheduleUpdate();
 	this->initPhysics();
-	this->initMap();
+	this->initMap(mapfile);
 
 	CCLabelTTF *pLabel = CCLabelTTF::create("test",
                                             "Arial",
@@ -139,7 +141,7 @@ void LevelLayer::addNewSpriteAtPosition(CCPoint p)
 #endif
 }
 
-
+/*
 void LevelLayer::ccTouchesEnded(CCSet* touches, CCEvent* event)
 {
     //Add a new body/atlas sprite at the touched location
@@ -156,11 +158,12 @@ void LevelLayer::ccTouchesEnded(CCSet* touches, CCEvent* event)
         addNewSpriteAtPosition( location );
     }
 }
+*/
 
-void LevelLayer::initMap()
+void LevelLayer::initMap(const char *mapfile)
 {
 	// create a TMX map
-	LevelLoader loader("tilemap/MAP_1.tmx", this);
+	LevelLoader loader(mapfile, this);
 	loader.load();
 	player = (Player*)GameWorld::sharedWorld()->getObjectByType(OBJECT_PLAYER);
 
