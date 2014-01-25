@@ -123,4 +123,33 @@
   <object x="1486" y="904" width="486" height="12"/>
   <object x="1483" y="511" width="12" height="392"/>
  </objectgroup>
+ <objectgroup name="objects" width="186" height="87">
+  <object name="player" type="player" x="448" y="1476" width="31" height="31">
+   <properties>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture/player.png"/>
+   </properties>
+  </object>
+  <object name="npc1" type="npc" x="928" y="1468" width="32" height="129">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="80"/>
+    <property name="texture_name" value="texture/player.png"/>
+   </properties>
+  </object>
+  <object name="npc2" type="npc" x="1121" y="1477" width="159" height="25">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="150"/>
+    <property name="texture_name" value="texture/player.png"/>
+   </properties>
+  </object>
+  <object name="npc3" type="npc" x="1373" y="1535" width="452" height="31">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture/player.png"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

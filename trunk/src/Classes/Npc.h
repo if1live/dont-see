@@ -16,7 +16,6 @@ public:
 private:
 	float m_movingCool;
 
-	int m_startX; int m_endX;
-	int m_startY; int m_endY;
+	cocos2d::CCPoint startPos, endPos;
 };
 
