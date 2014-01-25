@@ -48,11 +48,15 @@ void CollisionAnimationObject::runAnimation()
 	if(m_textureName == "texture\\fire.png") {
 		CCAction *act = create_fire_animation();
 		m_sprite->runAction(act);
+
+		//TODO 소화전 터지는 소리
 	}
 
 	if(m_textureName == "texture\\trash.png") {
 		int mode = rand() % 2;
 		CCAction *act = create_trash_animation(mode);
 		m_sprite->runAction(act);
+
+		//TODO 쓰레기통 엎는 소리
 	}
 }
