@@ -71,3 +71,9 @@ cocos2d::CCAction *create_trash_animation(int mode)
 	CCAction *action = CCSpawn::create(animate, NULL);
 	return action;
 }
+
+cocos2d::CCAction *create_blink_animation(float duration)
+{
+	CCBlink *blink = CCBlink::create(duration, duration / 0.08f);
+	return blink;
+}

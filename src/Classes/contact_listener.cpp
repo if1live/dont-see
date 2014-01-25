@@ -4,6 +4,8 @@
 #include "collision_animation_object.h"
 #include "goal.h"
 #include "player.h"
+#include "Npc.h"
+#include "action_helper.h"
 
 using namespace cocos2d;
 
@@ -40,6 +42,14 @@ void MyContactListener::BeginContact(b2Contact* contact)
 	if(typeA == OBJECT_GOAL && typeB == OBJECT_PLAYER) {
 		collision_player_vs_goal((Player*)objB, (Goal*)objA);
 	}
+
+	//npc¶û ºÎµúÄ£ °æ¿ì
+	if(typeA == OBJECT_PLAYER && typeB == OBJECT_NPC) {
+		collision_player_vs_npc((Player*)objA, (Npc*)objB);
+	}
+	if(typeA == OBJECT_NPC && typeB == OBJECT_PLAYER) {
+		collision_player_vs_npc((Player*)objB, (Npc*)objA);
+	}
 }
 
 void MyContactListener::EndContact(b2Contact *contact)
@@ -48,12 +58,23 @@ void MyContactListener::EndContact(b2Contact *contact)
 
 void collision_player_vs_collision_object(Player *player, CollisionAnimationObject *other)
 {
+	if(player->canDamagable() == false) {
+		return;
+	}
 	other->runAnimation();
-	player->hp -= 1;
+	player->damage();
 }
 
 
 void collision_player_vs_goal(Player *player, Goal *goal)
 {
 	goal->clearGame();
+}
+
+void collision_player_vs_npc(Player *player, Npc *npc)
+{
+	if(player->canDamagable() == false) {
+		return;
+	}
+	player->damage();
 }

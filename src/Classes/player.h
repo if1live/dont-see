@@ -11,8 +11,13 @@ public:
 	virtual void update(float dt);
 	virtual b2Body *createBody();
 
+	bool canDamagable();
+	void damage();
 private:
 	float m_movingCool;
 	int hp;
+
+	//얻어맞고난뒤 힘세고 강한 시간
+	float powerfulTime;
 };
 

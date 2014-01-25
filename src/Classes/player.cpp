@@ -3,6 +3,9 @@
 #include "KeyboardDevice.h"
 #include "game_world.h"
 #include "b2_helper.h"
+#include "action_helper.h"
+
+#define POWERFUL_TIME (3.0f)
 
 using namespace cocos2d;
 
@@ -14,7 +17,7 @@ Player* Player::create(cocos2d::CCDictionary* dict)
 }
 
 Player::Player(CCDictionary* dict)
-	: TmxObject(dict, OBJECT_PLAYER), m_movingCool(0), hp(3)
+	: TmxObject(dict, OBJECT_PLAYER), m_movingCool(0), hp(3), powerfulTime(0)
 {
 }
 
@@ -38,6 +41,11 @@ void Player::update(float dt)
 	if(hp <= 0) {
 		//HP가 0이하면 게임이 끝난다
 	}
+
+	powerfulTime -= dt;
+	if(powerfulTime < 0) {
+		powerfulTime = 0.0f;
+	}
 }
 
 b2Body *Player::createBody()
@@ -59,4 +67,20 @@ b2Body *Player::createBody()
 	body->CreateFixture(&fixtureDef);
 
 	return body;
+}
+
+bool Player::canDamagable()
+{
+	if(powerfulTime <= 0.0f) {
+		return true;
+	}
+	return false;
+}
+
+void Player::damage()
+{
+	powerfulTime = POWERFUL_TIME;
+	hp -= 1;
+	CCAction *blink = create_blink_animation(POWERFUL_TIME - 0.1f);
+	this->runAction(blink);
 }
