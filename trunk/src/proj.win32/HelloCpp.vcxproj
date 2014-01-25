@@ -135,6 +135,7 @@
     </ClCompile>
     <ClCompile Include="..\Classes\TmxObject.cpp" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
+    <ClCompile Include="..\Classes\vision_clipper.cpp" />
     <ClCompile Include="..\Classes\vision_mask.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -152,6 +153,7 @@
     <ClInclude Include="..\Classes\stdafx.h" />
     <ClInclude Include="..\Classes\TmxObject.h" />
     <ClInclude Include="..\Classes\VisibleRect.h" />
+    <ClInclude Include="..\Classes\vision_clipper.h" />
     <ClInclude Include="..\Classes\vision_mask.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
