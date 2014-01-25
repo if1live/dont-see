@@ -145,9 +145,14 @@ void LevelLayer::updateSound(float dt)
 	int currentKeys = KeyboardDevice::sharedDevice()->GetKeys();
 	int preKeys = KeyboardDevice::sharedDevice()->GetPreKeys();
 
-	if( (currentKeys & KeyLButton) != 0 && (preKeys & KeyLButton) == 0)
+	if( (currentKeys & KeyLButton) != 0 && (preKeys & KeyLButton) == 0 && custom_action->TryDecreaseSpecialCount())
 	{
 		SoundManager::sharedManager()->PlayEffect(EFFECT_DOG);
+	}
+
+	if(custom_action->TrySpecialSound())
+	{
+		SoundManager::sharedManager()->PlayEffect(EFFECT_SPECIAL_INC);
 	}
 
 	SoundManager::sharedManager()->Update(dt);

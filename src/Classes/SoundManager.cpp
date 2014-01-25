@@ -14,6 +14,7 @@ SoundManager* SoundManager::sharedManager()
 SoundManager::SoundManager()
 {
 	strcpy(effectSoundFile[EFFECT_DOG], "/sound/effect/dog_bark.mp3");
+	strcpy(effectSoundFile[EFFECT_SPECIAL_INC], "/sound/effect/special_get.mp3");
 	for(int i = 0; i < EFFECT_MAX; i++)
 	{
 		effectSoundID[i] = 0;

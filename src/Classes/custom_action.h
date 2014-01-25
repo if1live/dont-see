@@ -10,14 +10,16 @@ public:
 	void Update(float dt);
 	bool TryDecreaseSpecialCount();
 	int GetSpecialCount();
-
 	float GetSpecialGap();
+
+	bool TrySpecialSound();
 private:
 	const int specialCountMax;
 	const float specialGapMax;
 
 	int specialCount;
 	float specialGap;
+	bool specialSoundFlag;
 };
 
 
