@@ -10,6 +10,7 @@
 #include "vision_clipper.h"
 #include "action_helper.h"
 #include "text_layer.h"
+#include "collision_animation_object.h"
 
 using namespace cocos2d;
 
@@ -157,8 +158,8 @@ void LevelLayer::ccTouchesEnded(CCSet* touches, CCEvent* event)
 void LevelLayer::initMap()
 {
 	// create a TMX map
-	CCTMXTiledMap *map = CCTMXTiledMap::create("tilemap/desert.tmx");
-	//CCTMXTiledMap *map = CCTMXTiledMap::create("tilemap/LIKE_GTA_2.tmx");
+	//CCTMXTiledMap *map = CCTMXTiledMap::create("tilemap/desert.tmx");
+	CCTMXTiledMap *map = CCTMXTiledMap::create("tilemap/MAP_1.tmx");
 	
 	this->addChild(map, -1);
 
@@ -230,6 +231,17 @@ void LevelLayer::initMap()
 	empty->setPosition(ccp(-50, 100));
 	CCAction *sonarAction = create_circle_sonar();
 	empty->runAction(sonarAction);
+
+	//소화전 임시로 추가
+	{
+		CCDictionary tempDict;
+		tempDict.setObject(CCString::create("32"), "x");
+		tempDict.setObject(CCString::create("32"), "y");
+		CollisionAnimationObject *obj = CollisionAnimationObject::create(&tempDict);
+		obj->init();
+		this->addChild(obj, -1);
+		GameWorld::sharedWorld()->addTmxObject(obj);
+	}
 }
 
 void LevelLayer::updateCamera()
