@@ -22,6 +22,7 @@
     <ClCompile Include="..\Classes\level_loader.cpp" />
     <ClCompile Include="..\Classes\contact_listener.cpp" />
     <ClCompile Include="..\Classes\SoundManager.cpp" />
+    <ClCompile Include="..\..\..\..\dont-see\src\Classes\goal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -48,5 +49,6 @@
     <ClInclude Include="..\Classes\level_loader.h" />
     <ClInclude Include="..\Classes\contact_listener.h" />
     <ClInclude Include="..\Classes\SoundManager.h" />
+    <ClInclude Include="..\..\..\..\dont-see\src\Classes\goal.h" />
   </ItemGroup>
 </Project>

@@ -6,6 +6,7 @@
 #include "Npc.h"
 #include "b2_helper.h"
 #include "collision_animation_object.h"
+#include "goal.h"
 
 using namespace cocos2d;
 
@@ -83,6 +84,30 @@ void LevelLoader::registerNpc(cocos2d::CCTMXTiledMap *map)
 	}
 }
 
+void LevelLoader::registerGoal(cocos2d::CCTMXTiledMap *map)
+{
+	CCDictionary* dict = nullptr;
+	CCTMXObjectGroup* group = map->objectGroupNamed("objects");
+
+	//Npc Ãß°¡
+	if (group != nullptr) {
+		CCArray* array = group->getObjects();
+		CCObject* object;
+		CCARRAY_FOREACH(array, object) {
+			CCDictionary* dict = (CCDictionary*)object;
+			CCString* type = (CCString*)dict->objectForKey("type");
+
+			std::string typeValue = safeReadStringValue(dict, "type");
+			if (typeValue == "goal") {
+				Goal* goal = Goal::create(dict);
+				goal->init();
+				layer->addChild(goal);
+				GameWorld::sharedWorld()->addTmxObject(goal);
+			}
+		}
+	}
+}
+
 void LevelLoader::registerCollisionBox(cocos2d::CCTMXTiledMap *map)
 {
 	CCTMXObjectGroup* group = map->objectGroupNamed("collisions");
@@ -123,6 +148,7 @@ void LevelLoader::load()
 	registerNpc(map);
 	registerCollisionBox(map);
 	registerAnimate(map);
+	registerGoal(map);
 }
 
 void LevelLoader::registerAnimate(cocos2d::CCTMXTiledMap *map)

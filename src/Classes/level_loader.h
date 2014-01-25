@@ -13,6 +13,7 @@ public:
 	void registerNpc(cocos2d::CCTMXTiledMap *map);
 	void registerCollisionBox(cocos2d::CCTMXTiledMap *map);
 	void registerAnimate(cocos2d::CCTMXTiledMap *map);
+	void registerGoal(cocos2d::CCTMXTiledMap *map);
 
 	void load();
 
