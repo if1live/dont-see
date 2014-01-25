@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "vision_mask.h"
+#include "MouseDevice.h"
+#include "KeyboardDevice.h"
+#include <cmath>
 
 using namespace cocos2d;
 
@@ -46,4 +49,36 @@ bool VisionMask::init()
 	enableLight(lightEnabled);
 
 	return true;
+}
+
+void VisionMask::Update()
+{
+	POINT p = MouseDevice::sharedDevice()->GetMousePos();
+	float angle = 0;
+	if(p.x < 0)
+	{
+		angle = atan(float(p.y)/p.x * -1) * 180 / M_PI;
+		angle += 270;
+	}
+	else
+	{
+		angle = atan(float(p.y)/p.x * -1) * 180 / M_PI;
+		angle += 90;
+	}
+	centerMasking->setRotation(angle);
+	lightMasking->setRotation(angle);
+	CCLOG("%f", angle);
+
+
+	int keys = KeyboardDevice::sharedDevice()->GetKeys();
+
+	if(keys & KeyRButton)
+	{
+		enableLight(true);
+	}
+	else
+	{
+		enableLight(false);
+	}
+	return;
 }

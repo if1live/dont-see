@@ -9,6 +9,7 @@ public:
 	static cocos2d::CCScene *scene();
 	
 	void enableLight(bool light);
+	void Update();
 
 	CREATE_FUNC(VisionMask);
 
