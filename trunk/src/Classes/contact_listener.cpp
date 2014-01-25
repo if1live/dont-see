@@ -3,6 +3,7 @@
 #include "TmxObject.h"
 #include "collision_animation_object.h"
 #include "goal.h"
+#include "player.h"
 
 using namespace cocos2d;
 
@@ -48,6 +49,7 @@ void MyContactListener::EndContact(b2Contact *contact)
 void collision_player_vs_collision_object(Player *player, CollisionAnimationObject *other)
 {
 	other->runAnimation();
+	player->hp -= 1;
 }
 
 

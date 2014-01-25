@@ -1,5 +1,6 @@
 #pragma once
 
+class Custom_action;
 
 class TextLayer : public cocos2d::CCLayer {
 public:
@@ -11,4 +12,8 @@ public:
 
 	cocos2d::CCLabelTTF *positionLabel;
 	cocos2d::CCLabelTTF *tileCoordLabel;
+	cocos2d::CCLabelTTF *hpLabel;
+	cocos2d::CCLabelTTF *availCountLabel;
+
+	Custom_action *customAction;
 };

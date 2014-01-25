@@ -13,5 +13,6 @@ public:
 
 private:
 	float m_movingCool;
+	int hp;
 };
 
