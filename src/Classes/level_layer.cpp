@@ -11,6 +11,7 @@
 #include "b2_helper.h"
 #include "collision_animation_object.h"
 #include "action_helper.h"
+#include "level_loader.h"
 
 using namespace cocos2d;
 
@@ -159,99 +160,9 @@ void LevelLayer::ccTouchesEnded(CCSet* touches, CCEvent* event)
 void LevelLayer::initMap()
 {
 	// create a TMX map
-	CCTMXTiledMap *map = CCTMXTiledMap::create("tilemap/MAP_1.tmx");
-	this->addChild(map, -1);
-
-	//디버깅용 타일 경계선 그리기
-	// All the tiles by default will be aliased. If you want to create anti-alias tiles, you should do:
-	// iterate over all the "layers" (atlas sprite managers)
-	// and set them as 'antialias' 
-	CCArray * pChildrenArray = map->getChildren();
-	CCSpriteBatchNode* child = NULL;
-	CCObject* pObject = NULL;
-	CCARRAY_FOREACH(pChildrenArray, pObject) {
-		child = (CCSpriteBatchNode*)pObject;
-		if(!child) {
-			break;
-		}
-		child->getTexture()->setAntiAliasTexParameters();
-	}
-	
-	{
-		//플레이어 추가
-		CCDictionary* dict = nullptr;
-		CCTMXObjectGroup* group = map->objectGroupNamed("objects");
-		if (group != nullptr) {
-			dict = group->objectNamed("player");
-		}
-
-		player = Player::create(dict);
-		player->init();
-		this->addChild(player, -1);
-		GameWorld::sharedWorld()->addTmxObject(player);
-
-		//Npc 추가
-		if (group != nullptr) {
-			CCArray* array = group->getObjects();
-			CCObject* object;
-			CCARRAY_FOREACH(array, object) {
-				CCDictionary* dict = (CCDictionary*)object;
-				CCString* type = (CCString*)dict->objectForKey("type");
-
-				std::string typeValue = safeReadStringValue(dict, "type");
-				if (typeValue == "npc") {
-					Npc* npc = Npc::create(dict);
-					npc->init();
-					this->addChild(npc);
-					GameWorld::sharedWorld()->addTmxObject(npc);
-				}
-			}
-		}
-
-		CCDictionary tempDict;
-		tempDict.setObject(CCString::create("100"), "x");
-		tempDict.setObject(CCString::create("100"), "y");
-		tempDict.setObject(CCString::create("100"), "width");
-		tempDict.setObject(CCString::create("100"), "height");
-		tempDict.setObject(CCString::create("10"), "speed");
-		tempDict.setObject(CCString::create("1"), "dir");
-	
-		Npc* npc = Npc::create(&tempDict);
-		npc->init();
-		this->addChild(npc, -1);
-		GameWorld::sharedWorld()->addTmxObject(npc);
-	}
-
-	{
-		CCTMXObjectGroup* group = map->objectGroupNamed("collisions");
-		if (group != nullptr) {
-			CCArray* array = group->getObjects();
-			CCObject* object;
-			CCARRAY_FOREACH(array, object) {
-				CCDictionary* dict = (CCDictionary*)object;
-				float x = safeReadFloatValue(dict, "x");
-				float y = safeReadFloatValue(dict, "y");
-				float width = safeReadFloatValue(dict, "width");
-				float height = safeReadFloatValue(dict, "height");
-
-				//box2d 객체도 생성
-				b2BodyDef bodyDef;
-				bodyDef.position = px_to_mt_pos(ccp(x + width/2, y + height/2));
-				bodyDef.type = b2_staticBody;
-				bodyDef.userData = this;
-
-				b2Body *body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
-
-				b2PolygonShape  shape;
-				shape.SetAsBox(px_to_mt_length(width) / 2, px_to_mt_length(height) / 2);
-
-				b2FixtureDef fixtureDef;
-				fixtureDef.shape = &shape;
-				fixtureDef.density = 1;
-				body->CreateFixture(&fixtureDef);
-			}
-		}
-	}
+	LevelLoader loader("tilemap/MAP_1.tmx", this);
+	loader.load();
+	player = (Player*)GameWorld::sharedWorld()->getObjectByType(OBJECT_PLAYER);
 
 	//카메라를 기본 위치로 이동시키기
 	//레이어 초기화할때 같이 하지 않으면 끊기는 느낌이 든다

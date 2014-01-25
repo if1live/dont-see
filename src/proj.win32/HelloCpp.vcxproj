@@ -129,6 +129,7 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\level_layer.cpp" />
+    <ClCompile Include="..\Classes\level_loader.cpp" />
     <ClCompile Include="..\Classes\MenuLayer.cpp" />
     <ClCompile Include="..\Classes\Npc.cpp" />
     <ClCompile Include="..\Classes\player.cpp" />
@@ -146,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="..\Classes\action_helper.h" />
     <ClInclude Include="..\Classes\b2_helper.h" />
+    <ClInclude Include="..\Classes\level_loader.h" />
     <ClInclude Include="..\Classes\MouseDevice.h" />
     <ClInclude Include="..\Classes\game_world.h" />
     <ClInclude Include="..\Classes\GLES-Render.h" />
