@@ -24,6 +24,7 @@
 
 #include "Box2D/Box2D.h"
 #include "cocos2d.h"
+#include "../CocosDenshion/include/SimpleAudioEngine.h"
 
 #include "AppMacros.h"
 
