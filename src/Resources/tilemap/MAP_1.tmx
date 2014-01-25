@@ -8,12 +8,12 @@
  </layer>
  <layer name="Road Obj" width="186" height="87">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="Roof Obj" width="186" height="87">
   <data encoding="base64" compression="zlib">
-   eJzt1jEKgDAQBMBgp3ainf7/m6ZIISHtcRBnYOHKLba4UgAAAAAAAAAAAAAAAAAAAADItnWB2fQbt3VmZOf8xVlztFzJXSDK/rnXtBYQ665ZWp7kLhDFbw4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIy8hLIBZw==
+   eJzt1iEOwCAQRUGCa2VDXXv/axaBIli6Ccwkz6/4YlMCAAAAAAAAAAAAAAAAAAAAINrZBavpN27rrMjO2UWpXa07+Bb4wxF9AEzy1HLrDb4FZvGbAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIx/8/gFc
   </data>
  </layer>
  <objectgroup name="collisions" width="186" height="87">
@@ -124,31 +124,557 @@
   <object x="1483" y="511" width="12" height="392"/>
  </objectgroup>
  <objectgroup name="objects" width="186" height="87">
-  <object name="player" type="player" x="448" y="1476" width="31" height="31">
+  <object name="player" type="player" x="29" y="1429" width="31" height="31">
    <properties>
     <property name="speed" value="100"/>
     <property name="texture_name" value="texture/player.png"/>
    </properties>
   </object>
-  <object name="npc1" type="npc" x="928" y="1468" width="32" height="129">
+  <object name="tresh1" type="animate" x="263" y="1448">
    <properties>
-    <property name="dir" value="3"/>
-    <property name="speed" value="80"/>
-    <property name="texture_name" value="texture/player.png"/>
+    <property name="texture_name" value="textuer\trash.png"/>
    </properties>
   </object>
-  <object name="npc2" type="npc" x="1121" y="1477" width="159" height="25">
+  <object name="npc1" type="npc" x="211" y="1449" width="437" height="21">
    <properties>
     <property name="dir" value="2"/>
     <property name="speed" value="150"/>
-    <property name="texture_name" value="texture/player.png"/>
+    <property name="texture_name" value="texture\player.png"/>
    </properties>
   </object>
-  <object name="npc3" type="npc" x="1373" y="1535" width="452" height="31">
+  <object name="tresh2" type="animate" x="195" y="1175">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash3" type="animate" x="255" y="968">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc2" type="npc" x="200" y="865" width="25" height="494">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name&#10;" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire1" type="animate" x="199" y="1537">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc3" type="npc" x="706" y="1451" width="24" height="177">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name&#10;" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc4" type="npc" x="737" y="1452" width="23" height="177">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire2" type="animate" x="794" y="1444">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash4" type="animate" x="954" y="1441">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc5" type="npc" x="846" y="1608" width="314" height="19">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="130"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc6" type="npc" x="1093" y="1448" width="217" height="23">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="150"/>
+    <property name="texture_name">texture\player.png
+</property>
+   </properties>
+  </object>
+  <object name="fire3" type="animate" x="1129" y="1391">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire4" type="animate" x="1159" y="749">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash5" type="animate" x="1247" y="748">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash6" type="animate" x="1186" y="672">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="fire5" type="animate" x="1222" y="673">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc7" type="npc" x="1129" y="695" width="23" height="179">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="105"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire6" type="animate" x="1958" y="1445">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire7" type="animate" x="1955" y="1628">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash7" type="animate" x="1991" y="1659">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash8" type="animate" x="1747" y="541">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash9" type="animate" x="1745" y="565">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc8" type="npc" x="1515" y="599" width="235" height="24">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="120"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc9" type="npc" x="1535" y="1455" width="256" height="28">
    <properties>
     <property name="dir" value="2"/>
     <property name="speed" value="110"/>
-    <property name="texture_name" value="texture/player.png"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc10" type="npc" x="1535" y="1495" width="255" height="27">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc11" type="npc" x="1897" y="1445" width="232" height="24">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="120"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc12" type="npc" x="1987" y="1579" width="28" height="268">
+   <properties>
+    <property name="dir" value="1"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire8" type="animate" x="1966" y="886">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire9" type="animate" x="2070" y="882">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash10" type="animate" x="2918" y="752">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash11" x="2922" y="492">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="fire10" type="animate" x="2950" y="494">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash12" type="animate" x="3330" y="780">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="fire11" type="animate" x="3178" y="1416">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash13" type="animate" x="3202" y="1418">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc13" type="npc" x="3304" y="1260" width="38" height="342">
+   <properties>
+    <property name="dir" value="1"/>
+    <property name="speed" value="115"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc14" type="npc" x="3196" y="1242" width="40" height="234">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="110"/>
+    <property name="textrue_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="trash14" type="animate" x="5736" y="1510">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash15" type="animate" x="5748" y="1536">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash16" type="animate" x="5746" y="1626">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash17" type="animate" x="5734" y="1648">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc15" type="npc" x="5762" y="1384" width="28" height="358">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="125"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc16" type="npc" x="5748" y="388" width="160" height="30">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire12" type="animate" x="5720" y="376">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc17" type="npc" x="5750" y="1970" width="152" height="28">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc18" type="npc" x="2092" y="792" width="612" height="32">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc19" type="npc" x="2264" y="852" width="608" height="32">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="125"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire13" type="animate" x="2776" y="872">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire14" type="animate" x="3400" y="880">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc20" type="npc" x="3548" y="516" width="44" height="344">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="trash18" type="animate" x="3696" y="640">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash19" type="animate" x="4232" y="616">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc21" type="npc" x="4281" y="581" width="360" height="44">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="trash20" type="animate" x="4596" y="1000">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash21" type="animate" x="4632" y="1000">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc22" type="npc" x="1864" y="2428" width="424" height="36">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="115"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire15" type="animate" x="2072" y="2352">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire16" type="animate" x="2820" y="2352">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire17" type="animate" x="3280" y="2352">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire18" type="animate" x="52" y="2420">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash22" type="animate" x="36" y="2468">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash23" type="animate" x="32" y="2516">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc23" type="npc" x="12" y="2515" width="648" height="55">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc24" type="npc" x="794" y="2415" width="39" height="161">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc25" type="npc" x="1126" y="1044" width="152" height="26">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire19" type="animate" x="1196" y="994">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc26" type="npc" x="1136" y="978" width="136" height="22">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="trash24" type="animate" x="1514" y="1456">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash25" type="animate" x="1516" y="1616">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="fire20" type="animate" x="1516" y="1584">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc26" type="animate" x="816" y="1516" width="688" height="30">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="130"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire21" type="animate" x="1384" y="2490">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc27" type="animate" x="2526" y="2522" width="606" height="24">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="120"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="trash26" type="animate" x="3284" y="2542">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash27" type="animate" x="3274" y="2512">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc28" type="npc" x="2388" y="2350" width="28" height="224">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire22" type="animate" x="2034" y="2080">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc29" type="npc" x="2076" y="1564" width="478" height="26">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="115"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc30" type="npc" x="2978" y="538" width="32" height="332">
+   <properties>
+    <property name="dir" value="1"/>
+    <property name="speed" value="115"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="trash28" type="animate" x="3148" y="780">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc31" type="npc" x="3122" y="776" width="366" height="28">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name">texture\player.png
+</property>
+   </properties>
+  </object>
+  <object name="npc32" type="npc" x="2924" y="1460" width="26" height="158">
+   <properties>
+    <property name="dir" value="1"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire23" type="animate" x="2872" y="1448">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash29" type="animate" x="2870" y="1618">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash30" type="animate" x="4732" y="1510">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="fire24" type="animate" x="4730" y="1646">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc33" type="npc" x="4024" y="1506" width="390" height="36">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="115"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc34" type="npc" x="4496" y="1588" width="522" height="34">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="npc35" type="npc" x="4020" y="1066" width="346" height="38">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire25" type="animate" x="3982" y="980">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc36" type="npc" x="3958" y="774" width="30" height="206">
+   <properties>
+    <property name="dir" value="1"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name">texture\player.png
+</property>
+   </properties>
+  </object>
+  <object name="trash31" type="animate" x="3694" y="780">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="fire25" type="animate" x="3908" y="918">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
    </properties>
   </object>
  </objectgroup>
