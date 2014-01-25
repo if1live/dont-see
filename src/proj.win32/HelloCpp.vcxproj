@@ -122,7 +122,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\dont-see\src\Classes\GLES-Render.cpp" />
+    <ClCompile Include="..\Classes\GLES-Render.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\level_layer.cpp" />
@@ -133,7 +133,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\dont-see\src\Classes\GLES-Render.h" />
+    <ClInclude Include="..\Classes\GLES-Render.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\AppMacros.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
