@@ -3,34 +3,60 @@
 
 using namespace cocos2d;
 
-VisionClipper::VisionClipper()
+
+cocos2d::CCScene *VisionClipper::testScene()
 {
-	/*
-	CCNode *stencil = this->shape();
-    stencil->setPosition( ccp(50, 50) );
+	CCScene *scene = CCScene::create();
+	
+	CCSprite *sprite = CCSprite::create("texture/HelloWorld.png");
+	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+	CCPoint center(winSize.width / 2, winSize.height / 2);
+	sprite->setScale(3);
+
+	CCClippingNode *clipper = VisionClipper::create();
+	clipper->setPosition(center);
+	clipper->addChild(sprite);
+
+	scene->addChild(clipper);
+	//scene->addChild(sprite);
+	sprite->setPosition(center);
+
+	return scene;
+
+}
+
+CCClippingNode *VisionClipper::create()
+{
+	CCNode *stencil = shape();
 
 	CCClippingNode *clipper = CCClippingNode::create();
-    clipper->setAnchorPoint(ccp(0.5, 0.5));
-    clipper->setPosition(ccp(s.width / 2 - 50, s.height / 2 - 50) );
     clipper->setStencil(stencil);
-    this->addChild(clipper);
-	*/
+    return clipper;
 }
 
-VisionClipper::~VisionClipper()
-{
-}
 
 CCDrawNode* VisionClipper::shape()
 {
+	const int circlePoint = 16;
+	const float innerRadius = 50;
+	const float outerRadius = 100;
+
     CCDrawNode *shape = CCDrawNode::create();
-    static CCPoint triangle[3];
-    triangle[0] = ccp(-100, -100);
-    triangle[1] = ccp(100, -100);
-    triangle[2] = ccp(0, 100);
+
+	std::vector<CCPoint> pointList;
+	for(int i = 1 ; i < circlePoint - 1 ; i++) {
+		float segment = 360.0f / circlePoint;
+		float angle = segment * i + 90;
+		float rad = CC_DEGREES_TO_RADIANS(angle);
+		float sinVal = sin(rad);
+		float cosVal = cos(rad);
+		float x = cosVal * innerRadius;
+		float y = sinVal * innerRadius;
+
+		pointList.push_back(ccp(x, y));
+	}
 
     static ccColor4F green = {0, 1, 0, 1};
-    shape->drawPolygon(triangle, 3, green, 0, green);
+	shape->drawPolygon(pointList.data(), pointList.size(), green, 0, green);
     return shape;
 }
-
