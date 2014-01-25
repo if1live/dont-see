@@ -10,7 +10,6 @@
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
     <ClCompile Include="..\Classes\game_world.cpp" />
     <ClCompile Include="..\Classes\player.cpp" />
-    <ClCompile Include="..\Classes\CCMask.cpp" />
     <ClCompile Include="..\Classes\vision_mask.cpp" />
     <ClCompile Include="..\Classes\MenuLayer.cpp" />
     <ClCompile Include="..\Classes\Npc.cpp" />
@@ -26,7 +25,6 @@
     <ClInclude Include="..\Classes\VisibleRect.h" />
     <ClInclude Include="..\Classes\game_world.h" />
     <ClInclude Include="..\Classes\player.h" />
-    <ClInclude Include="..\Classes\CCMask.h" />
     <ClInclude Include="..\Classes\vision_mask.h" />
     <ClInclude Include="..\Classes\MenuLayer.h" />
     <ClInclude Include="..\Classes\Npc.h" />

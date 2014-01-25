@@ -2,7 +2,6 @@
 #include "level_layer.h"
 #include "game_world.h"
 #include "player.h"
-#include "CCMask.h"
 #include "vision_mask.h"
 #include "KeyboardDevice.h"
 
@@ -50,7 +49,7 @@ bool LevelLayer::init()
 
 	//플레이어 추가
 	CCDictionary* dict = nullptr;
-	CCTMXObjectGroup* group = map->objectGroupNamed("positions");
+	CCTMXObjectGroup* group = dict->objectGroupNamed("positions");
 	if (group != nullptr)
 	{
 		dict = group->objectNamed("user_start");
