@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "TmxObject.h"
 #include "game_world.h"
+#include "b2_helper.h"
 
 using namespace cocos2d;
 
@@ -25,7 +26,7 @@ std::string safeReadStringValue(CCDictionary* dict, const char* key, const char*
 }
 
 TmxObject::TmxObject(CCDictionary* dict)
-	: m_x(0), m_y(0), m_width(0), m_height(0), m_speed(0)
+	: m_x(0), m_y(0), m_width(0), m_height(0), m_speed(0), m_body(nullptr)
 {
 	m_x = safeReadIntValue(dict, "x");
 	m_y = safeReadIntValue(dict, "y");
@@ -39,6 +40,14 @@ TmxObject::TmxObject(CCDictionary* dict)
 	m_moveDirection = safeReadIntValue(dict, "dir");
 }
 
+TmxObject::~TmxObject()
+{
+	if(m_body != nullptr) {
+		GameWorld::sharedWorld()->b2_world->DestroyBody(m_body);
+		m_body = nullptr;
+	}
+}
+
 bool TmxObject::init()
 {
 	if(!CCLayer::init()) {
@@ -48,20 +57,25 @@ bool TmxObject::init()
 	m_sprite = CCSprite::create(m_textureName.c_str());
 	this->addChild(m_sprite);
 
-	/*
-	// Define the dynamic body.
-	//Set up a 1m squared box in the physics world
+	//TODO tmx 객체 타입에 따라서 다른 box2d 객체를 생성해서 연결해야한다
+	
+	//box2d 객체도 생성
 	b2BodyDef bodyDef;
+	bodyDef.position = px_to_mt_pos(ccp(m_x, m_y));
 	bodyDef.type = b2_dynamicBody;
-	bodyDef.position.Set(m_x/PTM_RATIO, m_y/PTM_RATIO);
+	bodyDef.userData = this;
 
-	b2Body *body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
+	m_body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
 
-	// Define another box shape for our dynamic body.
-	b2PolygonShape box;
-	box.SetAsBox(.5f, .5f);//These are mid points for our 1m box
-	body->CreateFixture(&box, 0.0f);
-	*/
+	b2CircleShape circle;
+	circle.m_radius = px_to_mt_length(20);
+
+	b2FixtureDef fixtureDef;
+	fixtureDef.shape = &circle;
+	fixtureDef.density = 1;
+	m_body->CreateFixture(&fixtureDef);
+
+
 	m_sprite->runAction(cocos2d::CCMoveTo::create(0, cocos2d::CCPoint(m_x, m_y)));
 
 	scheduleUpdate();
