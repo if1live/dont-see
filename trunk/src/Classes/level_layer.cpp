@@ -1,19 +1,16 @@
 #include "stdafx.h"
 #include "level_layer.h"
-#include "VisibleRect.h"
-
-#define PTM_RATIO (32.0f)
+#include "game_world.h"
 
 using namespace cocos2d;
 
 LevelLayer::~LevelLayer()
 {
-	CC_SAFE_DELETE(world);
+	CC_SAFE_DELETE(gameWorld);
 }
 
 LevelLayer::LevelLayer()
-	: world(nullptr),
-	debugDraw(PTM_RATIO)
+	: gameWorld(nullptr)
 {
 }
 
@@ -71,11 +68,8 @@ bool LevelLayer::init()
 
 void LevelLayer::update(float dt)
 {
-	int velocityIterations = 8;
-    int positionIterations = 1;
-	world->Step(dt, velocityIterations, positionIterations);
+	gameWorld->update(dt);
 
-	
 }
 
 void LevelLayer::draw()
@@ -84,58 +78,13 @@ void LevelLayer::draw()
 
 	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
     kmGLPushMatrix();
-    world->DrawDebugData();
+	gameWorld->b2_world->DrawDebugData();
     kmGLPopMatrix();
 }
 
 void LevelLayer::initPhysics()
 {
-	//물리엔진 초기화
-	b2Vec2 gravity;
-	gravity.Set(0.0f, -5.0f);
-	//메모리 누스 옮기기
-	world = new b2World(gravity);
-	world->SetAllowSleeping(true);
-	world->SetContinuousPhysics(true);
-
-	uint32 flags = 0;
-    flags += b2Draw::e_shapeBit;
-    //        flags += b2Draw::e_jointBit;
-    //        flags += b2Draw::e_aabbBit;
-    //        flags += b2Draw::e_pairBit;
-    //        flags += b2Draw::e_centerOfMassBit;
-    debugDraw.SetFlags(flags);
-	world->SetDebugDraw(&debugDraw);
-	
-
-	// Define the ground body.
-    b2BodyDef groundBodyDef;
-	groundBodyDef.type = b2_staticBody;
-    groundBodyDef.position.Set(0, 0); // bottom-left corner
-	b2Body* groundBody = world->CreateBody(&groundBodyDef);
-
-	// Define the ground box shape.
-    b2EdgeShape groundBox;
-
-    auto visibleRect = VisibleRect::getVisibleRect();
-	float left = visibleRect.getMinX() / PTM_RATIO;
-	float right = visibleRect.getMaxX() / PTM_RATIO;
-	float bottom = visibleRect.getMinY() / PTM_RATIO;
-	float top = visibleRect.getMaxY() / PTM_RATIO;
-    groundBox.Set(b2Vec2(left, bottom), b2Vec2(right, bottom));
-    groundBody->CreateFixture(&groundBox,0);
-
-    // top
-    groundBox.Set(b2Vec2(left, top), b2Vec2(right, top));
-    groundBody->CreateFixture(&groundBox,0);
-
-    // left
-    groundBox.Set(b2Vec2(left, top), b2Vec2(left, bottom));
-    groundBody->CreateFixture(&groundBox,0);
-
-    // right
-    groundBox.Set(b2Vec2(right, bottom), b2Vec2(right, top));
-    groundBody->CreateFixture(&groundBox,0);
+	gameWorld = new GameWorld();
 }
 
 
@@ -150,7 +99,7 @@ void LevelLayer::addNewSpriteAtPosition(CCPoint p)
     bodyDef.type = b2_dynamicBody;
     bodyDef.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);
 
-    b2Body *body = world->CreateBody(&bodyDef);
+    b2Body *body = gameWorld->b2_world->CreateBody(&bodyDef);
     
     // Define another box shape for our dynamic body.
     b2PolygonShape dynamicBox;

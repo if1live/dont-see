@@ -26,3 +26,5 @@
 #include "cocos2d.h"
 
 #include "AppMacros.h"
+
+#define PTM_RATIO (32.0f)

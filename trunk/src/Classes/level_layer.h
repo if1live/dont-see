@@ -2,6 +2,8 @@
 
 #include "GLES-Render.h"
 
+class GameWorld;
+
 class LevelLayer : public cocos2d::CCLayer {
 public:
 	LevelLayer();
@@ -24,6 +26,5 @@ private:
 	cocos2d::CCSprite *playerSprite;
 
 private:
-	GLESDebugDraw debugDraw;
-	b2World *world;
+	GameWorld *gameWorld;
 };
