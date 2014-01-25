@@ -2,6 +2,8 @@
 #include "level_layer.h"
 #include "game_world.h"
 #include "player.h"
+#include "CCMask.h"
+#include "vision_mask.h"
 #include "KeyboardDevice.h"
 
 using namespace cocos2d;
@@ -13,7 +15,8 @@ LevelLayer::~LevelLayer()
 
 LevelLayer::LevelLayer()
 	: gameWorld(nullptr),
-	player(nullptr)
+	player(nullptr),
+	masking(nullptr)
 {
 }
 
@@ -35,24 +38,8 @@ bool LevelLayer::init()
 	this->setTouchEnabled( true );
 	this->scheduleUpdate();
 	this->initPhysics();
+	this->initMap();
 
-	// create a TMX map
-	CCTMXTiledMap *map = CCTMXTiledMap::create("tilemap/desert.tmx");
-	this->addChild(map, -1);
-	//디버깅용 타일 경계선 그리기
-	// All the tiles by default will be aliased. If you want to create anti-alias tiles, you should do:
-	// iterate over all the "layers" (atlas sprite managers)
-	// and set them as 'antialias' 
-	CCArray * pChildrenArray = map->getChildren();
-	CCSpriteBatchNode* child = NULL;
-	CCObject* pObject = NULL;
-	CCARRAY_FOREACH(pChildrenArray, pObject) {
-		child = (CCSpriteBatchNode*)pObject;
-		if(!child) {
-			break;
-		}
-		child->getTexture()->setAntiAliasTexParameters();
-	}
 
 	CCLabelTTF *pLabel = CCLabelTTF::create("test",
                                             "Arial",
@@ -72,6 +59,12 @@ bool LevelLayer::init()
 	player = Player::create(dict);
 	player->init();
 	this->addChild(player, -1);
+	player->release();
+
+	masking = VisionMask::create();
+	masking->setPosition(ccp(size.width/2, size.height/2));
+	this->addChild(masking, -1);
+
 
 	return true;
 }
@@ -153,4 +146,25 @@ void LevelLayer::ccTouchesEnded(CCSet* touches, CCEvent* event)
         CCPoint location = touch->getLocation();
         addNewSpriteAtPosition( location );
     }
+}
+
+void LevelLayer::initMap()
+{
+	// create a TMX map
+	CCTMXTiledMap *map = CCTMXTiledMap::create("tilemap/desert.tmx");
+	this->addChild(map, -1);
+	//디버깅용 타일 경계선 그리기
+	// All the tiles by default will be aliased. If you want to create anti-alias tiles, you should do:
+	// iterate over all the "layers" (atlas sprite managers)
+	// and set them as 'antialias' 
+	CCArray * pChildrenArray = map->getChildren();
+	CCSpriteBatchNode* child = NULL;
+	CCObject* pObject = NULL;
+	CCARRAY_FOREACH(pChildrenArray, pObject) {
+		child = (CCSpriteBatchNode*)pObject;
+		if(!child) {
+			break;
+		}
+		child->getTexture()->setAntiAliasTexParameters();
+	}
 }
