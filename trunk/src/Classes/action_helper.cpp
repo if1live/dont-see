@@ -21,7 +21,7 @@ cocos2d::CCAction *create_circle_sonar()
     // 애니메이션 만들기
     CCAnimation* animation = CCAnimation::createWithSpriteFrames(animFrames, 0.1f);
     CCAnimate *animate = CCAnimate::create(animation);
-	CCActionInterval *wait = CCActionInterval::create(1.0f);
+	CCActionInterval *wait = CCActionInterval::create(3.0f);
     CCAction* action = CCSpawn::create(animate, wait, NULL);
 
     CCActionInterval* rep1 = (CCActionInterval*)action;

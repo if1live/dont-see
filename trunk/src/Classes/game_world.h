@@ -16,7 +16,7 @@ public:
 	~GameWorld();
 
 	void update(float dt);
-	std::vector<cocos2d::CCPoint> gatherPoints(const cocos2d::CCPoint center, float minDistance, float maxDistance);
+	std::vector<TmxObject*> nearBy(const cocos2d::CCPoint center, float minDistance, float maxDistance);
 
 	void addTmxObject(TmxObject *obj);
 	void removeTmxObject(TmxObject *obj);

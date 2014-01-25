@@ -88,14 +88,16 @@ void LevelLayer::update(float dt)
 
 	updateCamera();
 
-	soundTick -= dt;
-	if (soundTick <= 0) {
-		const float minViewRadius = 100;
-		const float maxViewRadius = 400;
-		const CCPoint& layerPos = getPosition();
-		const auto& soundPoses = GameWorld::sharedWorld()->gatherPoints(player->getPosition(), minViewRadius, maxViewRadius);
-		for each (const CCPoint& soundPos in soundPoses) {
-			CCPoint resultPos = soundPos + layerPos;
+	const float minViewRadius = 100;
+	const float maxViewRadius = 400;
+	const CCPoint& layerPos = getPosition();
+	std::vector<TmxObject*> nearObjects = GameWorld::sharedWorld()->nearBy(player->getPosition(), minViewRadius, maxViewRadius);
+	for (auto it = nearObjects.begin(); it != nearObjects.end(); ++it) {
+		TmxObject* nearObject = (*it);
+
+		auto mapIt = soundEffectObjectMap.find(nearObject);
+		if (mapIt == soundEffectObjectMap.end()) {
+			CCPoint resultPos = nearObject->getPosition() + layerPos;
 
 			//소화전 임시로 추가
 			//효과용 애니메이션 테스트로 넣어보자
@@ -104,8 +106,20 @@ void LevelLayer::update(float dt)
 			empty->setPosition(resultPos);
 			CCAction *sonarAction = create_circle_sonar();
 			empty->runAction(sonarAction);
+			sonarAction->retain();
+
+			soundEffectObjectMap.insert(std::make_pair(nearObject, std::make_pair(empty, sonarAction)));
+		} else {
+			mapIt->second.first->setPosition(mapIt->first->getPosition() + layerPos);
 		}
-		soundTick = 5;
+	}
+
+	for (auto it = soundEffectObjectMap.begin(); it != soundEffectObjectMap.end(); ) {
+		if (it->second.second->isDone()) {
+			it->second.second->release();
+			it = soundEffectObjectMap.erase(it);
+		}
+		else ++it;
 	}
 	
 	masking->Update();
