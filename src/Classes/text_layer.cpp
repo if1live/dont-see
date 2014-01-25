@@ -2,6 +2,8 @@
 #include "text_layer.h"
 #include "game_world.h"
 #include "TmxObject.h"
+#include "player.h"
+#include "custom_action.h"
 
 #define FONT_NAME "Arial"
 #define FONT_SIZE 18
@@ -11,7 +13,8 @@ using namespace cocos2d;
 
 TextLayer::TextLayer()
 	: positionLabel(nullptr),
-	tileCoordLabel(nullptr)
+	tileCoordLabel(nullptr),
+	customAction(nullptr)
 {
 }
 
@@ -43,13 +46,26 @@ bool TextLayer::init()
 	tileCoordLabel->setAnchorPoint(ccp(0, 1));
 	this->addChild(tileCoordLabel);
 
+	count++;
+
+	hpLabel = CCLabelTTF::create("hp", FONT_NAME, FONT_SIZE);
+	hpLabel->setPosition(ccp(0, 768 - count * LINE_HEIGHT));
+	hpLabel->setAnchorPoint(ccp(0, 1));
+	this->addChild(hpLabel);
+
+	count++;
+
+	availCountLabel = CCLabelTTF::create("Avail Count", FONT_NAME, FONT_SIZE);
+	availCountLabel->setPosition(ccp(0, 768 - count * LINE_HEIGHT));
+	availCountLabel->setAnchorPoint(ccp(0, 1));
+	this->addChild(availCountLabel);
 
 	return true;
 }
 
 void TextLayer::update(float dt)
 {
-	TmxObject *player = GameWorld::sharedWorld()->getObjectByType(OBJECT_PLAYER);
+	Player *player = (Player*)GameWorld::sharedWorld()->getObjectByType(OBJECT_PLAYER);
 	assert(player != nullptr);
 
 	CCPoint pos = player->getPosition();
@@ -62,4 +78,10 @@ void TextLayer::update(float dt)
 
 	sprintf(buffer, "Tile: %.2f, %.2f", tileX, tileY);
 	tileCoordLabel->setString(buffer);
+
+	sprintf(buffer, "HP  : %d", player->hp);
+	hpLabel->setString(buffer);
+
+	sprintf(buffer, "Avail: %d / %.1f", customAction->GetSpecialCount(), customAction->GetSpecialGap());
+	availCountLabel->setString(buffer);
 }

@@ -58,5 +58,7 @@ void CollisionAnimationObject::runAnimation()
 		m_sprite->runAction(act);
 
 		//TODO 쓰레기통 엎는 소리
+
+		//엎은 쓰레기통을 또 걷어차는셈 치고 냅둔다
 	}
 }

@@ -14,7 +14,7 @@ Player* Player::create(cocos2d::CCDictionary* dict)
 }
 
 Player::Player(CCDictionary* dict)
-	: TmxObject(dict, OBJECT_PLAYER), m_movingCool(0)
+	: TmxObject(dict, OBJECT_PLAYER), m_movingCool(0), hp(3)
 {
 }
 
@@ -33,6 +33,10 @@ void Player::update(float dt)
 		m_movingCool = 0.3f;
 		//Move(dx, dy, m_movingCool);
 		setVelocity(dx, dy);
+	}
+
+	if(hp <= 0) {
+		//HP가 0이하면 게임이 끝난다
 	}
 }
 

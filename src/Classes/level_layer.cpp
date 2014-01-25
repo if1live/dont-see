@@ -15,6 +15,7 @@
 
 #include "SoundManager.h"
 #include "custom_action.h"
+#include "text_layer.h"
 
 using namespace cocos2d;
 
@@ -67,6 +68,13 @@ cocos2d::CCScene *LevelLayer::scene(const char *mapfile)
 
 	layer->soundLayer = CCLayer::create();
 	scene->addChild(layer->soundLayer);
+
+	//개발시 사용할 정보 보여줄 레이어
+	TextLayer *textLayer = (TextLayer*)TextLayer::create();
+	textLayer->customAction = layer->custom_action;
+	scene->addChild(textLayer);
+
+
 	return scene;
 }
 
