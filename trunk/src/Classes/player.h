@@ -9,6 +9,7 @@ public:
 	Player(cocos2d::CCDictionary* dict);
 
 	virtual void update(float dt);
+	virtual b2Body *createBody();
 
 private:
 	float m_movingCool;

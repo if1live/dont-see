@@ -11,6 +11,9 @@ public:
 
 	virtual bool init();
 	void Move(int dx, int dy, float animDelay = 0.0f);
+	void setVelocity(float x, float y);
+
+	virtual b2Body *createBody() = 0;
 
 protected:
 	int m_x;

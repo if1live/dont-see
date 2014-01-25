@@ -11,6 +11,8 @@ public:
 	virtual bool init();
 	virtual void update(float dt);
 
+	virtual b2Body *createBody();
+
 private:
 	float m_movingCool;
 
