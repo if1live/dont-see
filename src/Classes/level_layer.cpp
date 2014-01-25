@@ -9,6 +9,7 @@
 #include "Npc.h"
 #include "vision_clipper.h"
 #include "action_helper.h"
+#include "text_layer.h"
 
 using namespace cocos2d;
 
@@ -42,6 +43,12 @@ cocos2d::CCScene *LevelLayer::scene()
 
 	layer->clipper = clipper;
 	layer->updateClipper(false);
+
+	//디버깅 텍스트 레이어
+	TextLayer *textLayer = TextLayer::create();
+	//textLayer->setPosition(ccp(size.width/2, size.height/2));
+	scene->addChild(textLayer);
+
 	return scene;
 }
 
@@ -56,13 +63,6 @@ bool LevelLayer::init()
 	this->scheduleUpdate();
 	this->initPhysics();
 	this->initMap();
-
-	CCLabelTTF *pLabel = CCLabelTTF::create("test",
-                                            "Arial",
-                                            18);
-	this->addChild(pLabel);
-	/*
-	*/
 
 	return true;
 }
@@ -158,6 +158,8 @@ void LevelLayer::initMap()
 {
 	// create a TMX map
 	CCTMXTiledMap *map = CCTMXTiledMap::create("tilemap/desert.tmx");
+	//CCTMXTiledMap *map = CCTMXTiledMap::create("tilemap/LIKE_GTA_2.tmx");
+	
 	this->addChild(map, -1);
 
 	//디버깅용 타일 경계선 그리기
