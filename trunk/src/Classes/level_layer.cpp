@@ -4,6 +4,7 @@
 #include "player.h"
 #include "vision_mask.h"
 #include "KeyboardDevice.h"
+#include "MouseDevice.h"
 #include "TmxObject.h"
 #include "Npc.h"
 #include "vision_clipper.h"
@@ -58,6 +59,7 @@ void LevelLayer::update(float dt)
 {
 	GameWorld::sharedWorld()->update(dt);
 	KeyboardDevice::sharedDevice()->Update();
+	MouseDevice::sharedDevice()->Update();
 	updateCamera();
 }
 
