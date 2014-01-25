@@ -136,6 +136,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\Classes\TmxObject.cpp" />
+    <ClCompile Include="..\Classes\text_layer.cpp" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
     <ClCompile Include="..\Classes\vision_clipper.cpp" />
     <ClCompile Include="..\Classes\vision_mask.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="..\Classes\player.h" />
     <ClInclude Include="..\Classes\stdafx.h" />
     <ClInclude Include="..\Classes\TmxObject.h" />
+    <ClInclude Include="..\Classes\text_layer.h" />
     <ClInclude Include="..\Classes\VisibleRect.h" />
     <ClInclude Include="..\Classes\vision_clipper.h" />
     <ClInclude Include="..\Classes\vision_mask.h" />
