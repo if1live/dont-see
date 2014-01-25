@@ -24,6 +24,7 @@ enum {
 LevelLayer::LevelLayer()
 	: player(nullptr)
 	, masking(nullptr)
+	, soundTick(0)
 {
 }
 
@@ -53,6 +54,9 @@ cocos2d::CCScene *LevelLayer::scene(const char *mapfile)
 	layer->masking = visionMasking;
 	scene->addChild(visionMasking);
 	visionMasking->setPosition(ccp(size.width/2, size.height/2));
+
+	layer->soundLayer = CCLayer::create();
+	scene->addChild(layer->soundLayer);
 	return scene;
 }
 
@@ -83,6 +87,27 @@ void LevelLayer::update(float dt)
 	}
 
 	updateCamera();
+
+	soundTick -= dt;
+	if (soundTick <= 0) {
+		const float minViewRadius = 100;
+		const float maxViewRadius = 400;
+		const CCPoint& layerPos = getPosition();
+		const auto& soundPoses = GameWorld::sharedWorld()->gatherPoints(player->getPosition(), minViewRadius, maxViewRadius);
+		for each (const CCPoint& soundPos in soundPoses) {
+			CCPoint resultPos = soundPos + layerPos;
+
+			//소화전 임시로 추가
+			//효과용 애니메이션 테스트로 넣어보자
+			CCSprite *empty = CCSprite::create("texture/empty.png");
+			soundLayer->addChild(empty);
+			empty->setPosition(resultPos);
+			CCAction *sonarAction = create_circle_sonar();
+			empty->runAction(sonarAction);
+		}
+		soundTick = 5;
+	}
+	
 	masking->Update();
 }
 
