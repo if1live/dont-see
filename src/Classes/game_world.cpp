@@ -89,3 +89,14 @@ void GameWorld::removeTmxObject(TmxObject *obj)
 	if (it != tmxObjectList.end())
 		tmxObjectList.erase(it);
 }
+
+TmxObject *GameWorld::getObjectByType(int objType)
+{
+	for(size_t i = 0 ; i < tmxObjectList.size() ; ++i) {
+		TmxObject *obj = tmxObjectList[i];
+		if(obj->m_objType == objType) {
+			return obj;
+		}
+	}
+	return nullptr;
+}
