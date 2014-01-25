@@ -67,7 +67,7 @@ void VisionMask::Update()
 	}
 	centerMasking->setRotation(angle);
 	lightMasking->setRotation(angle);
-	CCLOG("%f", angle);
+	//CCLOG("%f", angle);
 
 
 	int keys = KeyboardDevice::sharedDevice()->GetKeys();

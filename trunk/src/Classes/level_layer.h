@@ -27,6 +27,8 @@ public:
 	void updateClipper(bool use);
 	bool isClipperEnabled();
 
+	void updateSound(float dt);
+
 private:
 	Player *player;
 	VisionMask *masking;
