@@ -10,6 +10,7 @@
 #include "vision_clipper.h"
 #include "b2_helper.h"
 #include "collision_animation_object.h"
+#include "action_helper.h"
 
 using namespace cocos2d;
 
@@ -257,6 +258,21 @@ void LevelLayer::initMap()
 	updateCamera();
 
 	//소화전 임시로 추가
+	//효과용 애니메이션 테스트로 넣어보자
+	CCSprite *empty = CCSprite::create("texture/empty.png");
+	this->addChild(empty);
+	empty->setPosition(ccp(-50, 100));
+	CCAction *sonarAction = create_circle_sonar();
+	empty->runAction(sonarAction);
+
+
+	//소화전 애니메이션
+	CCSprite *empty1 = CCSprite::create("texture/empty.png");
+	this->addChild(empty1);
+	empty1->setPosition(ccp(-50, 0));
+	CCAction *fireAction = create_fire_animation();
+	empty1->runAction(fireAction);
+
 	{
 		CCDictionary tempDict;
 		tempDict.setObject(CCString::create("32"), "x");

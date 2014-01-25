@@ -28,3 +28,26 @@ cocos2d::CCAction *create_circle_sonar()
     CCAction* rep2 = CCRepeatForever::create(rep1);
 	return rep2;
 }
+
+cocos2d::CCAction *create_fire_animation()
+{
+	CCSpriteFrameCache *cache = CCSpriteFrameCache::sharedSpriteFrameCache();
+	cache->addSpriteFramesWithFile("animation/fire.plist");
+
+	CCArray *frames = CCArray::createWithCapacity(4);
+
+	char buffer[256];
+	for(int i = 2 ; i <= 3 ; ++i) {
+		sprintf(buffer, "fire_%d.png", i);
+		CCSpriteFrame *frame = cache->spriteFrameByName(buffer);
+		frames->addObject(frame);
+	}
+
+	CCAnimation *animation = CCAnimation::createWithSpriteFrames(frames, 0.1f);
+	CCAnimate *animate = CCAnimate::create(animation);
+	CCAction *action = CCSpawn::create(animate, NULL);
+
+	CCActionInterval *rep1 = (CCActionInterval*)action;
+	CCAction *rep2 = CCRepeatForever::create(rep1);
+	return rep2;
+}
