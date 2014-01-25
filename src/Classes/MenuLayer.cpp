@@ -9,7 +9,8 @@ MenuLayer::~MenuLayer()
 }
 
 MenuLayer::MenuLayer()
-	: m_logoShowingTime(0)
+	: m_logoShowingTime(0),
+	m_sceneChangeOccur(false)
 {
 }
 
@@ -40,7 +41,8 @@ bool MenuLayer::init()
 void MenuLayer::update(float dt)
 {
 	m_logoShowingTime += dt;
-	if (m_logoShowingTime > 1) {
+	if (m_logoShowingTime > 1 && m_sceneChangeOccur == false) {
+		m_sceneChangeOccur = true;
 		CCDirector* pDirector = CCDirector::sharedDirector();
 		pDirector->replaceScene(CCTransitionFade::create(0.5, LevelLayer::scene()));
 	}
