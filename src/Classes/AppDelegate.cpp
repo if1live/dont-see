@@ -32,6 +32,7 @@ THE SOFTWARE.
 #include "AppMacros.h"
 
 #include "MenuLayer.h"
+#include "vision_clipper.h"
 
 USING_NS_CC;
 using namespace std;
@@ -102,7 +103,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
     CCScene *scene = nullptr;
 	//scene = HelloWorld::scene();
-	scene = MenuLayer::scene();
+	//scene = MenuLayer::scene();
+	scene = VisionClipper::testScene();
 	
     // run
     pDirector->runWithScene(scene);
