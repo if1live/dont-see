@@ -101,11 +101,6 @@ void LevelLayer::update(float dt)
 	KeyboardDevice::sharedDevice()->Update();
 	MouseDevice::sharedDevice()->Update();
 
-	if (KeyboardDevice::sharedDevice()->GetKeys() == Key2)
-	{
-		this->updateClipper(!this->isClipperEnabled());
-	}
-
 	updateCamera();
 
 	const float minViewRadius = 100;
