@@ -4,18 +4,14 @@
 #include "player.h"
 #include "vision_mask.h"
 #include "KeyboardDevice.h"
+#include "TmxObject.h"
+#include "Npc.h"
 
 using namespace cocos2d;
 
-LevelLayer::~LevelLayer()
-{
-	CC_SAFE_DELETE(gameWorld);
-}
-
 LevelLayer::LevelLayer()
-	: gameWorld(nullptr),
-	player(nullptr),
-	masking(nullptr)
+	: player(nullptr)
+	, masking(nullptr)
 {
 }
 
@@ -47,19 +43,6 @@ bool LevelLayer::init()
     pLabel->setPosition(ccp(size.width/2, size.height/2));
     addChild(pLabel);
 
-	//플레이어 추가
-	CCDictionary* dict = nullptr;
-	CCTMXObjectGroup* group = dict->objectGroupNamed("positions");
-	if (group != nullptr)
-	{
-		dict = group->objectNamed("user_start");
-	}
-
-	player = Player::create(dict);
-	player->init();
-	this->addChild(player, -1);
-	player->release();
-
 	masking = VisionMask::create();
 	masking->setPosition(ccp(size.width/2, size.height/2));
 	this->addChild(masking, -1);
@@ -70,8 +53,8 @@ bool LevelLayer::init()
 
 void LevelLayer::update(float dt)
 {
-	gameWorld->update(dt);
-	KeyboardDevice::sharedDirector()->Update();
+	GameWorld::sharedWorld()->update(dt);
+	KeyboardDevice::sharedDevice()->Update();
 }
 
 void LevelLayer::draw()
@@ -80,13 +63,13 @@ void LevelLayer::draw()
 
 	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
     kmGLPushMatrix();
-	gameWorld->b2_world->DrawDebugData();
+	GameWorld::sharedWorld()->b2_world->DrawDebugData();
     kmGLPopMatrix();
 }
 
 void LevelLayer::initPhysics()
 {
-	gameWorld = new GameWorld();
+	GameWorld::sharedWorld();
 }
 
 
@@ -101,7 +84,7 @@ void LevelLayer::addNewSpriteAtPosition(CCPoint p)
     bodyDef.type = b2_dynamicBody;
     bodyDef.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);
 
-    b2Body *body = gameWorld->b2_world->CreateBody(&bodyDef);
+    b2Body *body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
     
     // Define another box shape for our dynamic body.
     b2PolygonShape dynamicBox;
@@ -166,4 +149,45 @@ void LevelLayer::initMap()
 		}
 		child->getTexture()->setAntiAliasTexParameters();
 	}
+	
+	//플레이어 추가
+	CCDictionary* dict = nullptr;
+	CCTMXObjectGroup* group = map->objectGroupNamed("objects");
+	if (group != nullptr) {
+		dict = group->objectNamed("player");
+	}
+
+	player = Player::create(dict);
+	player->init();
+	this->addChild(player, -1);
+	player->release();
+
+	//Npc 추가
+	if (group != nullptr) {
+		CCArray* array = group->getObjects();
+		CCObject* object;
+		CCARRAY_FOREACH(array, object) {
+			CCDictionary* dict = (CCDictionary*)object;
+			CCString* type = (CCString*)dict->objectForKey("type");
+
+			std::string typeValue = safeReadStringValue(dict, "type");
+			if (typeValue == "npc") {
+				Npc* npc = Npc::create(dict);
+				npc->init();
+				this->addChild(npc);
+			}
+		}
+	}
+
+	CCDictionary tempDict;
+	tempDict.setObject(CCString::create("100"), "x");
+	tempDict.setObject(CCString::create("100"), "y");
+	tempDict.setObject(CCString::create("100"), "width");
+	tempDict.setObject(CCString::create("100"), "height");
+	tempDict.setObject(CCString::create("10"), "speed");
+	tempDict.setObject(CCString::create("1"), "dir");
+	
+	Npc* npc = Npc::create(&tempDict);
+	npc->init();
+	this->addChild(npc);
 }

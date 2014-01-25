@@ -9,7 +9,6 @@ class VisionMask;
 class LevelLayer : public cocos2d::CCLayer {
 public:
 	LevelLayer();
-	virtual ~LevelLayer();
 
 	virtual bool init();
 	static cocos2d::CCScene *scene();
@@ -27,7 +26,6 @@ public:
     CREATE_FUNC(LevelLayer);
 
 private:
-	GameWorld *gameWorld;
 	Player *player;
 	VisionMask *masking;
 };

@@ -11,29 +11,42 @@ Npc* Npc::create(cocos2d::CCDictionary* dict)
 }
 
 Npc::Npc(CCDictionary* dict)
-	: m_x(0), m_y(0)
-{
-	if (dict != nullptr)
-	{
-		m_x = ((CCString*)dict->objectForKey("x"))->intValue();
-		m_y = ((CCString*)dict->objectForKey("y"))->intValue();
-	}
-}
-
-Npc::~Npc()
+	: TmxObject(dict), m_movingCool(0)
 {
 }
 
 bool Npc::init()
 {
-	if(!CCLayer::init()) {
+	if (!TmxObject::init())
 		return false;
-	}
 
-	CCSprite *npcSprite = CCSprite::create("texture/npc.png");
-	this->addChild(npcSprite);
-
-	// npcSprite->runAction(cocos2d::CCMoveTo::create(5.0f, cocos2d::CCPoint(m_x, m_y)));
-
+	m_startX = m_x;
+	m_startY = m_y;
+	m_endX = m_x + m_width;
+	m_endY = m_y + m_height;
 	return true;
+}
+
+void Npc::update(float dt)
+{
+	m_movingCool -= dt;
+	if (m_movingCool <= 0)
+	{
+		int dx = 0, dy = 0;
+		switch (m_moveDirection)
+		{
+		case 1: dy += m_speed; break;
+		case 2: dx -= m_speed; break;
+		case 3: dy -= m_speed; break;
+		case 4: dx += m_speed; break;
+		}
+
+		m_movingCool = 0.3f;
+		Move(dx, dy, m_movingCool);
+
+		if (m_moveDirection == 1 && m_y > m_endY) m_moveDirection = 3;
+		if (m_moveDirection == 2 && m_x < m_startX) m_moveDirection = 4;
+		if (m_moveDirection == 3 && m_y < m_startY) m_moveDirection = 1;
+		if (m_moveDirection == 4 && m_x > m_endX) m_moveDirection = 2;
+	}
 }

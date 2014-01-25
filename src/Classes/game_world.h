@@ -4,6 +4,11 @@
 
 class GameWorld {
 public:
+	static GameWorld* sharedWorld() {
+		static GameWorld world;
+		return &world;
+	}
+
 	GameWorld();
 	~GameWorld();
 
