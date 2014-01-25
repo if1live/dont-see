@@ -17,3 +17,12 @@ cocos2d::CCPoint mt_to_px_pos(const b2Vec2 &mt_pos)
 	return ccp(x, y);
 }
 
+float px_to_mt_length(float px_length)
+{
+	return px_length / PTM_RATIO;
+}
+
+float mt_to_px_length(float mt_length)
+{
+	return mt_length * PTM_RATIO;
+}
