@@ -16,8 +16,6 @@ Goal* Goal::create(cocos2d::CCDictionary *dict)
 Goal::Goal(cocos2d::CCDictionary *dict)
 	: TmxObject(dict, OBJECT_GOAL), clearCalled(false)
 {
-	//골 이미지가 생기면 바꾸기
-	//m_sprite->setVisible(false);
 }
 
 b2Body *Goal::createBody()
@@ -43,6 +41,8 @@ b2Body *Goal::createBody()
 
 void Goal::update(float dt)
 {
+	//목적지는 이미지가 따로 없다
+	m_sprite->setVisible(false);
 }
 
 void Goal::clearGame()
