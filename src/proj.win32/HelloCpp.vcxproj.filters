@@ -18,6 +18,7 @@
     <ClCompile Include="..\Classes\b2_helper.cpp" />
     <ClCompile Include="..\Classes\action_helper.cpp" />
     <ClCompile Include="..\Classes\text_layer.cpp" />
+    <ClCompile Include="..\Classes\collision_animation_object.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -40,5 +41,6 @@
     <ClInclude Include="..\Classes\b2_helper.h" />
     <ClInclude Include="..\Classes\action_helper.h" />
     <ClInclude Include="..\Classes\text_layer.h" />
+    <ClInclude Include="..\Classes\collision_animation_object.h" />
   </ItemGroup>
 </Project>
