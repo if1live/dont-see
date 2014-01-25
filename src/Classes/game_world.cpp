@@ -68,3 +68,12 @@ void GameWorld::update(float dt)
 	b2_world->Step(dt, velocityIterations, positionIterations);
 
 }
+
+void GameWorld::addTmxObject(TmxObject *obj)
+{
+	
+}
+
+void GameWorld::removeTmxObject(TmxObject *obj)
+{
+}
