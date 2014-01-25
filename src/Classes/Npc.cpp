@@ -22,10 +22,10 @@ bool Npc::init()
 	if (!TmxObject::init())
 		return false;
 
-	m_startX = m_x;
-	m_startY = m_y;
-	m_endX = m_x + m_width;
-	m_endY = m_y + m_height;
+	startPos = ccp(m_x, m_y);
+	endPos = ccp(
+		startPos.x + m_width,
+		startPos.y + m_height);
 	return true;
 }
 
@@ -44,12 +44,13 @@ void Npc::update(float dt)
 		}
 
 		m_movingCool = 0.3f;
-		Move(dx, dy, m_movingCool);
+		setVelocity(dx, dy);
 
-		if (m_moveDirection == 1 && m_y > m_endY) m_moveDirection = 3;
-		if (m_moveDirection == 2 && m_x < m_startX) m_moveDirection = 4;
-		if (m_moveDirection == 3 && m_y < m_startY) m_moveDirection = 1;
-		if (m_moveDirection == 4 && m_x > m_endX) m_moveDirection = 2;
+		const CCPoint& currPos = getPosition();
+		if (m_moveDirection == 1 && currPos.y > endPos.y) m_moveDirection = 3;
+		if (m_moveDirection == 2 && currPos.x < startPos.x) m_moveDirection = 4;
+		if (m_moveDirection == 3 && currPos.y < startPos.y) m_moveDirection = 1;
+		if (m_moveDirection == 4 && currPos.x > endPos.x) m_moveDirection = 2;
 	}
 }
 

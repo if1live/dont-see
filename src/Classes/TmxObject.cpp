@@ -69,23 +69,9 @@ bool TmxObject::init()
 
 	m_body = createBody();
 
-	m_sprite->runAction(cocos2d::CCMoveTo::create(0, cocos2d::CCPoint(m_x, m_y)));
-
 	scheduleUpdate();
 
 	return true;
-}
-void TmxObject::Move(int dx, int dy, float animDelay /* = 0 */)
-{
-	if (dx == 0 && dy == 0)
-		return;
-
-	//b2Vec2 mt_vec(1, 1);
-	//m_body->SetLinearVelocity(mt_vec);
-	//CCLog("%d, %d", m_x, m_y);
-	//m_x += dx;
-	//m_y += dy;
-	//this->runAction(cocos2d::CCMoveTo::create(animDelay, cocos2d::CCPoint(m_x, m_y)));
 }
 
 void TmxObject::setVelocity(float x, float y)
