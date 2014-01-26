@@ -5,6 +5,7 @@
 #include "b2_helper.h"
 #include "action_helper.h"
 #include "EndingLayer.h"
+#include "MenuLayer.h"
 
 #define POWERFUL_TIME (1.0f)
 
@@ -47,7 +48,8 @@ void Player::update(float dt)
 			gameOver = true;
 
 			CCDirector* pDirector = CCDirector::sharedDirector();
-			pDirector->replaceScene(CCTransitionFade::create(0.5, EndingLayer::scene()));
+			//pDirector->replaceScene(CCTransitionFade::create(0.5, EndingLayer::scene()));
+			pDirector->replaceScene(CCTransitionFade::create(0.5, MenuLayer::scene()));
 		}
 	}
 
