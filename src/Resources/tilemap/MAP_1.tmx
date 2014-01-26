@@ -164,6 +164,11 @@
   <object x="1965" y="911" width="10" height="506"/>
   <object x="1486" y="904" width="486" height="12"/>
   <object x="1483" y="511" width="12" height="392"/>
+  <object x="3260" y="532"/>
+  <object x="3" y="229" width="21" height="84"/>
+  <object x="4" y="1327" width="16" height="143"/>
+  <object x="1" y="2363" width="7" height="193"/>
+  <object x="5744" y="2763" width="184" height="15"/>
  </objectgroup>
  <objectgroup name="objects" width="186" height="87">
   <object name="player1" type="player" x="29" y="1429" width="31" height="31">
@@ -779,7 +784,7 @@
     <property name="texture_name" value="texture\player.png"/>
    </properties>
   </object>
-  <object name="player5" type="player" x="208" y="314">
+  <object name="player5" type="player" x="312" y="313">
    <properties>
     <property name="speed" value="100"/>
     <property name="texture_name" value="texture\player.png"/>
