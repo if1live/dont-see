@@ -3,14 +3,20 @@
 #include "MouseDevice.h"
 #include "KeyboardDevice.h"
 #include <cmath>
+#include "custom_action.h"
+
+const float lightEnabledTime = 5.0f;
 
 using namespace cocos2d;
 
 VisionMask::VisionMask()
 	: centerMasking(nullptr),
 	lightMasking(nullptr),
-	lightEnabled(true)
+	lightEnabled(false),
+	customAction(nullptr),
+	lightTime(0)
 {
+	
 }
 
 VisionMask::~VisionMask()
@@ -23,6 +29,7 @@ void VisionMask::enableLight(bool light)
 	if(light) {
 		centerMasking->setVisible(false);
 		lightMasking->setVisible(true);
+		lightTime = lightEnabledTime;
 	} else {
 		centerMasking->setVisible(true);
 		lightMasking->setVisible(false);
@@ -69,16 +76,24 @@ void VisionMask::Update()
 	lightMasking->setRotation(angle);
 	//CCLOG("%f", angle);
 
-
 	int keys = KeyboardDevice::sharedDevice()->GetKeys();
 
 	if(keys & KeyRButton)
 	{
-		enableLight(true);
+		if(lightEnabled == false && customAction->GetSpecialCount() > 0) {
+			enableLight(true);
+			customAction->specialCount -= 1;
+		}
 	}
 	else
 	{
 		enableLight(false);
 	}
+
+	lightTime -= 1/60.0f;
+	if(lightTime < 0 && lightEnabled == true) {
+		enableLight(false);
+	}
+
 	return;
 }
