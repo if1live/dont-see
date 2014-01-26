@@ -15,7 +15,9 @@ MenuLayer::~MenuLayer()
 
 MenuLayer::MenuLayer()
 	: m_logoShowingTime(0),
-	m_sceneChangeOccur(false)
+	m_sceneChangeOccur(false),
+	btn1(nullptr),
+	btn2(nullptr)
 {
 	SoundManager::sharedManager()->PlayBG(BG_TITLE);
 }
@@ -37,10 +39,22 @@ bool MenuLayer::init()
 	this->scheduleUpdate();
 	setTouchEnabled(true); 
 
-	CCSprite* sprite = CCSprite::create("texture/splash.png");
+	CCSprite* sprite = CCSprite::create("texture/main.png");
 	sprite->setPosition(ccp(getContentSize().width/2, getContentSize().height/2));
 
 	this->addChild(sprite);
+
+	btn1 = CCSprite::create("texture/main_bt1.png");
+	btn2 = CCSprite::create("texture/main_bt2.png");
+	this->addChild(btn1);
+	this->addChild(btn2);
+	btn1->setVisible(false);
+	btn2->setVisible(false);
+	
+	CCPoint pos = ccp(850, 510);
+	btn1->setPosition(pos);
+	btn2->setPosition(pos);
+
 	
 	return true;
 }
@@ -54,6 +68,14 @@ void MenuLayer::update(float dt)
 		
 		pDirector->replaceScene(CCTransitionFade::create(0.5, LevelLayer::scene(mapfile)));
 		SoundManager::sharedManager()->PlayBG(BG_MAIN);
+	}
+
+	if(int(m_logoShowingTime * 2) % 2 == 0) {
+		btn1->setVisible(false);
+		btn2->setVisible(true);
+	} else {
+		btn1->setVisible(true);
+		btn2->setVisible(false);
 	}
 }
 

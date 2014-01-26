@@ -17,6 +17,9 @@ public:
     CREATE_FUNC(MenuLayer);
 
 private:
+	cocos2d::CCSprite *btn1;
+	cocos2d::CCSprite *btn2;
+	
 	float m_logoShowingTime;
 	bool m_sceneChangeOccur;
 };
