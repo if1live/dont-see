@@ -1,1 +1,6 @@
 [license list]
+* all sound
+ - www.freesfx.co.uk
+
+* heart image for player's life
+ - http://all-free-download.com
