@@ -16,7 +16,7 @@ CollisionAnimationObject* CollisionAnimationObject::create(GameWorld *world, coc
 }
 
 CollisionAnimationObject::CollisionAnimationObject(GameWorld *world, cocos2d::CCDictionary *dict)
-	: TmxObject(world, dict, OBJECT_COLLISION_ANIMATION)
+	: TmxObject(world, dict, OBJECT_COLLISION_ANIMATION), enable(true)
 {
 }
 
@@ -61,5 +61,7 @@ void CollisionAnimationObject::runAnimation()
 		//¾²·¹±âÅë ¾þ´Â ¼Ò¸®
 		//¾þÀº ¾²·¹±âÅëÀ» ¶Ç °È¾îÂ÷´Â¼À Ä¡°í ³ÀµÐ´Ù
 		SoundManager::sharedManager()->PlayEffect(EFFECT_TRASH_CRASH);
+		enable = false;
+		m_body->GetFixtureList()->SetSensor(true);
 	}
 }

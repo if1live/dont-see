@@ -12,5 +12,7 @@ public:
 	virtual void update(float dt);
 
 	void runAnimation();
+
 private:
+	bool enable;
 };
