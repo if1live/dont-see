@@ -55,8 +55,6 @@ Player *LevelLoader::registerPlayer(cocos2d::CCTMXTiledMap *map)
 		CCObject* object;
 		CCARRAY_FOREACH(array, object) {
 			CCDictionary* dict = (CCDictionary*)object;
-			CCString* type = (CCString*)dict->objectForKey("type");
-
 			std::string typeValue = safeReadStringValue(dict, "type");
 			if (typeValue == "player") {
 				dicts.push_back(dict);
@@ -87,8 +85,6 @@ void LevelLoader::registerNpc(cocos2d::CCTMXTiledMap *map)
 		CCObject* object;
 		CCARRAY_FOREACH(array, object) {
 			CCDictionary* dict = (CCDictionary*)object;
-			CCString* type = (CCString*)dict->objectForKey("type");
-
 			std::string typeValue = safeReadStringValue(dict, "type");
 			if (typeValue == "npc") {
 				Npc* npc = Npc::create(world, dict);
@@ -109,8 +105,6 @@ void LevelLoader::registerGoal(cocos2d::CCTMXTiledMap *map)
 		CCObject* object;
 		CCARRAY_FOREACH(array, object) {
 			CCDictionary* dict = (CCDictionary*)object;
-			CCString* type = (CCString*)dict->objectForKey("type");
-
 			std::string typeValue = safeReadStringValue(dict, "type");
 			if (typeValue == "goal") {
 				dicts.push_back(dict);
@@ -118,7 +112,7 @@ void LevelLoader::registerGoal(cocos2d::CCTMXTiledMap *map)
 		}
 	}
 
-	if (!dicts.empty())
+	if (dicts.empty())
 		return;
 
 	std::random_shuffle(dicts.begin(), dicts.end());
