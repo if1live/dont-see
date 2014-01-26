@@ -50,7 +50,7 @@
  </layer>
  <layer name="Road Obj" width="186" height="87">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="Roof Obj" width="186" height="87">
@@ -66,7 +66,7 @@
   <object x="1776" y="308" width="1120" height="444"/>
   <object x="2912" y="401" width="222" height="80"/>
   <object x="3152" y="300" width="356" height="456"/>
-  <object x="3508" y="400" width="1236" height="88"/>
+  <object x="3584" y="394" width="1236" height="88"/>
   <object x="4744" y="400" width="968" height="447"/>
   <object x="4144" y="689" width="123" height="237"/>
   <object x="4376" y="689" width="117" height="237"/>
@@ -87,7 +87,7 @@
   <object x="0" y="2351" width="1951" height="15"/>
   <object x="1937" y="1681" width="15" height="668"/>
   <object x="2128" y="945" width="958" height="444"/>
-  <object x="-2" y="2380" width="1972" height="7"/>
+  <object x="0" y="2376" width="1972" height="7"/>
   <object x="1" y="2606" width="3313" height="7"/>
   <object x="1967" y="1647" width="9" height="731"/>
   <object x="0" y="1548" width="179" height="10"/>
@@ -166,7 +166,7 @@
   <object x="1483" y="511" width="12" height="392"/>
  </objectgroup>
  <objectgroup name="objects" width="186" height="87">
-  <object name="player" type="player" x="29" y="1429" width="31" height="31">
+  <object name="player1" type="player" x="29" y="1429" width="31" height="31">
    <properties>
     <property name="speed" value="100"/>
     <property name="texture_name" value="texture/player.png"/>
@@ -761,6 +761,32 @@
     <property name="texture_name" value="texture\npc.png"/>
    </properties>
   </object>
+  <object name="player2" type="player" x="116" y="2442">
+   <properties>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="player3" type="player" x="3192" y="2414">
+   <properties>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="player4" type="player" x="5842" y="2414">
+   <properties>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="player5" type="player" x="208" y="314">
+   <properties>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="goal1" type="goal" x="221" y="703"/>
+  <object name="goal2" type="goal" x="4318" y="876"/>
  </objectgroup>
  <layer name="apart_1" width="186" height="87">
   <data encoding="base64" compression="zlib">
