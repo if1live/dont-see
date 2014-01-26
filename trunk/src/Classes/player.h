@@ -20,5 +20,9 @@ private:
 	//얻어맞고난뒤 힘세고 강한 시간
 	float powerfulTime;
 	bool gameOver;
+
+	//애니메이션 2프레임. 야매코딩
+	cocos2d::CCSprite *ani_1;
+	cocos2d::CCSprite *ani_2;
 };
 

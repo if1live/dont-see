@@ -19,8 +19,14 @@ Player* Player::create(GameWorld *world, cocos2d::CCDictionary* dict)
 }
 
 Player::Player(GameWorld *world, CCDictionary* dict)
-	: TmxObject(world, dict, OBJECT_PLAYER), m_movingCool(0), hp(3), powerfulTime(0), gameOver(false)
+	: TmxObject(world, dict, OBJECT_PLAYER), m_movingCool(0), hp(3), powerfulTime(0), gameOver(false), ani_1(nullptr), ani_2(nullptr)
 {
+	ani_1 = CCSprite::create("texture/walk copy_1.png");
+	ani_2 = CCSprite::create("texture/walk copy_2.png");
+	this->addChild(ani_1);
+	this->addChild(ani_2);
+	ani_1->setVisible(true);
+	ani_2->setVisible(false);
 }
 
 void Player::update(float dt)
@@ -57,6 +63,13 @@ void Player::update(float dt)
 	if(powerfulTime < 0) {
 		powerfulTime = 0.0f;
 	}
+
+	m_sprite->setVisible(false);
+
+	//속도를 이동방향으로 갖다쓰기
+	b2Vec2 dir = m_body->GetLinearVelocity();
+	float rad = atan2(dir.x, dir.y);
+	ani_1->setRotation(CC_RADIANS_TO_DEGREES(rad));
 }
 
 b2Body *Player::createBody()

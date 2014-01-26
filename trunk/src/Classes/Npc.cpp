@@ -2,6 +2,7 @@
 #include "Npc.h"
 #include "game_world.h"
 #include "b2_helper.h"
+#include "action_helper.h"
 
 using namespace cocos2d;
 
@@ -15,6 +16,11 @@ Npc* Npc::create(GameWorld *world, cocos2d::CCDictionary* dict)
 Npc::Npc(GameWorld *world, CCDictionary* dict)
 	: TmxObject(world, dict, OBJECT_NPC), m_movingCool(0)
 {
+	attach = CCSprite::create("texture/walk_men_1.png");
+	this->addChild(attach);
+
+	CCAction *action = create_ai_animation();
+	attach->runAction(action);
 }
 
 bool Npc::init()
@@ -26,6 +32,9 @@ bool Npc::init()
 	endPos = ccp(
 		startPos.x + m_width,
 		startPos.y + m_height);
+
+	m_sprite->setVisible(false);
+
 	return true;
 }
 
@@ -65,6 +74,12 @@ void Npc::update(float dt)
 		if (m_moveDirection == 3 && currPos.y < startPos.y) m_moveDirection = 1;
 		if (m_moveDirection == 4 && currPos.x > endPos.x) m_moveDirection = 2;
 	}
+
+
+	//속도를 이동방향으로 갖다쓰기
+	b2Vec2 dir = m_body->GetLinearVelocity();
+	float rad = atan2(dir.x, dir.y);
+	attach->setRotation(CC_RADIANS_TO_DEGREES(rad));
 }
 
 b2Body *Npc::createBody()
