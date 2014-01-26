@@ -23,6 +23,5 @@ private:
 
 	//애니메이션 2프레임. 야매코딩
 	cocos2d::CCSprite *ani_1;
-	cocos2d::CCSprite *ani_2;
 };
 

@@ -6,6 +6,7 @@
 #include "action_helper.h"
 #include "EndingLayer.h"
 #include "MenuLayer.h"
+#include "MouseDevice.h"
 
 #define POWERFUL_TIME (1.0f)
 
@@ -19,14 +20,10 @@ Player* Player::create(GameWorld *world, cocos2d::CCDictionary* dict)
 }
 
 Player::Player(GameWorld *world, CCDictionary* dict)
-	: TmxObject(world, dict, OBJECT_PLAYER), m_movingCool(0), hp(3), powerfulTime(0), gameOver(false), ani_1(nullptr), ani_2(nullptr)
+	: TmxObject(world, dict, OBJECT_PLAYER), m_movingCool(0), hp(3), powerfulTime(0), gameOver(false), ani_1(nullptr)
 {
 	ani_1 = CCSprite::create("texture/walk copy_1.png");
-	ani_2 = CCSprite::create("texture/walk copy_2.png");
 	this->addChild(ani_1);
-	this->addChild(ani_2);
-	ani_1->setVisible(true);
-	ani_2->setVisible(false);
 }
 
 void Player::update(float dt)
@@ -45,6 +42,15 @@ void Player::update(float dt)
 		//Move(dx, dy, m_movingCool);
 		if (hp > 0) {
 			setVelocity(dx, dy);
+		}
+
+		if(dx == 0 && dy == 0) {
+			ani_1->stopAllActions();
+		} else {
+			if(ani_1->numberOfRunningActions() == 0) {
+				CCAction *act = create_player_animation();
+				ani_1->runAction(act);
+			}
 		}
 	}
 
@@ -66,10 +72,20 @@ void Player::update(float dt)
 
 	m_sprite->setVisible(false);
 
-	//속도를 이동방향으로 갖다쓰기
-	b2Vec2 dir = m_body->GetLinearVelocity();
-	float rad = atan2(dir.x, dir.y);
-	ani_1->setRotation(CC_RADIANS_TO_DEGREES(rad));
+	//처다보는 방향돌리기
+	POINT p = MouseDevice::sharedDevice()->GetMousePos();
+	float angle = 0;
+	if(p.x < 0)
+	{
+		angle = atan(float(p.y)/p.x * -1) * 180 / M_PI;
+		angle += 270;
+	}
+	else
+	{
+		angle = atan(float(p.y)/p.x * -1) * 180 / M_PI;
+		angle += 90;
+	}
+	ani_1->setRotation(angle);
 }
 
 b2Body *Player::createBody()
