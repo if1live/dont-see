@@ -18,4 +18,11 @@ public:
 
 	Custom_action *customAction;
 	GameWorld *world;
+
+	cocos2d::CCSprite *heartSprite[3];
+	cocos2d::CCSprite *specialGuage[5];
+	cocos2d::CCSprite *specialBase;
+
+	int preHP;
+	int preSpecialCount;
 };
