@@ -341,12 +341,12 @@
     <property name="texture_name" value="texture\trash.png"/>
    </properties>
   </object>
-  <object name="trash11" type="animate" x="2922" y="512">
+  <object name="trash11" type="animate" x="2928" y="558">
    <properties>
     <property name="texture_name" value="texture\trash.png"/>
    </properties>
   </object>
-  <object name="fire10" type="animate" x="2950" y="494">
+  <object name="fire10" type="animate" x="3118" y="560">
    <properties>
     <property name="texture_name" value="texture\fire.png"/>
    </properties>
@@ -678,7 +678,7 @@
     <property name="texture_name" value="texture\npc.png"/>
    </properties>
   </object>
-  <object name="fire26" type="animate" x="2763" y="176">
+  <object name="fire26" type="animate" x="2887" y="218">
    <properties>
     <property name="texture_name" value="texture\fire.png"/>
    </properties>
@@ -686,11 +686,6 @@
   <object name="fire27" type="animate" x="1580" y="212">
    <properties>
     <property name="texture_name" value="texture\fire.png"/>
-   </properties>
-  </object>
-  <object name="trash32" type="animate" x="1748" y="248">
-   <properties>
-    <property name="texture_name" value="texture\trash.png"/>
    </properties>
   </object>
   <object name="npc38" type="npc" x="1044" y="312" width="668" height="36">
