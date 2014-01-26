@@ -17,5 +17,7 @@ private:
 	float m_movingCool;
 
 	cocos2d::CCPoint startPos, endPos;
+
+	cocos2d::CCSprite *attach;
 };
 
