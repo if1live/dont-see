@@ -6,7 +6,7 @@
 #include "action_helper.h"
 #include "EndingLayer.h"
 
-#define POWERFUL_TIME (3.0f)
+#define POWERFUL_TIME (1.0f)
 
 using namespace cocos2d;
 
