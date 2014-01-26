@@ -17,6 +17,13 @@ TextLayer::TextLayer()
 	customAction(nullptr),
 	world(nullptr)
 {
+	for(int i = 0; i < 3; i++)
+		heartSprite[i] = nullptr;
+
+	for(int i = 0; i < 5; i++)
+		specialGuage[i] = nullptr;
+
+	specialBase = nullptr;
 }
 
 bool TextLayer::init()
@@ -32,6 +39,7 @@ bool TextLayer::init()
 	label->setPosition(ccp(0, 768));
 	label->setAnchorPoint(ccp(0, 1));
 	this->addChild(label);
+	label->setVisible(false);
 
 	int count = 1;
 
@@ -39,6 +47,7 @@ bool TextLayer::init()
 	positionLabel->setPosition(ccp(0, 768 - count * LINE_HEIGHT));
 	positionLabel->setAnchorPoint(ccp(0, 1));
 	this->addChild(positionLabel);
+	positionLabel->setVisible(false);
 
 	count++;
 
@@ -46,21 +55,47 @@ bool TextLayer::init()
 	tileCoordLabel->setPosition(ccp(0, 768 - count * LINE_HEIGHT));
 	tileCoordLabel->setAnchorPoint(ccp(0, 1));
 	this->addChild(tileCoordLabel);
-
+	tileCoordLabel->setVisible(false);
 	count++;
 
 	hpLabel = CCLabelTTF::create("hp", FONT_NAME, FONT_SIZE);
 	hpLabel->setPosition(ccp(0, 768 - count * LINE_HEIGHT));
 	hpLabel->setAnchorPoint(ccp(0, 1));
 	this->addChild(hpLabel);
-
+	hpLabel->setVisible(false);
 	count++;
 
 	availCountLabel = CCLabelTTF::create("Avail Count", FONT_NAME, FONT_SIZE);
 	availCountLabel->setPosition(ccp(0, 768 - count * LINE_HEIGHT));
 	availCountLabel->setAnchorPoint(ccp(0, 1));
 	this->addChild(availCountLabel);
+	availCountLabel->setVisible(false);
 
+
+
+	for(int i = 0; i < 3; i++)
+	{
+		heartSprite[i] = CCSprite::create("texture/heart.png");
+
+		heartSprite[i]->setScale(0.1f);
+
+		heartSprite[i]->setPosition(ccp((i + 1) * 35, 600));
+		this->addChild(heartSprite[i]);
+	}
+
+	specialBase = CCSprite::create("texture/special_base.png");
+	specialBase->setPosition(ccp(specialBase->getContentSize().width, 570));
+	this->addChild(specialBase);
+
+	for(int i = 0; i < 5; i++)
+	{
+		specialGuage[i] = CCSprite::create("texture/special_guage.png");
+		specialGuage[i]->setPosition(ccp((i + 1) * specialGuage[i]->getContentSize().width, 570));
+		this->addChild(specialGuage[i]);
+	}
+
+	preHP = 0;
+	preSpecialCount = 0;
 	return true;
 }
 
@@ -85,4 +120,29 @@ void TextLayer::update(float dt)
 
 	sprintf(buffer, "Avail: %d / %.1f", customAction->GetSpecialCount(), customAction->GetSpecialGap());
 	availCountLabel->setString(buffer);
+
+	if(preHP != player->hp)
+	{
+		preHP = player->hp;
+		for(int i = 0; i < 3; i++)
+		{
+			if(i < preHP)
+				heartSprite[i]->setVisible(true);
+			else
+				heartSprite[i]->setVisible(false);
+		}
+	}
+
+	if(preSpecialCount != customAction->GetSpecialCount())
+	{
+		preSpecialCount = customAction->GetSpecialCount();
+		for(int i = 0; i < 5; i++)
+		{
+			if(i < preSpecialCount)
+				specialGuage[i]->setVisible(true);
+			else
+				specialGuage[i]->setVisible(false);
+		}
+	}
+
 }
