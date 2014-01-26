@@ -10,9 +10,9 @@ public:
 
 	MouseDevice() {
 #ifdef _DEBUG
-		m_hwnd = FindWindow(0, L"HelloCpp - 1024x768 - 1.00");
+		m_hwnd = FindWindow(0, L"Far Sight - 1024x768 - 1.00");
 #else
-		m_hwnd = FindWindow(0, L"HelloCpp");
+		m_hwnd = FindWindow(0, L"Far Sight");
 #endif
 	}
 
