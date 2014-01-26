@@ -3,6 +3,7 @@
 #include "game_world.h"
 #include "b2_helper.h"
 #include "SoundManager.h"
+#include "EndingLayer.h"
 
 using namespace cocos2d;
 
@@ -52,7 +53,8 @@ void Goal::clearGame()
 	if(clearCalled == false) {
 		clearCalled = true;
 		
-		SoundManager::sharedManager()->PlayEffect(EFFECT_SPECIAL_INC);
+		//SoundManager::sharedManager()->PlayEffect(EFFECT_ENDING);
+		CCDirector* pDirector = CCDirector::sharedDirector();
+		pDirector->replaceScene(CCTransitionFade::create(0.5, EndingLayer::scene()));
 	}
-	printf("clear game");
 }

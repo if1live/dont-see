@@ -19,4 +19,9 @@ public:
 private:
 	float m_logoShowingTime;
 	bool m_sceneChangeOccur;
+
+	cocos2d::CCSprite *sprite1;
+	cocos2d::CCSprite *sprite2;
+	cocos2d::CCSprite *sprite3;
+
 };
