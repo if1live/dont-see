@@ -189,13 +189,14 @@ void LevelLayer::updateSound(float dt)
 			CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 			CCPoint camPos(winSize.width/2, winSize.height/2);
 			switch (barkDiv) {
-			case 1: camPos.x += 150; camPos.y += 150; break;
-			case 2: camPos.x += 150; camPos.y -= 150; break;
-			case 3: camPos.x -= 150; camPos.y -= 150; break;
-			case 4: camPos.x -= 150; camPos.y += 150; break;
+			case 1: camPos.x += 150; camPos.y += 250; break;
+			case 2: camPos.x += 150; camPos.y -= 250; break;
+			case 3: camPos.x -= 150; camPos.y -= 250; break;
+			case 4: camPos.x -= 150; camPos.y += 250; break;
 			}
 
 			CCSprite *empty = CCSprite::create("texture/empty.png");
+			empty->setScale(0.4f);
 			soundLayer->addChild(empty);
 			empty->setPosition(camPos);
 			CCAction *sonarAction = create_arc_sonar(barkDiv);
