@@ -123,6 +123,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\custom_action.cpp" />
+    <ClCompile Include="..\Classes\EndingLayer.cpp" />
     <ClCompile Include="..\Classes\goal.cpp" />
     <ClCompile Include="..\Classes\SoundManager.cpp" />
     <ClCompile Include="..\Classes\action_helper.cpp" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\custom_action.h" />
+    <ClInclude Include="..\Classes\EndingLayer.h" />
     <ClInclude Include="..\goal.h" />
     <ClInclude Include="..\Classes\SoundManager.h" />
     <ClInclude Include="..\Classes\action_helper.h" />

@@ -2,10 +2,10 @@
 
 #include "GLES-Render.h"
 
-class MenuLayer : public cocos2d::CCLayer {
+class EndingLayer : public cocos2d::CCLayer {
 public:
-	MenuLayer();
-	virtual ~MenuLayer();
+	EndingLayer();
+	virtual ~EndingLayer();
 
 	virtual bool init();
 	static cocos2d::CCScene *scene();
@@ -14,7 +14,7 @@ public:
 	virtual void ccTouchesEnded(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
 
 	// implement the "static node()" method manually
-    CREATE_FUNC(MenuLayer);
+    CREATE_FUNC(EndingLayer);
 
 private:
 	float m_logoShowingTime;

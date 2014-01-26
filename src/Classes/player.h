@@ -19,5 +19,6 @@ private:
 
 	//얻어맞고난뒤 힘세고 강한 시간
 	float powerfulTime;
+	bool gameOver;
 };
 
