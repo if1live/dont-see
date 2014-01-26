@@ -102,10 +102,8 @@ void LevelLoader::registerNpc(cocos2d::CCTMXTiledMap *map)
 
 void LevelLoader::registerGoal(cocos2d::CCTMXTiledMap *map)
 {
-	CCDictionary* dict = nullptr;
+	std::vector<CCDictionary*> dicts;
 	CCTMXObjectGroup* group = map->objectGroupNamed("objects");
-
-	//Npc Ãß°¡
 	if (group != nullptr) {
 		CCArray* array = group->getObjects();
 		CCObject* object;
@@ -115,13 +113,20 @@ void LevelLoader::registerGoal(cocos2d::CCTMXTiledMap *map)
 
 			std::string typeValue = safeReadStringValue(dict, "type");
 			if (typeValue == "goal") {
-				Goal* goal = Goal::create(world, dict);
-				goal->init();
-				layer->addChild(goal);
-				world->addTmxObject(goal);
+				dicts.push_back(dict);
 			}
 		}
 	}
+
+	if (!dicts.empty())
+		return;
+
+	std::random_shuffle(dicts.begin(), dicts.end());
+
+	Goal* goal = Goal::create(world, dicts.front());
+	goal->init();
+	layer->addChild(goal);
+	world->addTmxObject(goal);
 }
 
 void LevelLoader::registerCollisionBox(cocos2d::CCTMXTiledMap *map)
