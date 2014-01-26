@@ -4,6 +4,7 @@
 #include "KeyboardDevice.h"
 #include <cmath>
 #include "custom_action.h"
+#include "SoundManager.h"
 
 const float lightEnabledTime = 5.0f;
 
@@ -30,6 +31,8 @@ void VisionMask::enableLight(bool light)
 		centerMasking->setVisible(false);
 		lightMasking->setVisible(true);
 		lightTime = lightEnabledTime;
+
+		SoundManager::sharedManager()->PlayEffect(EFFECT_STICK);
 	} else {
 		centerMasking->setVisible(true);
 		lightMasking->setVisible(false);

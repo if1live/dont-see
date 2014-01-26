@@ -152,7 +152,7 @@
   <ItemGroup>
     <ClInclude Include="..\Classes\custom_action.h" />
     <ClInclude Include="..\Classes\EndingLayer.h" />
-    <ClInclude Include="..\goal.h" />
+    <ClInclude Include="..\Classes\goal.h" />
     <ClInclude Include="..\Classes\SoundManager.h" />
     <ClInclude Include="..\Classes\action_helper.h" />
     <ClInclude Include="..\Classes\b2_helper.h" />
