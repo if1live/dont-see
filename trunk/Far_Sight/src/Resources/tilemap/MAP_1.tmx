@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="186" height="87" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" source="desert.tsx"/>
+ <tileset firstgid="49" name="metro" tilewidth="32" tileheight="32">
+  <image source="metro.png" width="320" height="480"/>
+ </tileset>
+ <tileset firstgid="199" name="building_7" tilewidth="32" tileheight="32">
+  <image source="building_7.png" width="1105" height="2383"/>
+ </tileset>
+ <tileset firstgid="2715" name="apart_1" tilewidth="32" tileheight="32">
+  <image source="apart_1.png" width="452" height="575"/>
+ </tileset>
+ <tileset firstgid="2953" name="apart_2" tilewidth="32" tileheight="32">
+  <image source="apart_2.png" width="452" height="575"/>
+ </tileset>
+ <tileset firstgid="3191" name="apart_3" tilewidth="32" tileheight="32">
+  <image source="apart_3.png" width="452" height="575"/>
+ </tileset>
+ <tileset firstgid="3429" name="building_1" tilewidth="32" tileheight="32">
+  <image source="building_1.png" width="993" height="493"/>
+ </tileset>
+ <tileset firstgid="3894" name="building_2" tilewidth="32" tileheight="32">
+  <image source="building_2.png" width="659" height="488"/>
+ </tileset>
+ <tileset firstgid="4194" name="building_3" tilewidth="32" tileheight="32">
+  <image source="building_3.png" width="1153" height="480"/>
+ </tileset>
+ <tileset firstgid="4734" name="building_4" tilewidth="32" tileheight="32">
+  <image source="building_4.png" width="414" height="547"/>
+ </tileset>
+ <tileset firstgid="4938" name="building_5" tilewidth="32" tileheight="32">
+  <image source="building_5.png" width="1281" height="640"/>
+ </tileset>
+ <tileset firstgid="5738" name="building_6" tilewidth="32" tileheight="32">
+  <image source="building_6.png" width="994" height="653"/>
+ </tileset>
+ <tileset firstgid="6358" name="building_8" tilewidth="32" tileheight="32">
+  <image source="building_8.png" width="597" height="881"/>
+ </tileset>
+ <tileset firstgid="6844" name="goal" tilewidth="32" tileheight="32">
+  <image source="goal.png" width="452" height="438"/>
+ </tileset>
+ <tileset firstgid="7026" name="wall" tilewidth="32" tileheight="32">
+  <image source="wall.png" width="1760" height="964"/>
+ </tileset>
+ <layer name="Ground" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMBKHL8v1DrsdQcNVUVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVfX5A1J6ZaU=
+  </data>
+ </layer>
+ <layer name="Road Obj" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJztnUuPHDUURv2XSIANiSKBBJnZQEiDxAaQZtMgjRCQTRa8BBrekCx4Jdtkm2yTf8e1aKtqzLXLdtm+113fJx319HSP29196pa72uU5McacAABUcI+4r6AfALTkAfFQQT9SeJO41YmdguerDa4mvkq8NsD1R8RjBf1IuX5OvNiJzzLe/60wUk30eUI8VdCPFHp7rmkb13Ddr4kj8Yx4TnxBfEl8RXxt/hsjvK2MC4N6LslINTHE98QPxI/ET8RZ4P3Xgt0Odw3bh+f/x9XE+e+ka5/lrUxuHf7utulbO0uwY5j3G7bvPPf3cycLvw/dFrv/yEh70Iqexzxi2O0wxfPc+J77+7mThd+Hbovdf2SkfWyFHc9oSwvPvzHy27J2dszrfSxsxXOwjN3nSW9rLccL2lLb85tgEec5Mmac58jlzGsHPB8/8JwPPD+uwHM+8Py4As/5hDz/lLnvtQVqZelxYuyJ0xn+54/Tiv3UGO4zl+Qxxp2p60Zpjt3zue/uZ22JHReo2ZYE1iV4zmdrnnN9LO3r3LGXOwPP8wLP63reo26HvB/Rczuf182xsvN6e3hu56PcZtgZeM7Fd6/UW25e8867nRuL+489ouf2O3O3rbr+t/bcPuZLDHvm8eE5X8tL5q7Z742519e1z932noHnOQl5ftPA86VwtdzOAV4zFoTn8LxGWntujyvezSA0Jkz1fPTx+ZmZXBvZc6208jwX7r3N9dxvSzpb8LzH8YZepB7TW+O5rf+hmg7P66VFPV9TUzXBOdziOHhoTA/P6wWe53lee38Bz/V7bve5peddu+O/1ict62LsTNxz28/vCrkw+Z7HgOd5SfW8ds7N5LmW8+tsn2Ke2/fhBeJKJlfNNA6H55cDz/snxfNXTNm57tb1MwPP/cDz/mnp+XUzjfN2pp7nc+B5OPB8SqnnPxO/EL8SvxG/M/exuDHMude29Z+bVxSbY2T/hvsMAM/5wPMppZ7/QfxJ/EX8TfzD3Gde133PU7DrLKXWeunA8ynH5Hnu+GXueSrwfF3g+ZTens/bXzpmGZrTCM/TAs+nSHoem+eSi3RG8Hw+JoTn8Lwko3jOnWdRO/AcntvA8/6JeW7Hz3aMDM+XE/L8E+a+8Lx/Yp7XqOVb9zz0GRue9w08r5OQ59y5x/NjHvC8T+B5ndT0vAXwHJ7XSKnndi7Dtx24MLzn3FyKtbjHOm3Ufmmf4Pn6lHrek56P6TzXSk/PU9cfja0PoN1zf85OiGP0PHTbjcPlVjxPJWV7kE5uPfed6LENaPHcAc/zkU7I89C5ijm+jErsedmavtbTNfhrALXyvPYapNIJec6NsfamX13tzY0DvbalGttJK88539ciHf+5xTzPPZc+p/5L4zw/Pbwu0p83NXheE+nk1PNc1qwxIYFbQ8JmzXoRPY85rnXcseY4qr9mwEieX9kY1w/P23m+L35F+8Wv5ZJZ2hak07KejwQ8X5el/YV0Yp6XrknFfW9Qs615m2v+Bxo8r5eRPS8Ntz+o2dbaNvdMW/B8XeA5PG8VeJ6euePwHJ6XZiTP3c/wHJ7nBp7D81aB5+mB5/C8RuA5PG8VeJ4eeA7PawSew/NWgefpgefwvEbgOTxvFXieHngOz2tkJM/xfSg8L80onmN+y3iea3IJnsPzVtHkEjyH562iySV4Ds9bRZNLI3teuoYi9/+ZarY1b7P0/OElz7Wsrxg673jJK21IJ+T56xvjDXPZc+n1K2LYNSg4l94h3hW4HMVzbv0W6ZolgVub1hh5l0s8/4D4UOByJM/ndd3Vta1iFPShxPOPiI8FLuH5mBgFfSjx/HPijsDlyJ63XINsBFqlRt9CnmtGOqjn4wHP8wPPxwOe5weejwc8z0/I85I14kAf3Dq594j7Rt7hkT2Xfl3AMg+Ihwr6kYJ04Pm4PCIeK+hHCtKB5+PyhHiqoB8pSAeej8sz4rmCfqQgHXgOeiCdkOf/AnCaN2Y=
+  </data>
+ </layer>
+ <layer name="Roof Obj" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt0rOSHgAAReE/2I1dxHaWsa0itu0itu0itu0itu0itu0i5sk7ZP4Ue76Z8wB35gYCkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiTFLHlDAoF8FEbhFEGRFEXRlJ8KUEEqRIWpCBWlYlScSlBJKkWlqQyVpXJUnipQRapElakKVQ3538sVk1Tjb9WpBtWkWlSb6lBdqkf1qQE1pEbUmJpQU2pGzakFtaRW1JraUFtqR+2pA3WkTtSZuvhzBVFX/taNulMP6km9qDf1ob7Uj/rTABpIg2gwDaGhNIyG0wgaSaNoNI2hsTSOxtMEmkiTaLI/VxBN4W9TaRpNpxk0k2bRbJpDc2kezacFtJAW0WJaQktpGS2nFbSSVtFqWkNraR2tpw20kTb5cwXRZv62hbbSNtpOO2gn7aLdtIf20j7aTwfoIB2iw3SEjtIxOk4n6CSdotN0hs7SOTpPF+iiP1cQXeJvl+kKXaVrdJ1u0E26RbfpDt2le3SfHtBDekSP6Qk9pWf0nF7QS3pFr+kNvaV39J4++HMF0Uf+9ok+0xf6St/oO/2gn/SLfv/9ZWggEItiUxyKSyEUSvEoPiWghJSIElMSSkrJKDmloJSUKvR/L1dMkpq/paG0lI7SUwbKSJkoM2WhrJSNslMOykm5KDflobyUj8IonCIokqIomvJTASpIhaiwP5ckSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIk6Z/6A56ie5Q=
+  </data>
+ </layer>
+ <objectgroup name="collisions" width="186" height="87">
+  <object x="0" y="399" width="1759" height="93"/>
+  <object x="4" y="492" width="139" height="804"/>
+  <object x="434" y="495" width="541" height="864"/>
+  <object x="1328" y="940" width="627" height="450"/>
+  <object x="1776" y="308" width="1120" height="444"/>
+  <object x="2912" y="401" width="222" height="80"/>
+  <object x="3152" y="300" width="356" height="456"/>
+  <object x="3584" y="394" width="1236" height="88"/>
+  <object x="4744" y="400" width="968" height="447"/>
+  <object x="4144" y="689" width="123" height="237"/>
+  <object x="4376" y="689" width="117" height="237"/>
+  <object x="4145" y="929" width="350" height="78"/>
+  <object x="4755" y="883" width="953" height="443"/>
+  <object x="4755" y="1363" width="955" height="123"/>
+  <object x="4771" y="1484" width="924" height="19"/>
+  <object x="4769" y="1664" width="924" height="16"/>
+  <object x="4755" y="1680" width="956" height="127"/>
+  <object x="4753" y="1840" width="956" height="447"/>
+  <object x="4755" y="2321" width="955" height="459"/>
+  <object x="3507" y="1715" width="956" height="571"/>
+  <object x="2100" y="1681" width="1241" height="604"/>
+  <object x="1333" y="1748" width="439" height="571"/>
+  <object x="661" y="1748" width="440" height="569"/>
+  <object x="52" y="1747" width="440" height="569"/>
+  <object x="0" y="1664" width="1951" height="16"/>
+  <object x="0" y="2351" width="1951" height="15"/>
+  <object x="1937" y="1681" width="15" height="668"/>
+  <object x="2128" y="945" width="958" height="444"/>
+  <object x="0" y="2376" width="1972" height="7"/>
+  <object x="1" y="2606" width="3313" height="7"/>
+  <object x="1967" y="1647" width="9" height="731"/>
+  <object x="0" y="1548" width="179" height="10"/>
+  <object x="173" y="1560" width="9" height="57"/>
+  <object x="185" y="1611" width="378" height="10"/>
+  <object x="558" y="1623" width="7" height="29"/>
+  <object x="569" y="1646" width="1398" height="7"/>
+  <object x="1" y="237" width="1556" height="6"/>
+  <object x="0" y="365" width="1746" height="7"/>
+  <object x="1550" y="174" width="7" height="62"/>
+  <object x="1558" y="174" width="1182" height="6"/>
+  <object x="1741" y="269" width="7" height="94"/>
+  <object x="1750" y="268" width="1085" height="7"/>
+  <object x="2734" y="78" width="6" height="94"/>
+  <object x="2742" y="78" width="862" height="6"/>
+  <object x="2828" y="206" width="8" height="59"/>
+  <object x="2838" y="205" width="31" height="7"/>
+  <object x="2862" y="213" width="6" height="74"/>
+  <object x="3596" y="86" width="7" height="222"/>
+  <object x="3602" y="302" width="2337" height="8"/>
+  <object x="5934" y="312" width="6" height="2472"/>
+  <object x="3694" y="490" width="7" height="41"/>
+  <object x="3704" y="525" width="987" height="10"/>
+  <object x="4685" y="535" width="7" height="508"/>
+  <object x="4523" y="655" width="9" height="388"/>
+  <object x="4532" y="1037" width="154" height="8"/>
+  <object x="4399" y="653" width="127" height="7"/>
+  <object x="4397" y="659" width="9" height="13"/>
+  <object x="4237" y="653" width="8" height="20"/>
+  <object x="4111" y="654" width="124" height="7"/>
+  <object x="4111" y="663" width="8" height="28"/>
+  <object x="3695" y="686" width="415" height="7"/>
+  <object x="3694" y="695" width="8" height="61"/>
+  <object x="3703" y="749" width="381" height="10"/>
+  <object x="4078" y="759" width="9" height="59"/>
+  <object x="4087" y="811" width="29" height="9"/>
+  <object x="4107" y="821" width="9" height="223"/>
+  <object x="4119" y="1037" width="284" height="9"/>
+  <object x="4397" y="1048" width="8" height="91"/>
+  <object x="4142" y="1133" width="253" height="7"/>
+  <object x="4142" y="1141" width="7" height="319"/>
+  <object x="4151" y="1452" width="316" height="7"/>
+  <object x="4462" y="1463" width="7" height="30"/>
+  <object x="4471" y="1485" width="267" height="9"/>
+  <object x="4470" y="1673" width="266" height="10"/>
+  <object x="4461" y="1648" width="9" height="34"/>
+  <object x="3981" y="1643" width="485" height="10"/>
+  <object x="3981" y="1008" width="10" height="633"/>
+  <object x="3918" y="1002" width="72" height="11"/>
+  <object x="3917" y="944" width="9" height="62"/>
+  <object x="3887" y="939" width="37" height="10"/>
+  <object x="3885" y="911" width="9" height="28"/>
+  <object x="3406" y="908" width="486" height="8"/>
+  <object x="3406" y="915" width="9" height="352"/>
+  <object x="3374" y="1262" width="41" height="7"/>
+  <object x="3373" y="1268" width="6" height="384"/>
+  <object x="2061" y="1418" width="1097" height="10"/>
+  <object x="2063" y="907" width="1094" height="11"/>
+  <object x="3148" y="919" width="11" height="499"/>
+  <object x="2063" y="919" width="9" height="499"/>
+  <object x="2063" y="1646" width="1312" height="5"/>
+  <object x="2062" y="1646" width="8" height="677"/>
+  <object x="2070" y="2314" width="1247" height="11"/>
+  <object x="3311" y="2324" width="7" height="281"/>
+  <object x="1" y="1324" width="183" height="11"/>
+  <object x="175" y="655" width="9" height="667"/>
+  <object x="187" y="655" width="87" height="7"/>
+  <object x="268" y="663" width="8" height="763"/>
+  <object x="277" y="1420" width="830" height="8"/>
+  <object x="1103" y="656" width="9" height="766"/>
+  <object x="1109" y="651" width="189" height="9"/>
+  <object x="1292" y="659" width="10" height="767"/>
+  <object x="1304" y="1417" width="667" height="10"/>
+  <object x="1965" y="911" width="10" height="506"/>
+  <object x="1486" y="904" width="486" height="12"/>
+  <object x="1483" y="511" width="12" height="392"/>
+  <object x="3260" y="532"/>
+  <object x="3" y="229" width="21" height="84"/>
+  <object x="4" y="1327" width="16" height="143"/>
+  <object x="1" y="2363" width="7" height="193"/>
+  <object x="5744" y="2763" width="184" height="15"/>
+ </objectgroup>
+ <objectgroup name="objects" width="186" height="87">
+  <object name="player1" type="player" x="29" y="1429" width="31" height="31">
+   <properties>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture/player.png"/>
+   </properties>
+  </object>
+  <object name="tresh1" type="animate" x="263" y="1448">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc1" type="npc" x="211" y="1449" width="437" height="21">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="150"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="tresh2" type="animate" x="195" y="1175">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash3" type="animate" x="255" y="968">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc2" type="npc" x="200" y="865" width="25" height="494">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire1" type="animate" x="199" y="1537">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc3" type="npc" x="706" y="1451" width="24" height="177">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc4" type="npc" x="737" y="1452" width="23" height="177">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire2" type="animate" x="794" y="1444">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash4" type="animate" x="954" y="1441">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc5" type="npc" x="846" y="1608" width="314" height="19">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="130"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc6" type="npc" x="1093" y="1448" width="217" height="23">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="150"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire3" type="animate" x="1129" y="1391">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire4" type="animate" x="1159" y="749">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash5" type="animate" x="1247" y="748">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash6" type="animate" x="1186" y="672">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="fire5" type="animate" x="1222" y="673">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc7" type="npc" x="1129" y="695" width="23" height="179">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="105"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire6" type="animate" x="1958" y="1445">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire7" type="animate" x="1955" y="1628">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash7" type="animate" x="1991" y="1659">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash8" type="animate" x="1747" y="541">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash9" type="animate" x="1745" y="565">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc8" type="npc" x="1515" y="599" width="235" height="24">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="120"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc9" type="npc" x="1535" y="1455" width="256" height="28">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc10" type="npc" x="1535" y="1495" width="255" height="27">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc11" type="npc" x="1897" y="1445" width="232" height="24">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="120"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc12" type="npc" x="1987" y="1579" width="28" height="268">
+   <properties>
+    <property name="dir" value="1"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire8" type="animate" x="1966" y="886">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire9" type="animate" x="2070" y="882">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash10" type="animate" x="2918" y="752">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash11" type="animate" x="2922" y="512">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="fire10" type="animate" x="2950" y="494">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash12" type="animate" x="3473" y="782">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="fire11" type="animate" x="3178" y="1416">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash13" type="animate" x="3202" y="1418">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc13" type="npc" x="3304" y="1260" width="38" height="342">
+   <properties>
+    <property name="dir" value="1"/>
+    <property name="speed" value="115"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc14" type="npc" x="3196" y="1242" width="40" height="234">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="110"/>
+    <property name="textrue_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="trash14" type="animate" x="5768" y="1471">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash17" type="animate" x="5764" y="1741">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc15" type="npc" x="5762" y="1384" width="28" height="358">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="125"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc16" type="npc" x="5748" y="388" width="160" height="30">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire12" type="animate" x="5720" y="376">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc17" type="npc" x="5750" y="1970" width="152" height="28">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc18" type="npc" x="2092" y="792" width="612" height="32">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc19" type="npc" x="2264" y="852" width="608" height="32">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="125"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire13" type="animate" x="2776" y="872">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire14" type="animate" x="3400" y="880">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc20" type="npc" x="3548" y="516" width="44" height="344">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="trash18" type="animate" x="3696" y="640">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash19" type="animate" x="4232" y="616">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc21" type="npc" x="4281" y="581" width="360" height="44">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="trash20" type="animate" x="4596" y="1000">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash21" type="animate" x="4632" y="1000">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc22" type="npc" x="1864" y="2428" width="424" height="36">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="115"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire15" type="animate" x="2072" y="2352">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire16" type="animate" x="2820" y="2352">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire17" type="animate" x="3280" y="2352">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire18" type="animate" x="52" y="2420">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash22" type="animate" x="36" y="2468">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash23" type="animate" x="32" y="2516">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc23" type="npc" x="12" y="2515" width="648" height="55">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc24" type="npc" x="794" y="2415" width="39" height="161">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc25" type="npc" x="1126" y="1044" width="152" height="26">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire19" type="animate" x="1196" y="994">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc26" type="npc" x="1136" y="978" width="136" height="22">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="trash24" type="animate" x="1514" y="1456">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash25" type="animate" x="1516" y="1616">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="fire20" type="animate" x="1516" y="1584">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc26" type="animate" x="816" y="1516" width="688" height="30">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="130"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="fire21" type="animate" x="1384" y="2490">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc27" type="animate" x="2526" y="2522" width="606" height="24">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="120"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="trash26" type="animate" x="3284" y="2542">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash27" type="animate" x="3274" y="2512">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc28" type="npc" x="2388" y="2350" width="28" height="224">
+   <properties>
+    <property name="dir" value="3"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire22" type="animate" x="2034" y="2080">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc29" type="npc" x="2076" y="1564" width="478" height="26">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="115"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc30" type="npc" x="2978" y="538" width="32" height="332">
+   <properties>
+    <property name="dir" value="1"/>
+    <property name="speed" value="115"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="trash28" type="animate" x="3148" y="780">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc31" type="npc" x="3122" y="776" width="366" height="28">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc32" type="npc" x="2924" y="1460" width="26" height="158">
+   <properties>
+    <property name="dir" value="1"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire23" type="animate" x="2872" y="1448">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash29" type="animate" x="2870" y="1618">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="trash30" type="animate" x="4732" y="1510">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="fire24" type="animate" x="4730" y="1646">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc33" type="npc" x="4024" y="1506" width="390" height="36">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="115"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc34" type="npc" x="4496" y="1588" width="522" height="34">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc35" type="npc" x="4020" y="1066" width="346" height="38">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire25" type="animate" x="3982" y="980">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc36" type="npc" x="3958" y="774" width="30" height="206">
+   <properties>
+    <property name="dir" value="1"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="trash31" type="animate" x="3694" y="780">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="fire25" type="animate" x="3908" y="918">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc37" type="npc" x="2974" y="198" width="585" height="52">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire26" type="animate" x="2779" y="158">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="fire27" type="animate" x="1580" y="212">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="trash32" type="animate" x="1748" y="248">
+   <properties>
+    <property name="texture_name" value="texture\trash.png"/>
+   </properties>
+  </object>
+  <object name="npc38" type="npc" x="1044" y="312" width="668" height="36">
+   <properties>
+    <property name="dir" value="4"/>
+    <property name="speed" value="115"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc39" type="npc" x="436" y="260" width="856" height="32">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="120"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="fire28" type="animate" x="544" y="268">
+   <properties>
+    <property name="texture_name" value="texture\fire.png"/>
+   </properties>
+  </object>
+  <object name="npc40" type="npc" x="2312" y="1467" width="488" height="27">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="npc41" type="npc" x="3342" y="818" width="36" height="403">
+   <properties>
+    <property name="dir" value="2"/>
+    <property name="speed" value="110"/>
+    <property name="texture_name" value="texture\npc.png"/>
+   </properties>
+  </object>
+  <object name="player2" type="player" x="116" y="2442">
+   <properties>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="player3" type="player" x="3192" y="2414">
+   <properties>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="player4" type="player" x="5842" y="2414">
+   <properties>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="player5" type="player" x="312" y="313">
+   <properties>
+    <property name="speed" value="100"/>
+    <property name="texture_name" value="texture\player.png"/>
+   </properties>
+  </object>
+  <object name="goal1" type="goal" x="221" y="703"/>
+  <object name="goal2" type="goal" x="4318" y="876"/>
+ </objectgroup>
+ <layer name="apart_1" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt0tOyXgkABeE/Ts6Jbdu2ZmLbtm1zJnmH2LZt27Zts/MIuTrZlf6q+n5drFBIkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkqQ/25SwUGgqTaPpNINm0iyaTXNoLs2j+bSAFoZF9Grp9yzis4tpCS2lZbScVtBKWkWraQ2tpXW03p8rYDbw2Y20iTbTFtpK22g77aCdtIt20x7a688VMPv47H46QAfpEB2mI3SUjtFxOkEn6RSd9ucKmDN89iydo/N0gS7SJbpMV+gqXaPrdINu+nMFzC0+e5vu0F26R/fpAT2kR/SYntBTekbP/bkC5gWffUmv6DW9obf0jt7TB/pIn+gzfaGv/lwB843Pfqcfv74bHgpFosgUhaJSNIpOMSgmxaKw8IheLf2ecD4bm+JQXIpH8SkBJaRElJiSUFJKRsn9uQImBZ9NSakoNaWhtJSO0lMGykiZKDNloaz+XAGTjc9mpxyUk3JRbspDeSkf5acCVJAKUWF/roApwmeLUjEqTiWoJJWi0lSGylI5Kk//0L/+XAFTgc9WpEpUmapQVapG1akG1aRaVJvqUF1/roCpx2frUwNqSI2oMTWhptSMmlMLakmtqLU/V8C04bNtqR21pw7UkTpRZ+pCXakbdace1NOfK2B68dne1If6Uj/qTwNoIA2iwTSEhtIwGu7PFTAj+OxIGkWjaQyNpXE0nibQRPqP/qdJNNmfS5IkSZIkSZIkSZIkSZIkSdJf5SfmI38b
+  </data>
+ </layer>
+ <layer name="apart_2" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt0tOyXgkABeE/xjmxbdu2bds23iG2ORNnJrZt27Ztdh4hVye70l9V36+LFQpJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkvT3GBYWCg2nETSSRtFoGkNjaRyNpwk0kSbR5LCIXi39nil8dipNo+k0g2bSLJpNc2gu/UP/0jya788VMAv47EJaRItpCS2l/+h/WkbLaQWtpFW02p8rYNbw2bW0jtbTBtpIm2gzbaGttI220w7a6c8VMLv47G7aQ3tpH+2nA3SQDtFhOkJH6Rgd9+cKmBN89iSdotN0hs7SOTpPF+giXaLLdIWu+nMFzDU+e51u0E26RbfpDt2le3SfHtBDekSP/bkC5gmffUrP6Dm9oJf0il7TG3pL7+g9faCP/lwB84nPfqYv9JW+0Xf68evL4aFQJIpMUSgqRaPo4RG9Wvo9MfhsTIpFsSmMwikOxaV4FJ8SUEJKRIn9uQImCZ9NSskoOaWglJSKUlMaSkvpKD1loIz+XAGTic9mpiyUlbJRdspBOSkX5aY8lJfyUX5/roApwGcLUiEqTEWoKBWj4lSCSlIpKk1lqKw/V8CU47PlqQJVpEpUmapQVapG1akG1aRaVNufK2Dq8Nm6VI/qUwNqSI2oMTWhptSMmlMLaunPFTCt+GxrakNtqR21pw7UkTpRZ+pCXakbdffnCpgefLYn9aLe1If6Uj/qTwNoIA2iwTSEhvpzSZIkSZIkSZIkSZIkSZIkSfrj/QSAiYE7
+  </data>
+ </layer>
+ <layer name="apart_3" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt0lOvngkAReGv1jm1bdu2bbv9D7VtmzN1Z2rbtm3b5upPOGmT5k3Wk6z7fbFDIUmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmS9Du6hIVCXakbdace1JN6UW/qQ32pH/WnATQw7G+vliJmEJ8dTENoKA2j4TSCRtIoGk1jaCyNo/H+XAEzgc9OpEk0mabQVJpG02kGzaRZNJvm0Fx/roD5h8/+S/NoPi2ghbSIFtMSWkr/0f+0jJb7cwXMCj67klbRalpDa2kdracNtJE20WbaQlv9uQJmG5/dTjtoJ+2i3bSH9tI+2k8H6CAdosP+XAFzhM8epWN0nE7QSTpFp+kMnaVzdJ4u0EV/roC5xGcv0xW6StfoOt2gm3SLbtMdukv36L4/V8A84LMP6RE9pif0lJ7Rc3pBL+kVvaY39NafK2De8dn39IE+0if6TF/oK32j7/Tj17fDQ6FIFDn8b6+WIiYKn41K0Sg6xaCYFItiUxwKo3CKS/Eovj9XwCTgswkpESWmJJSUklFySkEpKRWlpjSU1p8rYNLx2fSUgTJSJspMWSgrZaPslINyUi7K7c8VMHn4bF7KR/mpABWkQlSYilBRKkbFqQSV9OcKmFJ8tjSVobJUjspTBapIlagyVaGqVI2q+3MFTA0+W5NqUW2qQ3WpHtWnBtSQGlFjakJN/bkCphmfbU4tqCW1otbUhtpSO2pPHagjdaLO/lySJEmSJEmSJEmSJEmSJEmS/qifyTWDWw==
+  </data>
+ </layer>
+ <layer name="wall" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt19dzFmUcR/HnSkH/AIW8STaKipiA2BAUEhBFRZEiKioKJIAVGySABTtFBAsqJGDFCgnFLkqzNyABC1iABOwNEfTSM4MXMVe8ODsbl3NmPvfP/OY7O7MhmJmZmZmZmZmZmZmZmZmZ2f+5TTkhbEY9GnKSfo1ZPB2QCeFAtEJr5CCDXOQhHxEKcBAORhscgkNxGNricLTDEShEEdqjA45ERxyFo3EMjsVx6ITj0RldcAJORFd0QzFK0B09cBJ64mScgl44FafhdPTGGTgzk/Rl/13T+zW+257kzXe/PpldzkJf9EN/DMDZGIhzcC7OwyCcjwtwIQbjIlyMIRiKYShFGYZjBEbiElyKy3A5rsCVGIWrcDWuwbW4DqMxBuWowFiMw3hcjxtwI27CBNyMW3ArbsPtzezmTe/X+G7ZNtibZ9UdmV3uxERMwmRMwV2YirsxDdNxD+7FfbgfM/AAHsRDmIlZqEQVZmMOHsYjeBSP4XE8gbl4Ek/haTyDZ/Ec5mE+qlGDBViIRViM5/ECXsRLeBmv4FW8hiXN7OZN79f4btk2w5tn3eu87Q0sxTIsxwqsxJt4C2/jHbyL9/A+PsCH+AgfYxVWYw1qUYe1WIdP8Ck+w+dYjw34Al/iK3yNjdiEzahHA7ZgK77Bt/gO3+MH/Iif8DN+wa/4DdvwezO7edP7Nb7bnuTNs2s7b/sDO7CzGb/T7L/ULpf/GBSiKDfp15jF01C2PQylKHPnltJmsu1ZqESVO7eUtpptr0Et6ty5pbR98kLYFy3QMi/p15jFU1e23Q3FKHHnltJGs+0xKEeFO7eUNo9tz0c1aty5pbR6tt2ALdjqzi2ltcoPoTVykMlP+jVm8dSXbfdDfwxw55bSJrLtSZiMKe7cUtpStr0My7HCnVtK28G2d+JP/OXOLaUVRiEUoT06RMm+xSyuSqMQyjAcI6Jk32IWV5VRCFWYjTlRsm8xi6vaKIQ6rMW6KNm3mMVVi4IQWmI/7F+Q9GvM4qmYbZegO3q4c0tp5Wy7AmMxzp1bSiv/Z+Pu3NKc33PbG6pm2zVYgIXu3MzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzCyx/gb4HUG9
+  </data>
+ </layer>
+ <layer name="building_1" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt0gOTngcAReEv5u7Gtu3USW23Qe3Ytm3btm3btu1kY/f0T7w7nT1n5vkBd+aGQmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZv+PKoSFQhVRCZVRBVVRDdVRAzVRC7VRB3VRD/XRAA3RCI3RBE3RDM3RAi3RCq3RBm3RLiyql1t0qj1/64CO6ITO6IKu6Ibu6IGe6IXe6IO+6If+GICBGITBGIKhGIbhGIGRGIXRGIOx/twCbBx/G48JmIhJmIwpmIppmI4ZmIlZmI05mIt5mI8FWIhFWIwlWIplWI4VWIlVWI01/twCbC1/W4f12ICN2ITN2IKt2Ibt2IGd2IXd2IO92If9OICDOITDOIKjOIbjOIGTOIXT/twC7Ax/O4tzOI8LuIhLuIwruIpruI4buIlbuI07iMRd3MN9PMBDPMJjPMFTPMNzvMBLf25BFh4KxUBMxEJsxEFcxEN8JEBCJEJihCEcEUiCpEiG5EiBlEiF1EiDtEiH9MiAjMgUHtXDLTqVmb9lQVZkQ3bkQE7kQm7kQV7kQ34UQEEUQmEUQVEUQ3GUQEm8glfxGl7HG3gTb6GUP7cAK83f3sY7eBfv4X18gA/xET7GJ/gUn+FzfIEv8RW+xjf4Ft/he5RBWZRDefyAH/ETfsYv/twC7Ff+9ht+xx/4E3/hb/yDCqiISqiMKqiKaqiOGqiJWqiNOqiLeqiPBmiIRmiMJmiKZv7cAqw5f2uBlmiF1miDtmiH9uiAjuiEzuiCruiG7uiBnuiF3uiDvuiH/hiAgRiEwRiCof7cAmwYfxuOERiJURiNMRiLcRiPCZiISZiMKZiKaZiOGZiJWZiNOZiLeZiPBViIRViMJf7cAmwpf1uG5ViBlViF1ViDtViH9diAjdiEzdiCrdiG7diBndiF3diDvdiH/TiAgziEw/7cAuwIfzuKYziOEziJUziNMziLcziPC7iIS7iMK7iKa7iOG7iJW7iNO4jEXdzDfTzAQ39uAfaIvz3GEzzFMzzHC7z874sRoVAMxEQsxEYcxEU8xEcCJEQiJEYYwhGBJEiKZEiOFEiJVBFRvdyiU6n5WxqkRTqkRwZkRCZkRhZkRTZkRw7kRC7kRh7kRT7kRwEURCEURhEURTEURwmU9OdmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZoH0LyVDCfY=
+  </data>
+ </layer>
+ <layer name="building_2" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt0ue31wMAx/FfoZC6N6FBUUI2yd232917Nu5eVkY7UaGU0qKh7KJQVikUhZYiu8ySaFBCA2Ur3p7fZx7c7zm93+e8/oDPOZ9QyMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM7P8XERYKRSIK0YhBLOIQj65IQDckIgnJSEEq0pCODGSG1fcas7rL4pvZyEEu8pCPAhSiCN3RAz3RC8UoQSnKUI4KVPpzC2hVfLMaNajFFbgSV+FqXIPeuBbX4XrcgD7oi37ojwEY6M8toA3im4NxI4bgJtyMoRiG4bgFt+I2jMBI3I5RGI07MAZj/bkFtDv55jiMxwRMxCTchbsxGVMwFdNwD6ZjBu7FfbgfD+BBf24B7SG++TBmYhYewaOYjTl4DI/jCczFPDyJp/A0nsGzmI8F/twC2nN8cyEW4Xm8gBexGEvwEl7GUizDK3gVr2E5VmAlVmG1P7eA9jrfXIO1eANvYh3ewtt4B+/iPbyPD7AeG/AhPsLH+ASf+nMLaJ/xzY3YhM+xGV9gC77EV9iKbdiOHfga32AnduFb7MZ3/twC2vd88wfswV7sw378iJ/wMw7gIH7Br/gNv+MP/Im/8DcO+XMLaIf55j///TM8FGqAhjgKR+MYNEJjHIvjcDya4AQ0RTOEIRzNw+t7jVndncg3W+AknIxT0BKt0BptcCpOQ1u0w+k4A+3RAWeiI87y5xbQzuab56ATzsV5OB8X4EJchItxCS5FZ1yGLrgcEYhEFKL9uQW0GL4ZizjEoysS0A2JSEIyUpCKNKQjA5nIQjZykOvPLaDl8c18FKAQReiOHuiJXihGCUpRhnJUoBJVqEYNav25mZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmdkR2b/1bJ5x
+  </data>
+ </layer>
+ <layer name="building_3" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt0nf3DwQAxeFf0VZGKmlJQ1RE0VCURKXSoCFk7713WiottDSRdqmokJQohRbRQIn2oIWi/fQO+ud7nOPczznPG7jnFhWllFJKKaWUUkoppZRSSimltHXVplRRUVva0Z4OdKQTnelCV7rRnR70pBe96UNf+tGfAQxkEIMZwlCGMZwRXM5IruBKruJqrim1pddIW2ujfOtaruN6RnMDN3ITN3MLYxjLOG7lNm7nDu5kPHdxN/dwL/dxPxOYyCQeYDIP8hAP8wiP8lh+ngrU4771BE8yhad4mmeYyjSe5TmeZzozmMkLzOJFZvMSLzOHV5jLPF7lNebzOm+wgIUs4k3e4u38PBWod3zrXRazhPdYyjLe5wM+5COWs4KVfMwnrOJTVrOGz/icL/iSr/iab/iW7/ietazjB37kJ37Oz1OB+sW31rOBjfzKb2xiM7/zB3/yF3/zz39/LF1UtA3bUozibMf27MCO7MTO7EIJdmU3SlKK0pRhd8qyR+ktvUbaWtvTt/aiHHtTnn3Yl/3YnwOowIFU5CAO5hAOpRKHUZkqHM4RHElVqnEU1anB0RxDTWpxLMdxfH6eCtQJvlWbEzmJOtTlZE6hHqdSn9NoQENO5wzOpBFncTbn0JhzOY/zuYAmNOVCLuJiLqEZl9KcFvl5KlAtfesyWtGaNrSlHe3pQEc60ZkudKUb3elBT3rRmz70pR/9GcBABjGYIQxlGMMZweWM5Ir8PBWoK33rKq7mGkZxLddxPaO5gRu5iZu5hTGMZRy3chu3cwd3Mp67uJt7uJf7uJ8JTGQSDzCZB3koP08F6mHfeoRHeYzHeYInmcJTPM0zTGUaz/IczzOdGczkBWbxIrN5iZeZwyvMZR6v8hrzeZ03WMDC/DwVqEW+9SZv8Tbv8C6LWcJ7LGUZ7/MBH/IRy1nBSj7mE1bxKatZw2d8zhd8yVd8zTd8y3d8z1rW5eepQP3gWz/yEz/zC+vZwEZ+5Tc2sZnf+YM/+Yu/+ee/f5YpKtqGbSlGcbZje3ZgR3ZiZ3ahBLuyGyUpRekyW3qNtLVWxrd2pyx7sCd7UY69Kc8+7Mt+7M8BVOBAKnIQB3MIh1KJw6hMFQ7nCI6kKtU4iurU4GiOoWZ+ngpULd86luM4nhOozYmcRB3qcjKnUI9Tqc9pNKAhp3MGZ9KIszibc2jMuZzH+VxAE5pyIRdxMZfk56lANfOtS2lOC1pyGa1oTRva0o72dKAjnehMF7rSje70oCe96E0f+tKP/gxgIIMYzBCGMozh+XlKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppfS/+xcTJC7+
+  </data>
+ </layer>
+ <layer name="building_4" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt0tVWlVEAReHfbtBz7ETs7g4EFfWl7AQDu7u7GxUbu7u7u9vpK3CDezC/Meb9ulhRJEmSJEmSJEmS9H8aGIuiQTSYhtBQGkbDaQSNpFE0msbE8nutlDcZfDeTxtI4Gk8TKIsm0iSaTFNoqj9XoKbx3ek0g2bSLJpNc2guzaP5tIAW+nMFahHfXUxLaCkto+W0glbSKlpNa2itP1eg1vHd9bSBNtIm2kxbaCtto+20g3b6cwVqF9/dTdm0h/bSPsqh/XSADtIhOuzPFagjfPco5dIxOk4n6CSdotN0hs7SOX+uQJ3nuxfoIl2iy3SFrtI1uk436Cbd8ucK1G2+e4fu0j26Tw/oIT2ix/SEntIzf65APee7L+glvaLX9Ibe0jt6Tx/oI33y5wrUZ777hb7SN/pOP+gn/aLf9Offv+NRVCie32ulvCnMd4tQUSpGxakElaRSVJrKUFkq588VqAS+m0jlqQLFKE4VqRJVpipUlar5cwWqOt+tQTWpFtWmOpREdSmZ6lF9auDPFaiGfLcRNaYm1JSaUXNqQS2pFbWmNv5cgWrLd9tRe+pAHakTdaYu1JW6UXfq4c8VqJ58N4V6USqlUW/qQ30pnfpRfxrgzyVJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkqQC7S9iuHnt
+  </data>
+ </layer>
+ <layer name="building_5" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt0gf3FgIDxuE/iSKrKZRIIqOSXSIr2nvvnU2orIyMMhOKUGRrooyiaFFZGaFsJbsiRdblOzzn9J7e+3fO9QXucxcVpZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSv+fNSpTVNSYJjSlGc1pQUta0Zo2tKUd7elARzrRmS50pRvd6UFPetGbPvSlH/0ZwEDO5CzO5hzO5TzO54IyW3qdtLV0oS8N4iIu5hIGM4ShXMplXM4VXMkwruJqruFahnMd13MDNzKCkdzEzdzCrdzG7YziDkZzJ3dxN2MYyz35eSpQ9/rSOO7jfh5gPBN4kIeYyMM8wqM8xuM8wZM8xSQmM4WpTGM6T/MMzzKDmTzH87zAi8xiNi/xMnOYyyv5eSpQr/rSPOazgIUs4jVeZzFLWMobvMlbvM07LONd3uN9PmA5H/IRH7OClXzCp3zG53zBl3zF16xiNd+whm/z81SgvvOl7/mBH/mJn1nLOtbzC7+ygd/YyCZ+5w828yd/8Tf//PfPskVF27AtxdiO4mzPDpSgJDuyE6XYmV3Yld3YveyWXidtLZX2pTKUpRzlqcAeVGRP9mJvKlGZfajCvuxHVfanGgdQnQM5iBoczCEcymHUpBa1OZw6HMGRHMXRHMOx+XkqUMf5Ul3qcTz1OYETacBJnMwpnMppNOR0zqARjWlCU5rRnBa0pBWtaUNb2tGeDnSkE53pQle60Z0e9MzPU4Hq5Uu96UNf+tGfAQzkTM7ibM7hXM7jfC7gQgZxERdzCYMZwlAu5TIu5wquZBhXcTXXcC3DuY7ruYEbGZGfpwI10pdu4mZu4VZu43ZGcQejuZO7uJsxjOUe7mUc93E/DzCeCTzIQ0zkYR7hUR7jcZ7gSZ5iEpOZwlSmMT0/TwXqaV96hmeZwUye43le4EVmMZuXeJk5zOUVXmUe81nAQhbxGq+zmCUs5Q3e5C3e5h2W8S7v8T4fsJwP+Sg/TwXqY19awUo+4VM+43O+4Eu+4mtWsZpvWMO3fMf3/MCP/MTPrGUd6/mFX9nAb2xkE7/zB5v5k7/4m3/++3e5oqJtym3pddLW0ra+VIztKM727EAJSrIjO1GKndmFXdmN3SlNGcpSjvJUYA8qsid7sTeVqMw+VGFf9qMq+1ONA6jOgRyUn6cCVcOXDuYQDuUwalKL2hxOHY7gSI7iaI7hWI6jLvU4nvqcwIk04CRO5hRO5TQacjpn0IjGNKEpzWhOC1rm56lAtfKl1rShLe1oTwc60onOdKEr3ehOD3rSi970oS/96M8ABnImZ3E253Au53E+F3Ahg7iIi7mEwQxhaH6eCtSlvnQZl3MFVzKMq7iaa7iW4VzH9dzAjYxgJDdxM7dwK7dxO6O4g9HcyV3czRjGcg/3Mo77uJ8HGM8EHszPU4F6yJcm8jCP8CiP8ThP8CRPMYnJTGEq05jO0zzDs8xgJs/xPC/wIrOYzUu8zBzm8gqvMo/5LGAhi3iN1/PzVKAW+9ISlvIGb/IWb/MOy3iX93ifD1jOh3zEx6xgJZ/wKZ/xOV/wJV/xNatYzTes4Vu+43t+4Ed+4mfWsi4/TwVqvS/9wq9s4Dc2sonf+YPN/Mlf/M0///2vfFHRNmxLMbajONuzAyUoyY7sRCl2Zhd2ZTd2pzRlKEs5ylOBPahYfkuvk7aW9vSlvdibSlRmH6qwL/tRlf2pxgFU50AOogYHcwiHchg1qUVtDqcOR3AkR3E0x3Asx1GXehxPfU7gRBrk56lAneRLJ3MKp3IaDTmdM2hEY5rQlGY0pwUtaUVr2tCWdrSnAx3pRGe60JVudKcHPelFb/rQl370ZwAD8/OUUkoppZRSSimllFJKKaWUUkoppZRSSimllNL/SP8Cfm/JXg==
+  </data>
+ </layer>
+ <layer name="building_6" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt0oPSHYYChdG/ttsktW3btm23sW3btm3bNmvbNu/qS5zMnexvZj3AntlFRSmllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFL6f6hksaKiUpSmDGUpR3kqUJFKVKYKValGdWpQk1rUpg51qUd9GtCQRjSmCU1pRvNiW3t52pZq4W8taUVr2tCWdrSnAx3pRGe60JVudKcHPelFb/rQl370ZwADGcRghjCUYfl5KmDD/W0EIxnFaMYwlnGMZwITmcRkpjCVaUxnBjOZxWzmMJd5zGcBC1nEYpawND9PBWyZvy1nBStZxWrWsJZ1rGcDG9nEZrbwCq/yGq/zBm/yFm/zDu/yHu/zAR/yER/n56mAfeJvn/IZn/MFX/IVX/MN3/Id3/MDP/ITP/MLv/Ibv/MHf/IXf/MP//736eJFRduxPTuwY/GtvTxtS+3kbzuzC7uyG7uzB3uyF3uzD/uyH/tzAAdyEMUoTgkO5hAO5TAO5wiO5CiO5hiOzc9TATvO347nBE7kJE7mFE7lNE7nDM7kLM7mHM7lPM7nAi7kIi7mEi7lMi7nCq7kKq7mmvw8FbBr/e06rucGbuQmbuYWbuU2bucO7uQu7uYe7uU+7ucBHuQhHuYRHuUxHucJnuQpns7PUwF7xt+e5Tme5wVe5CVepiSlKE0ZylKO8lSgIpWoTBWqUo3q1KAmtahNHepSj/r5eSpgDfytIY1oTBOa0ozmtKAlrWhNG9rSjvZ0oCOd6EwXutKN7vSgJ73oTR/60i8/TwWsv78NYCCDGMwQhjKM4YxgJKMYzRjGMo7xTGAik5jMFKYyjenMYCazmM0c5ubnqYDN87f5LGAhi1jMEpayjOWsYCWrWM0a1rKO9WxgI5vYzBZe4VVe43Xe4E3e4u38PBWwd/ztXd7jfT7gQz7iYz7hUz7jc77gS77ia77hW77je37gR37iZ37hV37jd/7gT/7Kz1MB+9vf/uHf/35XoqhoO7ZnB3ZkJ3ZmF3ZlN3ZnD/ZkL/ZmH/ZlP/bnAA7kIIpRnBIczCEcWmJrL0/bUof52+EcwZEcxdEcw7Ecx/GcwImcxMmcwqmcxumcwZmcxdmcw7mcx/lcwIVcxMVckp+nAnapv13G5VzBlVzF1VzDtVzH9dzAjdzEzdzCrdzG7dzBndzF3dzDvdzH/TzAgzzEw/l5KmCP+NujPMbjPMGTPMXTPMOzPMfzvMCLvMTLlKQUpSlDWcpRngpUpBKVqUJVqlE9P08FrIa/1aQWtalDXepRnwY0pBGNaUJTmtGcFrSkFa1pQ1va0Z4OdKQTnelCV7rl56mAdfe3HvSkF73pQ1/60Z8BDGQQgxnCUIYxnBGMZBSjGcNYxjGeCUxkEpOZwtT8PBWwaf42nRnMZBazmcNc5jGfBSxkEYtZwlKWsZwVrGQVq1nDWtaxng1sZBOb2ZKfp5RSSimllFJKKaWUUkoppZRSSimllFJKKaW0Tfc/rZV6Tg==
+  </data>
+ </layer>
+ <layer name="building_7" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   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
+  </data>
+ </layer>
+ <layer name="building_8" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt0tPSWAcAReE/tm3btm3btm3btm27tt3YttmoKy+Qq3ZyLtaa+R5gz+yQEDMzMzMzMzMzMzMzMzMzMzMzMzMzMzOz/6ejCUNCjuE4TuAkTuE0zuAszuE8LuAiLuEyruAqriX80CvM3t91PnoDN3ELt3EHd3EP9/EAD/EIj/EET/EMz/HCn1vA+4ePvsQrvMYbvH3320QhIaEQGmEQFuEQHhEQEZEQGVESfegVZu8vKh+NhuiIgZiIhdiIg7iIh/hIgIRIhMRIgqRI5s8t4CXnoymQEqmQGmmQFumQHhmQEZmQGVmQFdmQHTn8uQW8nHw0F3IjD/IiH/KjAAqiEAqjCIqiGIqjBEqilD+3gFeaj5ZBWZRDeVRARVRCZVRBVVRDddRATdRCbdTx5xbw6vLReqiPBmiIRmiMJmiKZmiOFmiJVmiNNmiLdv7cAl57PtoBHdEJndEFXdEN3dEDPdELvdEHfdEP/THAn1vAG8hHB2EwhmAohmE4RmAkRmE0xmAsxmE8JmAiJvlzC3iT+egUTMU0TMcMzMQszMYczMU8zMcCLMQiLMYSf24BbykfXYblWIGVWIXVWIO1WIf12ICN2ITN2IKt2ObPLeBt56M7sBO7sBt7sBf7sB8HcBCHcBhH8BE+xif41J9bwPuMj36OL/AlvsLX+Abf4jt8jx/wI37Cz/gFv+I3/O7PLeD9wUf/xF/4G0dxDMdxAidxCqdxBmdxDudxARdxyZ9bwLvMR6/gKq7hOm7gJm7hNu7gLu7hPh7gIR7hMZ74cwt4T/noMzzHC/yDl3iF13iDt+9+nDgkJBRCIwzCIhzCI0LiD73C7P1F5KOREBlREBXREB0xEBOxEBtxEBfxEB8JkBCJ/LkFvMR8NAmSIhmSIwVSIhVSIw3SIh3SIwMyIhMyI4s/t4CXlY9mQ3bkQE7kQm7kQV7kQ34UQEEUQmEUQVEU8+cW8Irz0RIoiVIojTIoi3IojwqoiEqojCqoimqojhr+3AJeTT5aC7VRB3VRD/XRAA3RCI3RBE3RDM3RAi3Ryp9bwGvNR9ugLdqhPTqgIzqhM7qgK7qhO3qgJ3qhN/r4cwt4ffloP/THAAzEIAzGEAzFMAzHCIzEKIzGGIzFOH9uAW88H52AiZiEyZiCqZiG6ZiBmZiF2ZiDuZiH+Vjgzy3gLeSji7AYS7AUy7AcK7ASq7Aaa7AW67AeG7ARm/y5BbzNfHQLtmIbtmMHdmIXdmMP9mIf9uMADuIQDuOIPzczMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzP7T/sX1U0auw==
+  </data>
+ </layer>
+ <layer name="home" width="186" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt0ufX1wMAhvEfGRkZJfE8ooxEZlkpK9mUTTKys/X/2WSvjKxQ9iYjI+LqT+iNzvecz+ec6/394h6NAAAAAAAAAAAAAAAAAACAoXhkbDR6tB6rx+uJerKeqqfrmVpdz9Zz9Xy9MLa9V8O2ebHPvlQv1yv1ar1Wr9eaeqPerLfq7Vpb7/g5A/Nun32v3q8Pal19WB/Vx7W+NtQn9Wl9Vp/7OQPzRZ/9sr6qr+ub+ra+q+/rh/qxfqqN9XP94ucMzK999rfaVL/XH/Vn/VWb6+/6p7bUv1v/PT4a7TC+vVfDttmxz06onWrn2qV2rYm1W+1ee9SeNan2qr39nIHZp8/uW5NrSu1XU2v/mlYH1IE1VuN1UE33cwbm4D57SM2omXVoHVaH1xE1q46s2XVUHV1z/JyBOabPHlvH1fF1Qp1Yc2tenVQn1yl1ap1W8/2cgTm9zy6ohXVGnVln1dl1Ti2qc2txnVfn1wV+zsBc2Gcvqovrkrq0LqsltbQuryvqyrqqrq5r/JyBubbPXlfX17K6oZbXjXVT3Vy31Iq6tW6r2/2cgbmjz95Zd9XdtbLuqXvrvrq/HqgH66F6uFb5OQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8D/6D6sNZu4=
+  </data>
+ </layer>
+</map>
