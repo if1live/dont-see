@@ -77,3 +77,39 @@ cocos2d::CCAction *create_blink_animation(float duration)
 	CCBlink *blink = CCBlink::create(duration, duration / 0.08f);
 	return blink;
 }
+
+cocos2d::CCAction *create_arc_sonar(int dir)
+{
+	const char* sprite_basename = "";
+	switch (dir) {
+	case 1: sprite_basename = "sound_wifi_SW"; break;
+	case 2: sprite_basename = "sound_wifi_NW"; break;
+	case 3: sprite_basename = "sound_wifi_NE"; break;
+	case 4: sprite_basename = "sound_wifi_SE"; break;
+	}
+	
+	char str[100] = {0};
+
+	// 스프라이트 시트의 위치정보 파일을 읽어들인다.
+	sprintf(str, "animation/%s.plist", sprite_basename);
+	CCSpriteFrameCache *cache = CCSpriteFrameCache::sharedSpriteFrameCache();
+	cache->addSpriteFramesWithFile(str);
+
+	CCArray* animFrames = CCArray::createWithCapacity(15);
+
+	for(int i = 1; i <=3 ; i++) {
+		sprintf(str, "%s_%d.png", sprite_basename, i);
+		CCSpriteFrame* frame = cache->spriteFrameByName( str );
+		animFrames->addObject(frame);
+	}
+
+	// 애니메이션 만들기
+	CCAnimation* animation = CCAnimation::createWithSpriteFrames(animFrames, 0.1f);
+	CCAnimate *animate = CCAnimate::create(animation);
+	CCActionInterval *wait = CCActionInterval::create(3.0f);
+	CCAction* action = CCSpawn::create(animate, wait, NULL);
+
+	CCActionInterval* rep1 = (CCActionInterval*)action;
+	CCAction* rep2 = CCRepeat::create(rep1, 3);
+	return rep2;
+}
