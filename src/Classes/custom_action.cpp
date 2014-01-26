@@ -1,9 +1,11 @@
 #include "stdafx.h"
 #include "custom_action.h"
 
-Custom_action::Custom_action():specialCountMax(3),specialGapMax(0.1f)
+Custom_action::Custom_action()
+	: specialCountMax(3)
+	, specialGapMax(5.0f)
 {
-	specialCount = 0;
+	specialCount = specialCountMax;
 	specialGap = 0.f;
 	specialSoundFlag = false;
 }
