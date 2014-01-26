@@ -50,7 +50,7 @@
  </layer>
  <layer name="Road Obj" width="186" height="87">
   <data encoding="base64" compression="zlib">
-   eJztnL2TGzUYh1+ggwquCq6YkOKGUBA+GggHYSY5XwMJBy3MpAnMXAM0FHxkgBC+k4KvpEmRtEmb/He8mrPGy1ralbSSXr3e32/mGZ/tPa1sP/uudu3VkoiWAIAmuMHcbKAfAJTkFnO7gX6E8C5zsRKHDbze1nDVxHPMOwru32XuNdCPkPtHzCuV+Czi858Lmmpin/vMgwb6EUJtz1vaxlu436+JmnjIPGK+Yr5mvmG+peMxwqXGuEao55Joqok+fmSuMz8xPzOXPZ9/K5xgFgXbh+eb2JrYfUy69hnei+Ti6v/ep7q1M4XnmJMF27ee9/dzy5HHfc8NLa8ZaQ9KYerosw3wIoV5Hpu+5/393HLkcd9zQ8trRtrHUpg62lpKeH6V6p3D1Mqh4/3eFubiORjH7POk9+slxwutJbfn+2AU6zmCbFO6tQOeI9saeI7MIfAcmUN8nj/pWPaNEXJlbD1DXGEOOvSPPw4y9rPFuI65dknu3N0pyutGarbd867v9u/WMnReIGdbEhiX4Lk7c/Pc1cfUvnYde60y8Dwu8Dyv5zXqts97jZ4/T+vfWNlxV2nPzTp/cOBaPzzfdC/V29T0163Rc/P4qyvMNQM1PO+us4tr/fDcXcvNb9dijx9TA8/D4/N8f2T98Nxdy4/ydDNp/fDcH3ie13NzXvHLCE6lv5SNfYlWz61rmj1vFVcf39wh2mPeYt7e2XyvzvNjF5h9ZrmTZ2w+5XvC/rrhuT+5Pa9xvqEWoef0pni+O/4ReQPPw1Oink+pqS3hcrjEefDUwPPwwPM4z3PvL+B5+56fpvTrrhe09vzEhHZysqBhz00/v09kQfBcg+e5c0Rrzy8XaD8lpk9Dnpv35yXmTCQv03FN6LsOz+G5REI8f53SrnU3rp8keN4PPK+fkp6fpeOabq6bXVA+z7vAc3/g+Tqpnv/C/Mr8xvzO/OFYxmDHMEeUx3PXdefw3B14vk6q538yfzF/M/8w/zqW6db1vuchmDlCXOcCXEgHnq+zTZ7Hjl+6nocCz6cFnq9T2/Nu+2PnLO2YBJ6nBZ6vI+m5PYbMgXQ0eN4dE8JzeJ4SLZ67rrPIHXgOz4nguUSGPDfjZzNGhufj8Xn+jGNZeF4/Q57nqOVz99x1fP0CwfPaged54vPcde1x95wHPK8TeJ4nOT0vATyH5zmS6vku810FumOlLmb9qb+79mHXdVCo/dQ+wfPpSfW8JjXXaT1vlZqem209Zq5QjZ6H/pZnGz33Pbe3up2L56GEbA/Sia3nfSdqbAOteG6B5/FIx+e571rFGF+0MvS6TE2f6ukU+nMAlfI89xyk0vF57hpjmWusatXV2uytqLUt5dhOSnnu8n0q0um/tiHPY6+lj6n/0ljPVy7dkT7ebMHznEgnpp7HMmWOCQnsHBLG8ynzRdTC/LZlquOW0xP64ZofQ4vnZ2bG2dXrtp5fmfSu1km/lktmbFuQTsl6rgl4Pi1j+wvpDHn+GPN4Ak/Qpkc52yrRJjyfFs2ep+Ypyvd9mKutEm3C82mB5/C8VOB5eLqOw3N4nhpNntu/4Tk8jw08h+elAs/DA8/heY7Ac3heKvA8PPAcnucIPIfnpQLPwwPP4XmOwHN4XirwPDzwHJ7niCbP8X0oPE+NFs/x+xZ9nrfkEjyH56XSkkvwHJ6XSksuwXN4XiotuaTZ86fpeB70WHZo06OcbZVos+/5VZK/ztnHIY171RrS8Xl+fmZcoP97Lj1/xRBmDgqXSx8wHwrcavHcNX+LdM2S4Brp9vwj5mOBW02ed+u6rWtzRavnnzCfCtzCc51o9fxz5guBW82el5yDTAl3CjG5bz7PW0Y6qOf6gOfxgef6gOfxgef6gOfx8Xl+CTSLnSf3BnOT5B3W7Ln0+wLGucXcbqAfIUgHnuvlLnOvgX6EIB14rpf7zIMG+hGCdOC5Xh4yjxroRwjSgeegBtLxef4ftVbQKA==
+   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
   </data>
  </layer>
  <layer name="Roof Obj" width="186" height="87">
@@ -58,7 +58,7 @@
    eJzt0rOSHgAAReE/2I1dxHaWsa0itu0itu0itu0itu0itu0i5sk7ZP4Ue76Z8wB35gYCkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiTFLHlDAoF8FEbhFEGRFEXRlJ8KUEEqRIWpCBWlYlScSlBJKkWlqQyVpXJUnipQRapElakKVQ3538sVk1Tjb9WpBtWkWlSb6lBdqkf1qQE1pEbUmJpQU2pGzakFtaRW1JraUFtqR+2pA3WkTtSZuvhzBVFX/taNulMP6km9qDf1ob7Uj/rTABpIg2gwDaGhNIyG0wgaSaNoNI2hsTSOxtMEmkiTaLI/VxBN4W9TaRpNpxk0k2bRbJpDc2kezacFtJAW0WJaQktpGS2nFbSSVtFqWkNraR2tpw20kTb5cwXRZv62hbbSNtpOO2gn7aLdtIf20j7aTwfoIB2iw3SEjtIxOk4n6CSdotN0hs7SOTpPF+iiP1cQXeJvl+kKXaVrdJ1u0E26RbfpDt2le3SfHtBDekSP6Qk9pWf0nF7QS3pFr+kNvaV39J4++HMF0Uf+9ok+0xf6St/oO/2gn/SLfv/9ZWggEItiUxyKSyEUSvEoPiWghJSIElMSSkrJKDmloJSUKvR/L1dMkpq/paG0lI7SUwbKSJkoM2WhrJSNslMOykm5KDflobyUj8IonCIokqIomvJTASpIhaiwP5ckSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIk6Z/6A56ie5Q=
   </data>
  </layer>
- <objectgroup name="collisions" width="186" height="87" visible="0">
+ <objectgroup name="collisions" width="186" height="87">
   <object x="0" y="399" width="1759" height="93"/>
   <object x="4" y="492" width="139" height="804"/>
   <object x="434" y="495" width="541" height="864"/>
@@ -351,7 +351,7 @@
     <property name="texture_name" value="texture\trash.png"/>
    </properties>
   </object>
-  <object name="trash11" x="2922" y="492">
+  <object name="trash11" type="animate" x="2922" y="512">
    <properties>
     <property name="texture_name" value="texture\trash.png"/>
    </properties>
@@ -361,7 +361,7 @@
     <property name="texture_name" value="texture\fire.png"/>
    </properties>
   </object>
-  <object name="trash12" type="animate" x="3330" y="780">
+  <object name="trash12" type="animate" x="3473" y="782">
    <properties>
     <property name="texture_name" value="texture\trash.png"/>
    </properties>
@@ -390,12 +390,12 @@
     <property name="textrue_name" value="texture\npc.png"/>
    </properties>
   </object>
-  <object name="trash14" type="animate" x="5724" y="1508">
+  <object name="trash14" type="animate" x="5768" y="1471">
    <properties>
     <property name="texture_name" value="texture\trash.png"/>
    </properties>
   </object>
-  <object name="trash17" type="animate" x="5729" y="1670">
+  <object name="trash17" type="animate" x="5764" y="1741">
    <properties>
     <property name="texture_name" value="texture\trash.png"/>
    </properties>
