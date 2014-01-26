@@ -38,3 +38,6 @@
 #define protected public
 #define private public
 #define class struct
+
+
+#define DEBUG 1
