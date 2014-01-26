@@ -17,6 +17,7 @@ SoundManager::SoundManager()
 	strcpy(effectSoundFile[EFFECT_SPECIAL_INC], "/sound/effect/special_get.mp3");
 	strcpy(effectSoundFile[EFFECT_MAN_SCREAM], "/sound/effect/man_scream.mp3");
 	strcpy(effectSoundFile[EFFECT_TRASH_CRASH], "/sound/effect/trash_crash.mp3");
+	strcpy(effectSoundFile[EFFECT_STICK], "/sound/effect/stick.mp3");
 	for(int i = 0; i < EFFECT_MAX; i++)
 	{
 		effectSoundID[i] = 0;
