@@ -85,10 +85,6 @@ void VisionMask::Update()
 			customAction->specialCount -= 1;
 		}
 	}
-	else
-	{
-		enableLight(false);
-	}
 
 	lightTime -= 1/60.0f;
 	if(lightTime < 0 && lightEnabled == true) {
