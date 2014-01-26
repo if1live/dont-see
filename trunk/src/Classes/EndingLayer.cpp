@@ -32,22 +32,16 @@ bool EndingLayer::init()
 	SoundManager::sharedManager()->PlayEffect(EFFECT_ENDING);
 
 	this->scheduleUpdate();
-	setTouchEnabled(true); 
+	setTouchEnabled(true);
 
-	sprite1 = CCSprite::create("texture/ending_1.png");
-	sprite1->setPosition(ccp(getContentSize().width/2, getContentSize().height/2));
-	this->addChild(sprite1);
-	sprite1->setVisible(false);
-
-	sprite2 = CCSprite::create("texture/ending_2.png");
-	sprite2->setPosition(ccp(getContentSize().width/2, getContentSize().height/2));
-	this->addChild(sprite2);
-	sprite2->setVisible(false);
-
-	sprite3 = CCSprite::create("texture/ending_3.png");
-	sprite3->setPosition(ccp(getContentSize().width/2, getContentSize().height/2));
-	this->addChild(sprite3);
-	sprite3->setVisible(false);
+	for(int i = 0 ; i < 10 ; i++) {
+		char buf[256];
+		sprintf(buf, "texture/ending_%d.png", i+1);
+		spriteList[i] = CCSprite::create(buf);
+		spriteList[i]->setPosition(ccp(getContentSize().width/2, getContentSize().height/2));
+		this->addChild(spriteList[i]);
+		spriteList[i]->setVisible(false);
+	}
 
 	return true;
 }
@@ -56,13 +50,11 @@ void EndingLayer::update(float dt)
 {
 	m_logoShowingTime += dt;
 
-	if(m_logoShowingTime > 6) {
-		sprite3->setVisible(true);
-	} else if(m_logoShowingTime > 3) {
-		sprite2->setVisible(true);
-	} else {
-		sprite1->setVisible(true);
+	int spriteIndex = (int)m_logoShowingTime;
+	if(spriteIndex >= 10) {
+		spriteIndex = 9;
 	}
+	spriteList[spriteIndex]->setVisible(true);
 
 	if(m_logoShowingTime >= 10) {
 		CCDirector* pDirector = CCDirector::sharedDirector();

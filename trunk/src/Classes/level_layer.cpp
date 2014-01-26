@@ -70,7 +70,7 @@ cocos2d::CCScene *LevelLayer::scene(const char *mapfile)
 	VisionMask *visionMasking = VisionMask::create();
 	layer->masking = visionMasking;
 	scene->addChild(visionMasking);
-	visionMasking->setPosition(ccp(size.width/2, size.height/2+15));
+	visionMasking->setPosition(ccp(size.width/2, size.height/2));
 
 	layer->soundLayer = CCLayer::create();
 	scene->addChild(layer->soundLayer);
@@ -215,10 +215,12 @@ void LevelLayer::draw()
 {
 	CCLayer::draw();
 
-	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
-    kmGLPushMatrix();
-	world->b2_world->DrawDebugData();
-    kmGLPopMatrix();
+	if(DEBUG == 1) {
+		ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
+		kmGLPushMatrix();
+		world->b2_world->DrawDebugData();
+		kmGLPopMatrix();
+	}
 }
 
 void LevelLayer::addNewSpriteAtPosition(CCPoint p)
