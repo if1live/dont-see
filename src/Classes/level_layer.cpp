@@ -93,7 +93,6 @@ bool LevelLayer::initWithMapfile(const char *mapfile)
 	this->initPhysics();
 	this->initMap(mapfile);
 
-	SoundManager::sharedManager();
 
 	return true;
 }
