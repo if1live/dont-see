@@ -28,6 +28,31 @@ cocos2d::CCAction *create_ai_animation()
 	return rep2;
 }
 
+cocos2d::CCAction *create_player_animation()
+{
+	// 스프라이트 시트의 위치정보 파일을 읽어들인다.
+    CCSpriteFrameCache *cache = CCSpriteFrameCache::sharedSpriteFrameCache();
+    cache->addSpriteFramesWithFile("animation/player.plist");
+    
+    CCArray* animFrames = CCArray::createWithCapacity(15);
+    
+    char str[100] = {0};
+    for(int i = 1; i <=2 ; i++) {
+        sprintf(str, "walk copy_%d.png", i);
+        CCSpriteFrame* frame = cache->spriteFrameByName( str );
+        animFrames->addObject(frame);
+    }
+    
+    // 애니메이션 만들기
+    CCAnimation* animation = CCAnimation::createWithSpriteFrames(animFrames, 0.2f);
+    CCAnimate *animate = CCAnimate::create(animation);
+    CCAction* action = CCSpawn::create(animate, NULL);
+
+	CCActionInterval* rep1 = (CCActionInterval*)action;
+	CCAction* rep2 = CCRepeatForever::create(rep1);
+	return rep2;
+}
+
 cocos2d::CCAction *create_circle_sonar()
 {
 	// 스프라이트 시트의 위치정보 파일을 읽어들인다.
