@@ -97,19 +97,18 @@ cocos2d::CCAction *create_arc_sonar(int dir)
 
 	CCArray* animFrames = CCArray::createWithCapacity(15);
 
-	for(int i = 1; i <=3 ; i++) {
-		sprintf(str, "%s_%d.png", sprite_basename, i);
+	for(int i = 1; i <=9 ; i++) {
+		sprintf(str, "%s_%d.png", sprite_basename, i % 3 + 1);
 		CCSpriteFrame* frame = cache->spriteFrameByName( str );
 		animFrames->addObject(frame);
 	}
 
 	// 애니메이션 만들기
-	CCAnimation* animation = CCAnimation::createWithSpriteFrames(animFrames, 0.1f);
+	CCAnimation* animation = CCAnimation::createWithSpriteFrames(animFrames, 0.2f);
 	CCAnimate *animate = CCAnimate::create(animation);
-	CCActionInterval *wait = CCActionInterval::create(3.0f);
-	CCAction* action = CCSpawn::create(animate, wait, NULL);
-
+	CCHide *hide = CCHide::create();
+	CCAction* action = CCSequence::create(animate, hide, NULL);
 	CCActionInterval* rep1 = (CCActionInterval*)action;
-	CCAction* rep2 = CCRepeat::create(rep1, 3);
-	return rep2;
+	
+	return rep1;
 }
