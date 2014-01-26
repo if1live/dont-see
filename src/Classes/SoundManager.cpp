@@ -19,6 +19,8 @@ SoundManager::SoundManager()
 	strcpy(effectSoundFile[EFFECT_TRASH_CRASH], "/sound/effect/trash_crash.mp3");
 	strcpy(effectSoundFile[EFFECT_WATER], "/sound/effect/waterfall.mp3");
 	strcpy(effectSoundFile[EFFECT_STICK], "/sound/effect/stick.mp3");
+	strcpy(effectSoundFile[EFFECT_GAMEOVER], "/sound/effect/gameover.mp3");
+
 	for(int i = 0; i < EFFECT_MAX; i++)
 	{
 		effectSoundID[i] = 0;
