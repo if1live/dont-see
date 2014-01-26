@@ -162,15 +162,54 @@ void LevelLayer::updateSound(float dt)
 	if( (currentKeys & KeyLButton) != 0 && (preKeys & KeyLButton) == 0 && custom_action->TryDecreaseSpecialCount())
 	{
 		SoundManager::sharedManager()->PlayEffect(EFFECT_DOG);
+
+		// 골 지점과 위치를 계산하여 개소리 위치 표시를 해준다.
+		TmxObject* goalObject = world->getObjectByType(OBJECT_GOAL);
+		if (goalObject != nullptr) {
+			CCPoint playerPos = player->getPosition();
+			CCPoint goalPos = goalObject->getPosition();
+			CCPoint p = goalPos - playerPos;
+			float angle = 0;
+			if(p.x < 0)
+			{
+				angle = atan(float(p.y)/p.x * -1) * 180 / M_PI;
+				angle += 270;
+			}
+			else
+			{
+				angle = atan(float(p.y)/p.x * -1) * 180 / M_PI;
+				angle += 90;
+			}
+			int barkDiv = 0;
+			if (angle <= 90) barkDiv = 1;
+			else if (angle <= 180) barkDiv = 2;
+			else if (angle <= 270) barkDiv = 3;
+			else if (angle <= 360) barkDiv = 4;
+
+			CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+			CCPoint camPos(winSize.width/2, winSize.height/2);
+			switch (barkDiv) {
+			case 1: camPos.x += 150; camPos.y += 150; break;
+			case 2: camPos.x += 150; camPos.y -= 150; break;
+			case 3: camPos.x -= 150; camPos.y -= 150; break;
+			case 4: camPos.x -= 150; camPos.y += 150; break;
+			}
+
+			CCSprite *empty = CCSprite::create("texture/empty.png");
+			soundLayer->addChild(empty);
+			empty->setPosition(camPos);
+			CCAction *sonarAction = create_arc_sonar(barkDiv);
+			empty->runAction(sonarAction);
+		}
 	}
 
-	if(custom_action->TrySpecialSound())
-	{
+	if (custom_action->TrySpecialSound()) {
 		SoundManager::sharedManager()->PlayEffect(EFFECT_SPECIAL_INC);
 	}
 
 	SoundManager::sharedManager()->Update(dt);
 }
+
 void LevelLayer::draw()
 {
 	CCLayer::draw();
