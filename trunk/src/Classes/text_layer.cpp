@@ -79,18 +79,23 @@ bool TextLayer::init()
 
 		heartSprite[i]->setScale(0.1f);
 
-		heartSprite[i]->setPosition(ccp((i + 1) * 35, 600));
+		heartSprite[i]->setPosition(ccp((i + 1) * 35 + 12, 600));
 		this->addChild(heartSprite[i]);
 	}
 
 	specialBase = CCSprite::create("texture/special_base.png");
-	specialBase->setPosition(ccp(specialBase->getContentSize().width, 570));
+	specialBase->setPosition(ccp(25, 580));
+	specialBase->setAnchorPoint(ccp(0,1));
+	specialBase->setScale(0.4f);
 	this->addChild(specialBase);
 
 	for(int i = 0; i < 5; i++)
 	{
 		specialGuage[i] = CCSprite::create("texture/special_guage.png");
-		specialGuage[i]->setPosition(ccp((i + 1) * specialGuage[i]->getContentSize().width, 570));
+		specialGuage[i]->setAnchorPoint(ccp(0,1));
+		specialGuage[i]->setScale(0.37f);
+		//specialGuage[i]->setScaleX(0.2f);
+		specialGuage[i]->setPosition(ccp((i + 1) * (specialGuage[i]->getContentSize().width * 0.4f+ 4) + 13, 573));
 		this->addChild(specialGuage[i]);
 	}
 
