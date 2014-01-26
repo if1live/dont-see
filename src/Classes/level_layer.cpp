@@ -215,12 +215,14 @@ void LevelLayer::draw()
 {
 	CCLayer::draw();
 
+	/*
 	if(DEBUG == 1) {
 		ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
 		kmGLPushMatrix();
 		world->b2_world->DrawDebugData();
 		kmGLPopMatrix();
 	}
+	*/
 }
 
 void LevelLayer::addNewSpriteAtPosition(CCPoint p)
