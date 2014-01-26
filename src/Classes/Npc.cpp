@@ -5,15 +5,15 @@
 
 using namespace cocos2d;
 
-Npc* Npc::create(cocos2d::CCDictionary* dict)
+Npc* Npc::create(GameWorld *world, cocos2d::CCDictionary* dict)
 {
-	Npc* npc = new Npc(dict);
+	Npc* npc = new Npc(world, dict);
 	npc->autorelease();
 	return npc;
 }
 
-Npc::Npc(CCDictionary* dict)
-	: TmxObject(dict, OBJECT_NPC), m_movingCool(0)
+Npc::Npc(GameWorld *world, CCDictionary* dict)
+	: TmxObject(world, dict, OBJECT_NPC), m_movingCool(0)
 {
 }
 
@@ -75,7 +75,7 @@ b2Body *Npc::createBody()
 	bodyDef.type = b2_dynamicBody;
 	bodyDef.userData = this;
 
-	b2Body *body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
+	b2Body *body = world->b2_world->CreateBody(&bodyDef);
 
 	b2CircleShape circle;
 	circle.m_radius = px_to_mt_length(20);

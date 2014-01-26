@@ -1,10 +1,11 @@
 #pragma once
 
 class Player;
+class GameWorld;
 
 class LevelLoader {
 public:
-	LevelLoader(const char *mapfile, cocos2d::CCNode *layer);
+	LevelLoader(const char *mapfile, cocos2d::CCNode *layer, GameWorld *world);
 
 	cocos2d::CCTMXTiledMap *loadMap();
 
@@ -20,4 +21,5 @@ public:
 private:
 	std::string mapfile;
 	cocos2d::CCNode *layer;
+	GameWorld *world;
 };

@@ -4,9 +4,9 @@
 
 class Npc : public TmxObject {
 public:
-	static Npc* create(cocos2d::CCDictionary* dict);
+	static Npc* create(GameWorld *world, cocos2d::CCDictionary* dict);
 
-	Npc(cocos2d::CCDictionary* dict);
+	Npc(GameWorld *world, cocos2d::CCDictionary* dict);
 
 	virtual bool init();
 	virtual void update(float dt);

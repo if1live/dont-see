@@ -14,7 +14,8 @@ using namespace cocos2d;
 TextLayer::TextLayer()
 	: positionLabel(nullptr),
 	tileCoordLabel(nullptr),
-	customAction(nullptr)
+	customAction(nullptr),
+	world(nullptr)
 {
 }
 
@@ -65,7 +66,7 @@ bool TextLayer::init()
 
 void TextLayer::update(float dt)
 {
-	Player *player = (Player*)GameWorld::sharedWorld()->getObjectByType(OBJECT_PLAYER);
+	Player *player = (Player*)world->getObjectByType(OBJECT_PLAYER);
 	assert(player != nullptr);
 
 	CCPoint pos = player->getPosition();

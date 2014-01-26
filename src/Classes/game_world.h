@@ -7,10 +7,7 @@ class TmxObject;
 
 class GameWorld {
 public:
-	static GameWorld* sharedWorld() {
-		static GameWorld world;
-		return &world;
-	}
+	//static GameWorld* sharedWorld();
 
 	GameWorld();
 	~GameWorld();

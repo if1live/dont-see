@@ -10,9 +10,10 @@
 
 using namespace cocos2d;
 
-LevelLoader::LevelLoader(const char *mapfile, cocos2d::CCNode *layer)
+LevelLoader::LevelLoader(const char *mapfile, cocos2d::CCNode *layer, GameWorld *world)
 	: mapfile(mapfile),
-	layer(layer)
+	layer(layer),
+	world(world)
 {
 	
 }
@@ -68,10 +69,10 @@ Player *LevelLoader::registerPlayer(cocos2d::CCTMXTiledMap *map)
 		dict = dicts.front();
 	}
 
-	Player *player = Player::create(dict);
+	Player *player = Player::create(world, dict);
 	player->init();
 	layer->addChild(player, -1);
-	GameWorld::sharedWorld()->addTmxObject(player);
+	world->addTmxObject(player);
 	return player;
 }
 
@@ -90,10 +91,10 @@ void LevelLoader::registerNpc(cocos2d::CCTMXTiledMap *map)
 
 			std::string typeValue = safeReadStringValue(dict, "type");
 			if (typeValue == "npc") {
-				Npc* npc = Npc::create(dict);
+				Npc* npc = Npc::create(world, dict);
 				npc->init();
 				layer->addChild(npc);
-				GameWorld::sharedWorld()->addTmxObject(npc);
+				world->addTmxObject(npc);
 			}
 		}
 	}
@@ -114,10 +115,10 @@ void LevelLoader::registerGoal(cocos2d::CCTMXTiledMap *map)
 
 			std::string typeValue = safeReadStringValue(dict, "type");
 			if (typeValue == "goal") {
-				Goal* goal = Goal::create(dict);
+				Goal* goal = Goal::create(world, dict);
 				goal->init();
 				layer->addChild(goal);
-				GameWorld::sharedWorld()->addTmxObject(goal);
+				world->addTmxObject(goal);
 			}
 		}
 	}
@@ -142,7 +143,7 @@ void LevelLoader::registerCollisionBox(cocos2d::CCTMXTiledMap *map)
 			bodyDef.type = b2_staticBody;
 			bodyDef.userData = nullptr;
 
-			b2Body *body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
+			b2Body *body = world->b2_world->CreateBody(&bodyDef);
 
 			b2PolygonShape  shape;
 			shape.SetAsBox(px_to_mt_length(width) / 2, px_to_mt_length(height) / 2);
@@ -181,10 +182,10 @@ void LevelLoader::registerAnimate(cocos2d::CCTMXTiledMap *map)
 
 			std::string typeValue = safeReadStringValue(dict, "type");
 			if (typeValue == "animate") {
-				CollisionAnimationObject *obj = CollisionAnimationObject::create(dict);
+				CollisionAnimationObject *obj = CollisionAnimationObject::create(world, dict);
 				obj->init();
 				layer->addChild(obj);
-				GameWorld::sharedWorld()->addTmxObject(obj);
+				world->addTmxObject(obj);
 			}
 		}
 	}
