@@ -74,6 +74,9 @@ cocos2d::CCScene *LevelLayer::scene(const char *mapfile)
 	textLayer->customAction = layer->custom_action;
 	scene->addChild(textLayer);
 
+	//우클릭 허용은 카운터가 존재한다
+	visionMasking->customAction = layer->custom_action;
+
 
 	return scene;
 }
