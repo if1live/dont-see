@@ -6,8 +6,8 @@
 
 using namespace cocos2d;
 
-//const char *mapfile = "tilemap/MAP_1.tmx";
-const char *mapfile = "tilemap/MAP_0.tmx";
+const char *mapfile = "tilemap/MAP_1.tmx";
+//const char *mapfile = "tilemap/MAP_0.tmx";
 
 MenuLayer::~MenuLayer()
 {
