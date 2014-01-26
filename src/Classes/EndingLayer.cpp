@@ -34,7 +34,7 @@ bool EndingLayer::init()
 	this->scheduleUpdate();
 	setTouchEnabled(true);
 
-	for(int i = 0 ; i < 10 ; i++) {
+	for(int i = 0 ; i < 12 ; i++) {
 		char buf[256];
 		sprintf(buf, "texture/ending_%d.png", i+1);
 		spriteList[i] = CCSprite::create(buf);
@@ -51,12 +51,12 @@ void EndingLayer::update(float dt)
 	m_logoShowingTime += dt;
 
 	int spriteIndex = (int)m_logoShowingTime;
-	if(spriteIndex >= 10) {
-		spriteIndex = 9;
+	if(spriteIndex >= 12) {
+		spriteIndex = 11;
 	}
 	spriteList[spriteIndex]->setVisible(true);
 
-	if(m_logoShowingTime >= 10) {
+	if(m_logoShowingTime >= 12) {
 		CCDirector* pDirector = CCDirector::sharedDirector();
 		pDirector->replaceScene(CCTransitionFade::create(0.5, MenuLayer::scene()));
 	}
