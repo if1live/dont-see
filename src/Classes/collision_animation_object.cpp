@@ -4,6 +4,7 @@
 #include "b2_helper.h"
 #include "TmxObject.h"
 #include "action_helper.h"
+#include "SoundManager.h"
 
 using namespace cocos2d;
 
@@ -49,7 +50,7 @@ void CollisionAnimationObject::runAnimation()
 		CCAction *act = create_fire_animation();
 		m_sprite->runAction(act);
 
-		//TODO 소화전 터지는 소리
+		SoundManager::sharedManager()->PlayEffect(EFFECT_WATER);
 	}
 
 	if(m_textureName == "texture\\trash.png") {
@@ -57,8 +58,8 @@ void CollisionAnimationObject::runAnimation()
 		CCAction *act = create_trash_animation(mode);
 		m_sprite->runAction(act);
 
-		//TODO 쓰레기통 엎는 소리
-
+		//쓰레기통 엎는 소리
 		//엎은 쓰레기통을 또 걷어차는셈 치고 냅둔다
+		SoundManager::sharedManager()->PlayEffect(EFFECT_TRASH_CRASH);
 	}
 }

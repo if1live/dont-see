@@ -6,6 +6,7 @@
 #include "player.h"
 #include "Npc.h"
 #include "action_helper.h"
+#include "SoundManager.h"
 
 using namespace cocos2d;
 
@@ -68,7 +69,10 @@ void collision_player_vs_collision_object(Player *player, CollisionAnimationObje
 
 void collision_player_vs_goal(Player *player, Goal *goal)
 {
-	goal->clearGame();
+	if(goal->clearCalled == false) {
+		goal->clearGame();
+		SoundManager::sharedManager()->PlayEffect(EFFECT_SPECIAL_INC);
+	}
 }
 
 void collision_player_vs_npc(Player *player, Npc *npc)
@@ -77,4 +81,5 @@ void collision_player_vs_npc(Player *player, Npc *npc)
 		return;
 	}
 	player->damage();
+	SoundManager::sharedManager()->PlayEffect(EFFECT_MAN_SCREAM);
 }
