@@ -28,7 +28,6 @@ SoundManager::SoundManager()
 	}
 
 	//SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("/sound/background/bg01.mp3");
-	SimpleAudioEngine::sharedEngine()->playBackgroundMusic("/sound/background/bg01.mp3", true);
 }
 
 SoundManager::~SoundManager()
@@ -61,5 +60,22 @@ void SoundManager::Update(float dt)
 		{
 			effectSoundState[i] -= dt;
 		}
+	}
+}
+
+void SoundManager::PlayBG(int index)
+{
+	if(index >= BG_MAX)
+		return;
+
+	bg_index = index;
+	switch(index)
+	{
+	case BG_MAIN:
+			SimpleAudioEngine::sharedEngine()->playBackgroundMusic("/sound/background/bg01.mp3", true);
+		break;
+	case BG_TITLE:
+			SimpleAudioEngine::sharedEngine()->playBackgroundMusic("/sound/background/bg_title.mp3", true);
+		break;
 	}
 }

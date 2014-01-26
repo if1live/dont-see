@@ -2,6 +2,8 @@
 #include "MenuLayer.h"
 #include "level_layer.h"
 
+#include "SoundManager.h"
+
 using namespace cocos2d;
 
 MenuLayer::~MenuLayer()
@@ -12,6 +14,7 @@ MenuLayer::MenuLayer()
 	: m_logoShowingTime(0),
 	m_sceneChangeOccur(false)
 {
+	SoundManager::sharedManager()->PlayBG(BG_TITLE);
 }
 
 cocos2d::CCScene *MenuLayer::scene() 
@@ -48,6 +51,7 @@ void MenuLayer::update(float dt)
 		//const char *mapfile = "tilemap/MAP_1.tmx";
 		const char *mapfile = "tilemap/MAP_0.tmx";
 		pDirector->replaceScene(CCTransitionFade::create(0.5, LevelLayer::scene(mapfile)));
+		SoundManager::sharedManager()->PlayBG(BG_MAIN);
 	}
 }
 
@@ -59,5 +63,6 @@ void MenuLayer::ccTouchesEnded(CCSet* touches, CCEvent* event)
 		CCDirector* pDirector = CCDirector::sharedDirector();
 		const char *mapfile = "tilemap/MAP_0.tmx";
 		pDirector->replaceScene(CCTransitionFade::create(0.5, LevelLayer::scene(mapfile)));
+		SoundManager::sharedManager()->PlayBG(BG_MAIN);
 	}
 }
