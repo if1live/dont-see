@@ -71,7 +71,6 @@ void collision_player_vs_goal(Player *player, Goal *goal)
 {
 	if(goal->clearCalled == false) {
 		goal->clearGame();
-		SoundManager::sharedManager()->PlayEffect(EFFECT_SPECIAL_INC);
 	}
 }
 

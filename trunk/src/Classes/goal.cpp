@@ -2,6 +2,7 @@
 #include "goal.h"
 #include "game_world.h"
 #include "b2_helper.h"
+#include "SoundManager.h"
 
 using namespace cocos2d;
 
@@ -50,7 +51,7 @@ void Goal::clearGame()
 	if(clearCalled == false) {
 		clearCalled = true;
 		
-		//TODO °ñ µµÂø½Ã ³ª´Â ¼Ò¸®
+		SoundManager::sharedManager()->PlayEffect(EFFECT_SPECIAL_INC);
 	}
 	printf("clear game");
 }
