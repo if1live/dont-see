@@ -62,8 +62,10 @@ void collision_player_vs_collision_object(Player *player, CollisionAnimationObje
 	if(player->canDamagable() == false) {
 		return;
 	}
-	other->runAnimation();
-	player->damage();
+	if(other->enable == true) {
+		other->runAnimation();
+		player->damage();
+	}
 }
 
 
