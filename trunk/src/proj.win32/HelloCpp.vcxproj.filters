@@ -51,8 +51,8 @@
     <ClInclude Include="..\Classes\level_loader.h" />
     <ClInclude Include="..\Classes\contact_listener.h" />
     <ClInclude Include="..\Classes\SoundManager.h" />
-    <ClInclude Include="..\goal.h" />
     <ClInclude Include="..\Classes\custom_action.h" />
     <ClInclude Include="..\Classes\EndingLayer.h" />
+    <ClInclude Include="..\Classes\goal.h" />
   </ItemGroup>
 </Project>

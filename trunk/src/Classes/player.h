@@ -4,9 +4,9 @@
 
 class Player : public TmxObject {
 public:
-	static Player* create(cocos2d::CCDictionary* dict);
+	static Player* create(GameWorld *world, cocos2d::CCDictionary* dict);
 
-	Player(cocos2d::CCDictionary* dict);
+	Player(GameWorld *world, cocos2d::CCDictionary* dict);
 
 	virtual void update(float dt);
 	virtual b2Body *createBody();

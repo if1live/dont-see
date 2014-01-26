@@ -8,15 +8,15 @@
 
 using namespace cocos2d;
 
-CollisionAnimationObject* CollisionAnimationObject::create(cocos2d::CCDictionary* dict)
+CollisionAnimationObject* CollisionAnimationObject::create(GameWorld *world, cocos2d::CCDictionary* dict)
 {
-	CollisionAnimationObject* npc = new CollisionAnimationObject(dict);
+	CollisionAnimationObject* npc = new CollisionAnimationObject(world, dict);
 	npc->autorelease();
 	return npc;
 }
 
-CollisionAnimationObject::CollisionAnimationObject(cocos2d::CCDictionary *dict)
-	: TmxObject(dict, OBJECT_COLLISION_ANIMATION)
+CollisionAnimationObject::CollisionAnimationObject(GameWorld *world, cocos2d::CCDictionary *dict)
+	: TmxObject(world, dict, OBJECT_COLLISION_ANIMATION)
 {
 }
 
@@ -27,7 +27,7 @@ b2Body *CollisionAnimationObject::createBody()
 	bodyDef.type = b2_staticBody;
 	bodyDef.userData = this;
 
-	b2Body *body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
+	b2Body *body = world->b2_world->CreateBody(&bodyDef);
 
 	b2CircleShape circle;
 	circle.m_radius = 0.5f;

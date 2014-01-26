@@ -4,9 +4,9 @@
 
 class CollisionAnimationObject : public TmxObject {
 public:
-	static CollisionAnimationObject* create(cocos2d::CCDictionary* dict);
+	static CollisionAnimationObject* create(GameWorld *world, cocos2d::CCDictionary* dict);
 
-	CollisionAnimationObject(cocos2d::CCDictionary *dict);
+	CollisionAnimationObject(GameWorld *world, cocos2d::CCDictionary *dict);
 
 	virtual b2Body *createBody();
 	virtual void update(float dt);

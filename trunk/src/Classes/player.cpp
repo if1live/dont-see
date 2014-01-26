@@ -10,15 +10,15 @@
 
 using namespace cocos2d;
 
-Player* Player::create(cocos2d::CCDictionary* dict)
+Player* Player::create(GameWorld *world, cocos2d::CCDictionary* dict)
 {
-	Player* player = new Player(dict);
+	Player* player = new Player(world, dict);
 	player->autorelease();
 	return player;
 }
 
-Player::Player(CCDictionary* dict)
-	: TmxObject(dict, OBJECT_PLAYER), m_movingCool(0), hp(3), powerfulTime(0), gameOver(false)
+Player::Player(GameWorld *world, CCDictionary* dict)
+	: TmxObject(world, dict, OBJECT_PLAYER), m_movingCool(0), hp(3), powerfulTime(0), gameOver(false)
 {
 }
 
@@ -65,7 +65,8 @@ b2Body *Player::createBody()
 	bodyDef.type = b2_dynamicBody;
 	bodyDef.userData = this;
 
-	b2Body *body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
+	b2World *b2_world = world->b2_world;
+	b2Body *body = b2_world->CreateBody(&bodyDef);
 
 	b2CircleShape circle;
 	circle.m_radius = px_to_mt_length(20);

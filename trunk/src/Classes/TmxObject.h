@@ -1,5 +1,7 @@
 #pragma once
 
+class GameWorld;
+
 enum {
 	OBJECT_PLAYER,
 	OBJECT_NPC,
@@ -14,7 +16,7 @@ std::string safeReadStringValue(cocos2d::CCDictionary* dict, const char* key, co
 class TmxObject : public cocos2d::CCLayer
 {
 public:
-	TmxObject(cocos2d::CCDictionary* dict, int objType);
+	TmxObject(GameWorld *world, cocos2d::CCDictionary* dict, int objType);
 	virtual ~TmxObject();
 
 	virtual bool init();
@@ -37,4 +39,6 @@ protected:
 	int m_width;
 	int m_height;
 	int m_moveDirection;
+
+	GameWorld *world;
 };

@@ -1,6 +1,7 @@
 #pragma once
 
 class Custom_action;
+class GameWorld;
 
 class TextLayer : public cocos2d::CCLayer {
 public:
@@ -16,4 +17,5 @@ public:
 	cocos2d::CCLabelTTF *availCountLabel;
 
 	Custom_action *customAction;
+	GameWorld *world;
 };

@@ -63,6 +63,11 @@ GameWorld::GameWorld()
 
 GameWorld::~GameWorld()
 {
+	for(int i = 0 ; i < tmxObjectList.size() ; i++) {
+		auto obj = tmxObjectList[i];
+		obj->m_body = nullptr;
+	}
+
 	CC_SAFE_DELETE(b2_world);
 }
 

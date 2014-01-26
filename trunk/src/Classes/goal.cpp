@@ -7,16 +7,17 @@
 using namespace cocos2d;
 
 
-Goal* Goal::create(cocos2d::CCDictionary *dict)
+Goal* Goal::create(GameWorld *world, cocos2d::CCDictionary *dict)
 {
-	Goal *goal = new Goal(dict);
+	Goal *goal = new Goal(world, dict);
 	goal->autorelease();
 	return goal;
 }
 
-Goal::Goal(cocos2d::CCDictionary *dict)
-	: TmxObject(dict, OBJECT_GOAL), clearCalled(false)
+Goal::Goal(GameWorld *world, cocos2d::CCDictionary *dict)
+	: TmxObject(world, dict, OBJECT_GOAL), clearCalled(false)
 {
+	int a = 1;
 }
 
 b2Body *Goal::createBody()
@@ -26,7 +27,7 @@ b2Body *Goal::createBody()
 	bodyDef.type = b2_staticBody;
 	bodyDef.userData = this;
 
-	b2Body *body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
+	b2Body *body = world->b2_world->CreateBody(&bodyDef);
 
 	b2PolygonShape box;
 	box.SetAsBox(px_to_mt_length(m_width)/2, px_to_mt_length(m_height)/2);

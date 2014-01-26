@@ -35,8 +35,8 @@ std::string safeReadStringValue(CCDictionary* dict, const char* key, const char*
 	return ((CCString*)object)->getCString();
 }
 
-TmxObject::TmxObject(CCDictionary* dict, int objType)
-	: m_x(0), m_y(0), m_width(0), m_height(0), m_speed(0), m_body(nullptr), m_objType(objType)
+TmxObject::TmxObject(GameWorld *world, CCDictionary* dict, int objType)
+	: m_x(0), m_y(0), m_width(0), m_height(0), m_speed(0), m_body(nullptr), m_objType(objType), world(world)
 {
 	m_x = safeReadIntValue(dict, "x");
 	m_y = safeReadIntValue(dict, "y");
@@ -53,7 +53,7 @@ TmxObject::TmxObject(CCDictionary* dict, int objType)
 TmxObject::~TmxObject()
 {
 	if(m_body != nullptr) {
-		GameWorld::sharedWorld()->b2_world->DestroyBody(m_body);
+		world->b2_world->DestroyBody(m_body);
 		m_body = nullptr;
 	}
 }
@@ -92,4 +92,5 @@ bool TmxObject::noiseable()
 	default:
 		assert(false);
 	}
+	return false;
 }

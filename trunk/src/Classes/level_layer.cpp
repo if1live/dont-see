@@ -29,8 +29,14 @@ LevelLayer::LevelLayer()
 	: player(nullptr)
 	, masking(nullptr)
 	, soundTick(0)
+	, world(new GameWorld())
 {
 	custom_action = new Custom_action();
+}
+LevelLayer::~LevelLayer()
+{
+	delete(world);
+	world = nullptr;
 }
 
 cocos2d::CCScene *LevelLayer::scene(const char *mapfile)
@@ -72,6 +78,7 @@ cocos2d::CCScene *LevelLayer::scene(const char *mapfile)
 	//개발시 사용할 정보 보여줄 레이어
 	TextLayer *textLayer = (TextLayer*)TextLayer::create();
 	textLayer->customAction = layer->custom_action;
+	textLayer->world = layer->world;
 	scene->addChild(textLayer);
 
 	//우클릭 허용은 카운터가 존재한다
@@ -90,7 +97,6 @@ bool LevelLayer::initWithMapfile(const char *mapfile)
 
 	this->setTouchEnabled( true );
 	this->scheduleUpdate();
-	this->initPhysics();
 	this->initMap(mapfile);
 
 
@@ -99,7 +105,7 @@ bool LevelLayer::initWithMapfile(const char *mapfile)
 
 void LevelLayer::update(float dt)
 {
-	GameWorld::sharedWorld()->update(dt);
+	world->update(dt);
 	KeyboardDevice::sharedDevice()->Update();
 	MouseDevice::sharedDevice()->Update();
 
@@ -108,7 +114,7 @@ void LevelLayer::update(float dt)
 	const float minViewRadius = 100;
 	const float maxViewRadius = 400;
 	const CCPoint& layerPos = getPosition();
-	std::vector<TmxObject*> nearObjects = GameWorld::sharedWorld()->nearBy(player->getPosition(), minViewRadius, maxViewRadius);
+	std::vector<TmxObject*> nearObjects = world->nearBy(player->getPosition(), minViewRadius, maxViewRadius);
 	for (auto it = nearObjects.begin(); it != nearObjects.end(); ++it) {
 		TmxObject* nearObject = (*it);
 		if(nearObject->noiseable() == false) {
@@ -171,16 +177,9 @@ void LevelLayer::draw()
 
 	ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
     kmGLPushMatrix();
-	GameWorld::sharedWorld()->b2_world->DrawDebugData();
+	world->b2_world->DrawDebugData();
     kmGLPopMatrix();
 }
-
-void LevelLayer::initPhysics()
-{
-	GameWorld::sharedWorld();
-}
-
-
 
 void LevelLayer::addNewSpriteAtPosition(CCPoint p)
 {
@@ -192,7 +191,7 @@ void LevelLayer::addNewSpriteAtPosition(CCPoint p)
     bodyDef.type = b2_dynamicBody;
     bodyDef.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);
 
-    b2Body *body = GameWorld::sharedWorld()->b2_world->CreateBody(&bodyDef);
+    b2Body *body = world->b2_world->CreateBody(&bodyDef);
     
     // Define another box shape for our dynamic body.
     b2PolygonShape dynamicBox;
@@ -245,9 +244,9 @@ void LevelLayer::ccTouchesEnded(CCSet* touches, CCEvent* event)
 void LevelLayer::initMap(const char *mapfile)
 {
 	// create a TMX map
-	LevelLoader loader(mapfile, this);
+	LevelLoader loader(mapfile, this, world);
 	loader.load();
-	player = (Player*)GameWorld::sharedWorld()->getObjectByType(OBJECT_PLAYER);
+	player = (Player*)world->getObjectByType(OBJECT_PLAYER);
 
 	//카메라를 기본 위치로 이동시키기
 	//레이어 초기화할때 같이 하지 않으면 끊기는 느낌이 든다
